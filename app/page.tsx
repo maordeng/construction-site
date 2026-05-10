@@ -5,18 +5,19 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
 
-        {/* BACKGROUND IMAGE */}
+        {/* BACKGROUND */}
         <div className="absolute inset-0">
-
           <img
             src="/images/hero.jpg"
             alt="Maor David Engineering"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
 
-          {/* DARK OVERLAY */}
-          <div className="absolute inset-0 bg-black/55" />
+          {/* OVERLAY (cinematic dark layer) */}
+          <div className="absolute inset-0 bg-black/60" />
 
+          {/* subtle gradient for depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
 
         {/* CONTENT */}
@@ -24,8 +25,8 @@ export default function Home() {
 
           <div className="max-w-4xl">
 
-            {/* TOP LABEL */}
-            <div className="mb-8 text-sm tracking-[0.25em] uppercase text-white/60">
+            {/* LABEL */}
+            <div className="mb-6 text-sm tracking-[0.3em] uppercase text-white/60">
               MAOR DAVID ENGINEERING
             </div>
 
@@ -39,14 +40,14 @@ export default function Home() {
             </h1>
 
             {/* SUBTITLE */}
-            <p className="mt-10 text-xl text-white/75 leading-relaxed max-w-2xl">
+            <p className="mt-8 text-xl text-white/75 leading-relaxed max-w-2xl">
               ליווי מקצועי לפרויקטים פרטיים ומוסדיים,
               עם הקפדה בלתי מתפשרת על איכות הביצוע,
-              תיאום בין כלל הגורמים וניהול נכון של כל שלב בפרויקט.
+              תיאום מלא בין כלל הגורמים וניהול מדויק של כל שלב בפרויקט.
             </p>
 
             {/* BUTTONS */}
-            <div className="mt-12 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
 
               <a
                 href="/contact"
@@ -68,6 +69,11 @@ export default function Home() {
 
         </div>
 
+        {/* subtle scroll hint */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/40 text-sm">
+          גלול למטה
+        </div>
+
       </section>
 
       {/* TRUST SECTION */}
@@ -79,7 +85,6 @@ export default function Home() {
             <div className="text-4xl font-semibold mb-5">
               דיוק
             </div>
-
             <p className="text-black/60 leading-relaxed">
               ירידה לפרטים הקטנים ביותר לאורך כל שלבי הביצוע והפיקוח.
             </p>
@@ -89,7 +94,6 @@ export default function Home() {
             <div className="text-4xl font-semibold mb-5">
               שקיפות
             </div>
-
             <p className="text-black/60 leading-relaxed">
               עבודה מסודרת וברורה מול הלקוח, עם שליטה מלאה על הפרויקט.
             </p>
@@ -99,7 +103,6 @@ export default function Home() {
             <div className="text-4xl font-semibold mb-5">
               מקצועיות
             </div>
-
             <p className="text-black/60 leading-relaxed">
               ניסיון מעשי בשטח לצד ניהול הנדסי אחראי ומדויק.
             </p>
