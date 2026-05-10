@@ -20,7 +20,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold">פרטי קשר</h2>
   
             <p className="text-gray-600">
-              טלפון: 05X-XXX-XXXX
+              טלפון: 054-9762390
             </p>
   
             <p className="text-gray-600">
@@ -28,7 +28,7 @@ export default function ContactPage() {
             </p>
   
             <p className="text-gray-600">
-              מייל: info@maor-engineering.co.il
+              מייל: office@maordeng.com
             </p>
           </div>
   
