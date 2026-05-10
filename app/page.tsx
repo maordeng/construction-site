@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="bg-black text-white">
 
-      {/* WHATSAPP FLOAT BUTTON */}
+      {/* WHATSAPP FLOAT BUTTON (קבוע) */}
       <a
         href="https://wa.me/972500000000"
         target="_blank"
@@ -21,9 +21,22 @@ export default function Home() {
             alt="Construction"
             className="w-full h-full object-cover scale-110"
           />
-
           <div className="absolute inset-0 bg-black/65" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        </div>
+
+        {/* TOP BAR (LOGO במקום וואטסאפ) */}
+        <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-10 py-6">
+
+          {/* LOGO */}
+          <div className="flex items-center gap-3">
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              className="h-10 w-auto object-contain"
+            />
+          </div>
+
         </div>
 
         {/* CONTENT */}
@@ -31,7 +44,7 @@ export default function Home() {
 
           <div className="max-w-4xl">
 
-            {/* BRAND */}
+            {/* BRAND TEXT */}
             <div className="mb-6 flex items-center gap-3 text-white/60 text-sm tracking-[0.25em] uppercase">
               <span className="w-2 h-2 bg-white/60 rounded-full"></span>
               Maor David Engineering
@@ -50,20 +63,12 @@ export default function Home() {
               תוך שליטה מלאה, תיאום בין כלל הגורמים וסטנדרט ביצוע בלתי מתפשר.
             </p>
 
-            {/* ICON ROW */}
+            {/* ICONS */}
             <div className="mt-10 flex flex-wrap gap-6 text-white/70 text-sm">
 
-              <div className="flex items-center gap-2">
-                <span>📐</span> תכנון ובקרה
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span>🏗️</span> פיקוח שטח
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span>📊</span> ניהול פרויקטים
-              </div>
+              <div className="flex items-center gap-2">📐 תכנון ובקרה</div>
+              <div className="flex items-center gap-2">🏗️ פיקוח שטח</div>
+              <div className="flex items-center gap-2">📊 ניהול פרויקטים</div>
 
             </div>
 
@@ -103,27 +108,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-14">
 
           <div>
-            <div className="text-3xl font-medium mb-4 flex items-center gap-2">
-              📏 דיוק
-            </div>
+            <div className="text-3xl font-medium mb-4">📏 דיוק</div>
             <p className="text-black/60 leading-relaxed">
               ירידה לפרטים הקטנים ביותר לאורך כל שלבי הביצוע והפיקוח.
             </p>
           </div>
 
           <div>
-            <div className="text-3xl font-medium mb-4 flex items-center gap-2">
-              🔍 שקיפות
-            </div>
+            <div className="text-3xl font-medium mb-4">🔍 שקיפות</div>
             <p className="text-black/60 leading-relaxed">
               עבודה מסודרת וברורה מול הלקוח עם שליטה מלאה בפרויקט.
             </p>
           </div>
 
           <div>
-            <div className="text-3xl font-medium mb-4 flex items-center gap-2">
-              🏗️ מקצועיות
-            </div>
+            <div className="text-3xl font-medium mb-4">🏗️ מקצועיות</div>
             <p className="text-black/60 leading-relaxed">
               ניסיון שטח לצד ניהול הנדסי מוקפד ואחראי.
             </p>
