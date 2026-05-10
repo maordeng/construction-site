@@ -1,33 +1,48 @@
 export default function Home() {
   return (
-    <main className="bg-white text-[#111111]">
+    <main className="bg-black text-white">
 
       {/* HERO */}
-      <section className="min-h-screen flex items-center border-b border-black/10">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+        {/* BACKGROUND IMAGE */}
+        <div className="absolute inset-0">
+
+          <img
+            src="/images/hero.jpg"
+            alt="Maor David Engineering"
+            className="w-full h-full object-cover"
+          />
+
+          {/* DARK OVERLAY */}
+          <div className="absolute inset-0 bg-black/55" />
+
+        </div>
+
+        {/* CONTENT */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full">
 
           <div className="max-w-4xl">
 
             {/* TOP LABEL */}
-            <div className="mb-8 text-sm tracking-[0.25em] uppercase text-black/40">
+            <div className="mb-8 text-sm tracking-[0.25em] uppercase text-white/60">
               MAOR DAVID ENGINEERING
             </div>
 
-            {/* MAIN TITLE */}
+            {/* TITLE */}
             <h1 className="text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight">
               ניהול ופיקוח בנייה
               <br />
-              בגישה מדויקת,
+              מתוך דיוק,
               <br />
-              מקצועית ואחראית
+              אחריות ושליטה מלאה
             </h1>
 
-            {/* SUBTEXT */}
-            <p className="mt-10 text-xl text-black/60 leading-relaxed max-w-2xl">
+            {/* SUBTITLE */}
+            <p className="mt-10 text-xl text-white/75 leading-relaxed max-w-2xl">
               ליווי מקצועי לפרויקטים פרטיים ומוסדיים,
-              עם שליטה מלאה על תהליך הבנייה,
-              הקפדה על איכות הביצוע וניהול נכון של כל שלב בדרך.
+              עם הקפדה בלתי מתפשרת על איכות הביצוע,
+              תיאום בין כלל הגורמים וניהול נכון של כל שלב בפרויקט.
             </p>
 
             {/* BUTTONS */}
@@ -35,14 +50,14 @@ export default function Home() {
 
               <a
                 href="/contact"
-                className="bg-black text-white px-8 py-4 rounded-full hover:bg-black/80 transition"
+                className="bg-white text-black px-8 py-4 rounded-full hover:bg-white/90 transition"
               >
                 יצירת קשר
               </a>
 
               <a
                 href="/projects"
-                className="border border-black/20 px-8 py-4 rounded-full hover:bg-black hover:text-white transition"
+                className="border border-white/30 px-8 py-4 rounded-full hover:bg-white hover:text-black transition"
               >
                 פרויקטים
               </a>
@@ -56,12 +71,12 @@ export default function Home() {
       </section>
 
       {/* TRUST SECTION */}
-      <section className="py-24 px-6 md:px-10">
+      <section className="bg-white text-black py-24 px-6 md:px-10">
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-14">
 
           <div>
-            <div className="text-4xl font-semibold mb-4">
+            <div className="text-4xl font-semibold mb-5">
               דיוק
             </div>
 
@@ -71,22 +86,22 @@ export default function Home() {
           </div>
 
           <div>
-            <div className="text-4xl font-semibold mb-4">
+            <div className="text-4xl font-semibold mb-5">
               שקיפות
             </div>
 
             <p className="text-black/60 leading-relaxed">
-              עבודה מסודרת וברורה מול הלקוח, עם בקרה מלאה על כל תהליך.
+              עבודה מסודרת וברורה מול הלקוח, עם שליטה מלאה על הפרויקט.
             </p>
           </div>
 
           <div>
-            <div className="text-4xl font-semibold mb-4">
+            <div className="text-4xl font-semibold mb-5">
               מקצועיות
             </div>
 
             <p className="text-black/60 leading-relaxed">
-              ניסיון מעשי בשטח לצד גישה ניהולית מדויקת ואחראית.
+              ניסיון מעשי בשטח לצד ניהול הנדסי אחראי ומדויק.
             </p>
           </div>
 
