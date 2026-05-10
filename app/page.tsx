@@ -4,8 +4,9 @@ export default function Home() {
 
       {/* HERO */}
       <section className="flex flex-col items-center justify-center text-center px-6 py-24 bg-gray-50">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          מאור דוד הנדסה
+        
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-red-600">
+          🚧 מאור דוד הנדסה - שינוי בדיקה עובד 🚧
         </h1>
 
         <p className="mt-6 text-lg md:text-2xl text-gray-600 max-w-2xl">
@@ -93,7 +94,7 @@ export default function Home() {
 
         <div className="mt-8">
           <a
-            href="https://wa.me/972549762390"
+            href="https://wa.me/972XXXXXXXXX"
             className="bg-black text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition"
           >
             שלח הודעה בוואטסאפ
