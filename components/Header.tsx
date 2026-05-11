@@ -52,10 +52,9 @@ export default function Header() {
 
         </nav>
 
-        {/* LEFT SIDE: LOGO + HOME */}
+        {/* LEFT SIDE: HOME */}
         <div className="flex items-center gap-5 order-1">
 
-          {/* HOME BUTTON (יוקרתי יותר) */}
           <Link
             href="/"
             className="group flex items-center justify-center w-10 h-10 rounded-full border border-white/20 hover:border-white/60 transition"
@@ -65,7 +64,10 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* LOGO */}
+        </div>
+
+        {/* CENTER LOGO */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <Link href="/">
             <img
               src="/images/logo.png"
@@ -73,7 +75,6 @@ export default function Header() {
               className="h-[65px] w-auto object-contain"
             />
           </Link>
-
         </div>
 
       </div>
