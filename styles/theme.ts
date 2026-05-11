@@ -1,37 +1,42 @@
 export const theme = {
+  colors: {
     bg: {
-        header: {
-            normal: "bg-black/20",
-            scrolled: "bg-black/60",
-          },
-  
-      hero: {
-        overlay: "bg-black/40",
-        gradient:
-          "bg-gradient-to-t from-black/60 via-black/20 to-transparent",
-      },
-  
-      section: {
-        dark: "bg-black",
-        light: "bg-white",
-        muted: "bg-neutral-100",
-      },
+      base: "bg-white",
+      surface: "bg-gray-50",
+      elevated: "bg-white",
     },
-  
+
     text: {
-      primary: "text-white",
-      secondary: "text-white/70",
-      muted: "text-white/50",
-  
-      dark: "text-gray-900",
-      darkSecondary: "text-gray-600",
+      primary: "text-gray-900",
+      secondary: "text-gray-600",
+      muted: "text-gray-500",
     },
-  
+
+    border: {
+      default: "border-gray-200",
+      soft: "border-gray-100",
+    },
+  },
+
+  components: {
     button: {
       primary:
-        "bg-white text-black hover:bg-white/90 transition",
-  
+        "bg-black text-white hover:bg-gray-800 transition px-8 py-3 rounded-xl font-medium",
       secondary:
-        "border border-white/30 text-white hover:bg-white hover:text-black transition",
+        "bg-gray-100 text-gray-900 hover:bg-gray-200 transition px-8 py-3 rounded-xl",
+      whatsapp:
+        "bg-green-500 text-white hover:bg-green-600 transition px-8 py-3 rounded-xl font-medium",
     },
-  };
+
+    card:
+      "bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition",
+
+    section:
+      "px-6 py-20",
+  },
+
+  layout: {
+    container: "max-w-6xl mx-auto px-6",
+    containerNarrow: "max-w-4xl mx-auto px-6",
+  },
+};
