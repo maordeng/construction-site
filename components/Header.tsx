@@ -1,54 +1,63 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path;
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10 transition">
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
 
-        {/* LOGO */}
-        <Link href="/" className="flex items-center gap-3">
-          <img
-            src="/images/logo.png"
-            alt="Logo"
-            className="h-[65px] w-auto object-contain transition"
-          />
-        </Link>
-
         {/* NAV */}
-        <nav className="hidden md:flex gap-8 text-white/80 text-sm tracking-wide">
+        <nav className="hidden md:flex gap-8 text-sm tracking-wide order-2">
 
-          <Link href="/vision" className="hover:text-white transition">
-            חזון
-          </Link>
-
-          <Link href="/about" className="hover:text-white transition">
-            אודות
-          </Link>
-
-          <Link href="/projects" className="hover:text-white transition">
-            פרויקטים
-          </Link>
-
-          <Link href="/services" className="hover:text-white transition">
-            שירותים
-          </Link>
-
-          <Link href="/contact" className="hover:text-white transition">
-            יצירת קשר
-          </Link>
+          {[
+            { href: "/vision", label: "חזון" },
+            { href: "/about", label: "אודות" },
+            { href: "/projects", label: "פרויקטים" },
+            { href: "/services", label: "שירותים" },
+            { href: "/contact", label: "צור קשר" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`relative transition text-white/80 hover:text-white
+                after:content-[''] after:absolute after:left-0 after:-bottom-1
+                after:h-[1px] after:bg-white after:transition-all after:duration-300
+                after:w-0 hover:after:w-full
+                ${isActive(item.href) ? "text-white after:w-full" : ""}
+              `}
+            >
+              {item.label}
+            </Link>
+          ))}
 
         </nav>
 
-        {/* MOBILE CTA (אופציונלי) */}
-        <Link
-          href="/contact"
-          className="md:hidden bg-white text-black px-4 py-2 rounded-full text-sm"
-        >
-          יצירת קשר
-        </Link>
+        {/* LOGO + HOME */}
+        <div className="flex items-center gap-4 order-1">
+
+          <Link
+            href="/"
+            className="text-white/80 hover:text-white transition text-xl"
+          >
+            🏠
+          </Link>
+
+          <Link href="/">
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              className="h-[65px] w-auto object-contain"
+            />
+          </Link>
+
+        </div>
 
       </div>
 
