@@ -27,32 +27,32 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
 
-        {/* RIGHT NAV (RTL ORDER) */}
+        {/* RIGHT SIDE NAV (RTL ORDER) */}
         <nav className="hidden md:flex gap-8 text-sm tracking-wide order-2">
 
-          <Link href="/about" className={isActive("/about") ? "text-white" : "text-white/80 hover:text-white"}>
-            אודות
-          </Link>
-
-          <Link href="/vision" className={isActive("/vision") ? "text-white" : "text-white/80 hover:text-white"}>
-            חזון
-          </Link>
-
-          <Link href="/projects" className={isActive("/projects") ? "text-white" : "text-white/80 hover:text-white"}>
-            פרויקטים
+          <Link href="/contact" className={isActive("/contact") ? "text-white" : "text-white/80 hover:text-white"}>
+            יצירת קשר
           </Link>
 
           <Link href="/services" className={isActive("/services") ? "text-white" : "text-white/80 hover:text-white"}>
             שירותים
           </Link>
 
-          <Link href="/contact" className={isActive("/contact") ? "text-white" : "text-white/80 hover:text-white"}>
-            יצירת קשר
+          <Link href="/projects" className={isActive("/projects") ? "text-white" : "text-white/80 hover:text-white"}>
+            פרויקטים
+          </Link>
+
+          <Link href="/vision" className={isActive("/vision") ? "text-white" : "text-white/80 hover:text-white"}>
+            חזון
+          </Link>
+
+          <Link href="/about" className={isActive("/about") ? "text-white" : "text-white/80 hover:text-white"}>
+            אודות
           </Link>
 
         </nav>
 
-        {/* LEFT SIDE: HOME + LOGO */}
+        {/* LEFT SIDE: LOGO + HOME */}
         <div className="flex items-center gap-5 order-1">
 
           {/* HOME BUTTON (יוקרתי יותר) */}
