@@ -1,8 +1,22 @@
 export const theme = {
+  // 🔵 BACKWARD COMPATIBILITY (לשמור את הדפים עובדים)
+  bg: {
+    section: {
+      light: "bg-white",
+      muted: "bg-gray-50",
+    },
+  },
+
+  text: {
+    dark: "text-gray-900",
+    darkSecondary: "text-gray-600",
+  },
+
+  // 🟢 SYSTEM החדש (לשימוש עתידי מתקדם)
   colors: {
     bg: {
       base: "bg-white",
-      surface: "bg-gray-300",
+      surface: "bg-gray-50",
       elevated: "bg-white",
     },
 
@@ -31,8 +45,7 @@ export const theme = {
     card:
       "bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition",
 
-    section:
-      "px-6 py-20",
+    section: "px-6 py-20",
   },
 
   layout: {
