@@ -2,14 +2,28 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { useEffect, useState } from "react";
 export default function Header() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
 
   const isActive = (path: string) => pathname === path;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10 transition">
+    <header
+    className={`fixed top-0 left-0 right-0 z-50 transition
+    ${scrolled ? "bg-black/80" : "bg-black/40"}
+    backdrop-blur-md border-b border-white/10`}
+  >
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
 
