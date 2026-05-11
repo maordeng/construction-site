@@ -1,34 +1,57 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full border-b bg-white sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
 
-        {/* Logo */}
-        <div className="font-bold text-xl tracking-tight">
-          מאור דוד הנדסה
-        </div>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
 
-        {/* Navigation */}
-        <nav className="hidden md:flex gap-8 text-sm text-gray-700">
-          <Link href="/">בית</Link>
-          <Link href="/about">אודות</Link>
-          <Link href="/services">שירותים</Link>
-          <Link href="/projects">פרויקטים</Link>
-          <Link href="/vision">חזון</Link>
-          <Link href="/contact">יצירת קשר</Link>
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-3">
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            className="h-9 w-auto object-contain"
+          />
+        </Link>
+
+        {/* NAV */}
+        <nav className="hidden md:flex gap-8 text-white/80 text-sm tracking-wide">
+
+          <Link href="/vision" className="hover:text-white transition">
+            חזון
+          </Link>
+
+          <Link href="/about" className="hover:text-white transition">
+            אודות
+          </Link>
+
+          <Link href="/projects" className="hover:text-white transition">
+            פרויקטים
+          </Link>
+
+          <Link href="/services" className="hover:text-white transition">
+            שירותים
+          </Link>
+
+          <Link href="/contact" className="hover:text-white transition">
+            יצירת קשר
+          </Link>
+
         </nav>
 
-        {/* CTA Button */}
-        <a
-          href="https://wa.me/972549762390"
-          className="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition"
+        {/* MOBILE CTA (אופציונלי) */}
+        <Link
+          href="/contact"
+          className="md:hidden bg-white text-black px-4 py-2 rounded-full text-sm"
         >
-          וואטסאפ
-        </a>
+          יצירת קשר
+        </Link>
 
       </div>
+
     </header>
   );
 }
