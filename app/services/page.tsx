@@ -1,6 +1,6 @@
 export default function ServicesPage() {
     return (
-      <main className="min-h-screen bg-white text-gray-900">
+      <main className="min-h-screen bg-white text-gray-900 pt-28">
   
         {/* HERO */}
         <section className="bg-gray-50 px-6 py-20 text-center">
