@@ -2,7 +2,7 @@ export const theme = {
   colors: {
     bg: {
       base: "bg-white",
-      surface: "bg-gray-50",
+      surface: "bg-gray-100",
       elevated: "bg-white",
     },
 
