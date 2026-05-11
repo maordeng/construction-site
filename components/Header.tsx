@@ -13,7 +13,7 @@ export default function Header() {
           <img
             src="/images/logo.png"
             alt="Logo"
-            className="h-9 w-auto object-contain"
+            className="h-[65px] w-auto object-contain transition"
           />
         </Link>
 
