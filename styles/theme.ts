@@ -1,9 +1,9 @@
 export const theme = {
     bg: {
-      header: {
-        normal: "bg-black/20",
-        scrolled: "bg-black/60",
-      },
+        header: {
+            normal: "bg-black/10",
+            scrolled: "bg-black/40",
+          },
   
       hero: {
         overlay: "bg-black/40",
