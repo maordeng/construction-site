@@ -1,9 +1,17 @@
 export const theme = {
-  // 🔵 BACKWARD COMPATIBILITY (לשמור את הדפים עובדים)
+  // 🔵 BACKWARD COMPATIBILITY
   bg: {
     section: {
       light: "bg-white",
       muted: "bg-gray-50",
+    },
+
+    header: {
+      normal:
+        "bg-white/10 backdrop-blur-xl border-b border-black/5",
+
+      scrolled:
+        "bg-white/70 backdrop-blur-xl border-b border-black/10 shadow-sm",
     },
   },
 
@@ -12,7 +20,7 @@ export const theme = {
     darkSecondary: "text-gray-600",
   },
 
-  // 🟢 SYSTEM החדש (לשימוש עתידי מתקדם)
+  // 🟢 SYSTEM החדש
   colors: {
     bg: {
       base: "bg-white",
@@ -36,8 +44,10 @@ export const theme = {
     button: {
       primary:
         "bg-black text-white hover:bg-gray-800 transition px-8 py-3 rounded-xl font-medium",
+
       secondary:
         "bg-gray-100 text-gray-900 hover:bg-gray-200 transition px-8 py-3 rounded-xl",
+
       whatsapp:
         "bg-green-500 text-white hover:bg-green-600 transition px-8 py-3 rounded-xl font-medium",
     },
