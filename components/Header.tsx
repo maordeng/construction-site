@@ -22,45 +22,54 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${scrolled ? theme.bg.header.scrolled : theme.bg.header.normal}
-      `}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? theme.bg.header.scrolled : theme.bg.header.normal
+      }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
 
         {/* NAV */}
         <nav
-          className={`hidden md:flex gap-8 text-sm tracking-wide order-2 transition-colors ${
-            scrolled ? theme.headerText.scrolled : theme.headerText.normal
+          className={`hidden md:flex gap-8 text-sm tracking-wide transition-colors ${
+            scrolled ? "text-[#1C1C1C]" : "text-white"
           }`}
         >
-          <Link href="/contact" className={isActive("/contact") ? "font-semibold text-current" : "text-current/70 hover:text-current"}>
-            יצירת קשר
-          </Link>
+          {[
+            { href: "/contact", label: "יצירת קשר" },
+            { href: "/services", label: "שירותים" },
+            { href: "/projects", label: "פרויקטים" },
+            { href: "/vision", label: "חזון" },
+            { href: "/about", label: "אודות" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`relative transition-colors duration-300 ${
+                isActive(item.href)
+                  ? "font-medium"
+                  : "opacity-70 hover:opacity-100"
+              }`}
+            >
+              {item.label}
 
-          <Link href="/services" className={isActive("/services") ? "font-semibold text-current" : "text-current/70 hover:text-current"}>
-            שירותים
-          </Link>
-
-          <Link href="/projects" className={isActive("/projects") ? "font-semibold text-current" : "text-current/70 hover:text-current"}>
-            פרויקטים
-          </Link>
-
-          <Link href="/vision" className={isActive("/vision") ? "font-semibold text-current" : "text-current/70 hover:text-current"}>
-            חזון
-          </Link>
-
-          <Link href="/about" className={isActive("/about") ? "font-semibold text-current" : "text-current/70 hover:text-current"}>
-            אודות
-          </Link>
+              {/* underline premium */}
+              <span
+                className={`absolute left-0 -bottom-1 h-[1px] bg-current transition-all duration-300 ${
+                  isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+            </Link>
+          ))}
         </nav>
 
-        {/* HOME */}
-        <div className="flex items-center gap-5 order-1">
+        {/* HOME BUTTON */}
+        <div className="flex items-center order-1">
           <Link
             href="/"
-            className={`group flex items-center justify-center w-10 h-10 rounded-full border transition ${
-              scrolled ? "border-black/20" : "border-white/20"
+            className={`group flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
+              scrolled
+                ? "border-black/20 hover:border-black/40"
+                : "border-white/30 hover:border-white/70"
             }`}
           >
             <span className="text-lg group-hover:scale-110 transition">
@@ -75,7 +84,7 @@ export default function Header() {
             <img
               src="/images/logo.png"
               alt="Logo"
-              className="h-[65px] w-auto object-contain"
+              className="h-[65px] w-auto object-contain transition-all duration-300"
             />
           </Link>
         </div>
