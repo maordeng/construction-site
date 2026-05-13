@@ -1,61 +1,61 @@
 export const theme = {
-  // 🔵 BACKWARD COMPATIBILITY
+  // 🔵 BACKWARD COMPATIBILITY (שדרוג גוונים)
   bg: {
     section: {
-      light: "bg-white",
-      muted: "bg-gray-50",
+      light: "bg-[#F6F6F3]", // במקום white מסנוור
+      muted: "bg-[#F1F1EE]", // במקום gray-50
     },
 
     header: {
       normal:
-        "bg-white/10 backdrop-blur-xl border-b border-black/5",
+        "bg-white/40 backdrop-blur-xl border-b border-black/5",
 
       scrolled:
-        "bg-white/70 backdrop-blur-xl border-b border-black/10 shadow-sm",
+        "bg-white/75 backdrop-blur-xl border-b border-black/10 shadow-sm",
     },
   },
 
   text: {
-    dark: "text-zinc-900 tracking-tight",
-    darkSecondary: "text-zinc-600 leading-relaxed",
+    dark: "text-[#1C1C1C] tracking-tight",
+    darkSecondary: "text-[#5F5F5F] leading-relaxed",
   },
 
-  // 🟢 SYSTEM החדש
+  // 🟢 SYSTEM החדש (יותר “סטודיו” ופחות Tailwind ברירת מחדל)
   colors: {
     bg: {
-      base: "bg-white",
-      surface: "bg-gray-50",
-      elevated: "bg-white",
+      base: "#F6F6F3",      // רקע כללי חם
+      surface: "#FFFFFF",   // כרטיסים
+      elevated: "#FAFAF7",  // שכבה עדינה מעל
     },
 
     text: {
-      primary: "text-gray-900",
-      secondary: "text-gray-600",
-      muted: "text-gray-500",
+      primary: "#1C1C1C",
+      secondary: "#5F5F5F",
+      muted: "#8A8A8A",
     },
 
     border: {
-      default: "border-gray-200",
-      soft: "border-gray-100",
+      default: "border-[#E6E6E0]", // הרבה יותר רך מ-gray-200
+      soft: "border-[#F0F0EC]",
     },
   },
 
   components: {
     button: {
       primary:
-      "bg-black text-white hover:bg-zinc-800 transition-all duration-300 px-8 py-4 rounded-2xl font-medium tracking-wide shadow-sm hover:shadow-lg",
+        "bg-black text-white hover:bg-[#1A1A1A] transition-all duration-300 px-8 py-4 rounded-2xl font-medium tracking-wide shadow-sm hover:shadow-lg",
 
       secondary:
-        "bg-gray-100 text-gray-900 hover:bg-gray-200 transition px-8 py-3 rounded-xl",
+        "bg-white/60 backdrop-blur-md border border-[#E6E6E0] text-gray-900 hover:bg-white transition px-8 py-3 rounded-2xl",
 
-        whatsapp:
+      whatsapp:
         "bg-[#25D366] text-white hover:opacity-90 transition-all duration-300 px-8 py-4 rounded-2xl font-medium tracking-wide shadow-sm hover:shadow-lg",
     },
 
     card:
-      "bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition",
+      "bg-white/70 backdrop-blur-sm border border-[#E6E6E0] rounded-2xl shadow-sm hover:shadow-md transition",
 
-      section: "px-6 py-28 md:py-32",
+    section: "px-6 py-28 md:py-32",
   },
 
   layout: {
