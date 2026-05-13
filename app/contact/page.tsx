@@ -19,46 +19,26 @@ export default function ContactPage() {
       {/* CONTENT */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
 
-        {/* CONTACT INFO */}
+        {/* CONTACT ICONS ONLY */}
         <div className="space-y-10">
 
           <h2 className="text-2xl font-semibold tracking-tight">
             פרטי קשר
           </h2>
 
-          <div className="space-y-6">
+          <div className="flex gap-6 text-gray-600">
 
-            {/* PHONE */}
-            <div className="flex items-start gap-4">
-              <Phone className="w-5 h-5 text-gray-500 mt-1" />
-              <div>
-                <p className="font-medium">טלפון</p>
-                <p className={theme.text.darkSecondary}>054-9762390</p>
-              </div>
-            </div>
+            <Phone className="w-6 h-6 hover:text-black transition cursor-pointer" />
 
-            {/* WHATSAPP */}
-            <div className="flex items-start gap-4">
-              <MessageCircle className="w-5 h-5 text-gray-500 mt-1" />
-              <div>
-                <p className="font-medium">וואטסאפ</p>
-                <p className={theme.text.darkSecondary}>מענה מהיר בכל שעות היום</p>
-              </div>
-            </div>
+            <MessageCircle className="w-6 h-6 hover:text-black transition cursor-pointer" />
 
-            {/* EMAIL */}
-            <div className="flex items-start gap-4">
-              <Mail className="w-5 h-5 text-gray-500 mt-1" />
-              <div>
-                <p className="font-medium">מייל</p>
-                <p className={theme.text.darkSecondary}>office@maordeng.com</p>
-              </div>
-            </div>
+            <Mail className="w-6 h-6 hover:text-black transition cursor-pointer" />
 
           </div>
+
         </div>
 
-        {/* FORM CARD */}
+        {/* FORM */}
         <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm space-y-6">
 
           <h2 className="text-xl font-semibold tracking-tight">
@@ -82,7 +62,11 @@ export default function ContactPage() {
             className="w-full border border-black/10 rounded-xl px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-black/10"
           />
 
-          <button className={theme.components.button.primary}>
+          <button
+            type="button"
+            onClick={() => alert("הפנייה נשלחה")}
+            className={theme.components.button.primary}
+          >
             שליחת פנייה
           </button>
 
