@@ -77,7 +77,14 @@ function ContactForm() {
   const [message, setMessage] = useState("");
 
   const handleSubmit = () => {
-    alert("הפנייה נשלחה");
+    const text = `הודעה חדשה מהאתר:%0A
+שם: ${name}%0A
+טלפון: ${phone}%0A
+הודעה: ${message}`;
+
+    const url = `https://wa.me/972549762390?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
 
     setName("");
     setPhone("");
