@@ -1,5 +1,6 @@
 import { theme } from "@/styles/theme";
 import { Phone, Mail, MessageCircle } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
   return (
@@ -29,48 +30,14 @@ export default function ContactPage() {
           <div className="flex gap-6 text-gray-600">
 
             <Phone className="w-6 h-6 hover:text-black transition cursor-pointer" />
-
             <MessageCircle className="w-6 h-6 hover:text-black transition cursor-pointer" />
-
             <Mail className="w-6 h-6 hover:text-black transition cursor-pointer" />
 
           </div>
-
         </div>
 
-        {/* FORM */}
-        <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm space-y-6">
-
-          <h2 className="text-xl font-semibold tracking-tight">
-            השאירו פרטים
-          </h2>
-
-          <input
-            type="text"
-            placeholder="שם מלא"
-            className="w-full border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10"
-          />
-
-          <input
-            type="tel"
-            placeholder="טלפון"
-            className="w-full border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10"
-          />
-
-          <textarea
-            placeholder="תיאור קצר של הפרויקט"
-            className="w-full border border-black/10 rounded-xl px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-black/10"
-          />
-
-          <button
-            type="button"
-            onClick={() => alert("הפנייה נשלחה")}
-            className={theme.components.button.primary}
-          >
-            שליחת פנייה
-          </button>
-
-        </div>
+        {/* FORM (Client Component) */}
+        <ContactForm />
 
       </section>
 
