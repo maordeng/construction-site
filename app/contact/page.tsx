@@ -1,6 +1,8 @@
+"use client";
+
 import { theme } from "@/styles/theme";
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import ContactForm from "./ContactForm";
+import { useState } from "react";
 
 export default function ContactPage() {
   return (
@@ -20,7 +22,7 @@ export default function ContactPage() {
       {/* CONTENT */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
 
-        {/* CONTACT ICONS ONLY */}
+        {/* CONTACT ICONS */}
         <div className="space-y-10">
 
           <h2 className="text-2xl font-semibold tracking-tight">
@@ -28,20 +30,19 @@ export default function ContactPage() {
           </h2>
 
           <div className="flex gap-6 text-gray-600">
-
             <Phone className="w-6 h-6 hover:text-black transition cursor-pointer" />
             <MessageCircle className="w-6 h-6 hover:text-black transition cursor-pointer" />
             <Mail className="w-6 h-6 hover:text-black transition cursor-pointer" />
-
           </div>
+
         </div>
 
-        {/* FORM (Client Component) */}
+        {/* FORM */}
         <ContactForm />
 
       </section>
 
-      {/* CTA WHATSAPP */}
+      {/* CTA */}
       <section className={`${theme.bg.section.muted} px-6 py-28 text-center`}>
 
         <h2 className="text-3xl md:text-4xl font-light tracking-tight">
@@ -63,5 +64,64 @@ export default function ContactPage() {
       </section>
 
     </main>
+  );
+}
+
+/* ========================= */
+/* CLIENT COMPONENT          */
+/* ========================= */
+
+function ContactForm() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = () => {
+    alert("הפנייה נשלחה");
+
+    setName("");
+    setPhone("");
+    setMessage("");
+  };
+
+  return (
+    <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm space-y-6">
+
+      <h2 className="text-xl font-semibold tracking-tight">
+        השאירו פרטים
+      </h2>
+
+      <input
+        type="text"
+        placeholder="שם מלא"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="w-full border border-black/10 rounded-xl px-4 py-3"
+      />
+
+      <input
+        type="tel"
+        placeholder="טלפון"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        className="w-full border border-black/10 rounded-xl px-4 py-3"
+      />
+
+      <textarea
+        placeholder="תיאור קצר של הפרויקט"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        className="w-full border border-black/10 rounded-xl px-4 py-3 h-32"
+      />
+
+      <button
+        type="button"
+        onClick={handleSubmit}
+        className={theme.components.button.primary}
+      >
+        שליחת פנייה
+      </button>
+
+    </div>
   );
 }
