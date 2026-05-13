@@ -2,17 +2,17 @@ export const theme = {
   // 🔵 BACKWARD COMPATIBILITY (שדרוג גוונים)
   bg: {
     section: {
-      light: "bg-[#F6F6F3]", // רקע חם ולא לבן מסנוור
-      muted: "bg-[#F1F1EE]", // שכבה מעט כהה יותר
+      light: "bg-[#F6F6F3]",
+      muted: "bg-[#F1F1EE]",
     },
 
     header: {
       normal:
-        "bg-white/30 backdrop-blur-xl border-b border-black/5",
+        "bg-white/20 backdrop-blur-xl border-b border-black/5 text-white",
 
-      // 🔥 FIX חשוב: יותר opaque כדי לא לאבד כפתורים
+      // 🔥 FIX אמיתי לניגודיות
       scrolled:
-        "bg-[#F6F6F3]/95 backdrop-blur-xl border-b border-black/10 shadow-sm",
+        "bg-[#F3F3F0]/98 backdrop-blur-xl border-b border-black/10 shadow-sm text-[#1C1C1C]",
     },
   },
 
