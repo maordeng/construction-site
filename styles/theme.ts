@@ -8,12 +8,17 @@ export const theme = {
 
     header: {
       normal:
-        "bg-white/20 backdrop-blur-xl border-b border-black/5 text-white",
-
-      // 🔥 FIX אמיתי לניגודיות
+        "bg-white/20 backdrop-blur-xl border-b border-black/5",
+      
       scrolled:
-        "bg-[#F3F3F0]/98 backdrop-blur-xl border-b border-black/10 shadow-sm text-[#1C1C1C]",
+        "bg-[#F3F3F0]/98 backdrop-blur-xl border-b border-black/10 shadow-sm",
     },
+  },
+
+  // 🧠 NEW: header text states (זה מה שהיה חסר לך)
+  headerText: {
+    normal: "text-white",
+    scrolled: "text-[#1C1C1C]",
   },
 
   text: {
