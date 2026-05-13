@@ -16,8 +16,8 @@ export const theme = {
   },
 
   text: {
-    dark: "text-gray-900",
-    darkSecondary: "text-gray-600",
+    dark: "text-zinc-900 tracking-tight",
+    darkSecondary: "text-zinc-600 leading-relaxed",
   },
 
   // 🟢 SYSTEM החדש
@@ -43,19 +43,19 @@ export const theme = {
   components: {
     button: {
       primary:
-        "bg-black text-white hover:bg-gray-800 transition px-8 py-3 rounded-xl font-medium",
+      "bg-black text-white hover:bg-zinc-800 transition-all duration-300 px-8 py-4 rounded-2xl font-medium tracking-wide shadow-sm hover:shadow-lg",
 
       secondary:
         "bg-gray-100 text-gray-900 hover:bg-gray-200 transition px-8 py-3 rounded-xl",
 
-      whatsapp:
-        "bg-green-500 text-white hover:bg-green-600 transition px-8 py-3 rounded-xl font-medium",
+        whatsapp:
+        "bg-[#25D366] text-white hover:opacity-90 transition-all duration-300 px-8 py-4 rounded-2xl font-medium tracking-wide shadow-sm hover:shadow-lg",
     },
 
     card:
       "bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition",
 
-    section: "px-6 py-20",
+      section: "px-6 py-28 md:py-32",
   },
 
   layout: {

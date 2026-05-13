@@ -5,58 +5,62 @@ export default function ContactPage() {
     <main className={`min-h-screen ${theme.bg.section.light} ${theme.text.dark} pt-28`}>
 
       {/* HERO */}
-      <section className={`${theme.bg.section.muted} px-6 py-20 text-center`}>
-        <h1 className="text-4xl md:text-5xl font-bold">
+      <section className={`${theme.bg.section.muted} px-6 py-28 text-center`}>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           יצירת קשר
         </h1>
 
-        <p className={`mt-6 text-lg ${theme.text.darkSecondary} max-w-2xl mx-auto`}>
+        <p className={`mt-6 text-lg ${theme.text.darkSecondary} max-w-2xl mx-auto leading-relaxed`}>
           נשמח לשמוע על הפרויקט שלכם ולתת ייעוץ ראשוני ללא התחייבות
         </p>
       </section>
 
       {/* CONTACT INFO */}
-      <section className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+      <section className="max-w-4xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12">
 
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">פרטי קשר</h2>
+        <div className="space-y-6">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            פרטי קשר
+          </h2>
 
-          <p className={theme.text.darkSecondary}>
+          <p className={`${theme.text.darkSecondary} leading-relaxed`}>
             טלפון: 054-9762390
           </p>
 
-          <p className={theme.text.darkSecondary}>
+          <p className={`${theme.text.darkSecondary} leading-relaxed`}>
             וואטסאפ: לחץ על הכפתור למענה מהיר
           </p>
 
-          <p className={theme.text.darkSecondary}>
+          <p className={`${theme.text.darkSecondary} leading-relaxed`}>
             מייל: office@maordeng.com
           </p>
         </div>
 
         {/* FORM */}
-        <div className="border rounded-xl p-6 space-y-4">
+        <div className="border border-black/10 rounded-2xl p-8 space-y-5 shadow-sm">
 
-          <h2 className="text-xl font-semibold">השאירו פרטים</h2>
+          <h2 className="text-xl font-semibold tracking-tight">
+            השאירו פרטים
+          </h2>
 
           <input
             type="text"
             placeholder="שם מלא"
-            className="w-full border rounded-lg px-4 py-2"
+            className="w-full border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10"
           />
 
           <input
             type="tel"
             placeholder="טלפון"
-            className="w-full border rounded-lg px-4 py-2"
+            className="w-full border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10"
           />
 
           <textarea
             placeholder="תיאור קצר של הפרויקט"
-            className="w-full border rounded-lg px-4 py-2 h-32"
+            className="w-full border border-black/10 rounded-xl px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-black/10"
           />
 
-          <button className={`w-full py-3 rounded-lg transition bg-black text-white hover:bg-gray-800`}>
+          <button className={theme.components.button.primary}>
             שליחת פנייה
           </button>
 
@@ -65,17 +69,19 @@ export default function ContactPage() {
       </section>
 
       {/* CTA WHATSAPP */}
-      <section className={`${theme.bg.section.muted} px-6 py-20 text-center`}>
-        <h2 className="text-3xl font-semibold">
+      <section className={`${theme.bg.section.muted} px-6 py-28 text-center`}>
+
+        <h2 className="text-3xl font-semibold tracking-tight">
           רוצים מענה מהיר?
         </h2>
 
         <a
           href="https://wa.me/972549762390"
-          className="inline-block mt-8 px-8 py-4 rounded-xl transition bg-green-500 text-white hover:bg-green-600"
+          className={`inline-block mt-8 ${theme.components.button.whatsapp}`}
         >
           וואטסאפ עכשיו
         </a>
+
       </section>
 
     </main>
