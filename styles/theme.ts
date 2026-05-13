@@ -1,71 +1,88 @@
-export const theme = {
-  // 🔵 BACKWARD COMPATIBILITY (שדרוג גוונים)
-  bg: {
-    section: {
-      light: "bg-[#F6F6F3]",
-      muted: "bg-[#F1F1EE]",
-    },
+"use client";
 
-    header: {
-      normal:
-        "bg-white/20 backdrop-blur-xl border-b border-black/5",
-      
-      scrolled:
-        "bg-[#F3F3F0]/98 backdrop-blur-xl border-b border-black/10 shadow-sm",
-    },
-  },
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { theme } from "@/styles/theme";
 
-  // 🧠 NEW: header text states (זה מה שהיה חסר לך)
-  headerText: {
-    normal: "text-white",
-    scrolled: "text-[#1C1C1C]",
-  },
+export default function Header() {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
 
-  text: {
-    dark: "text-[#1C1C1C] tracking-tight",
-    darkSecondary: "text-[#5F5F5F] leading-relaxed",
-  },
+  const isActive = (path: string) => pathname === path;
 
-  // 🟢 DESIGN SYSTEM
-  colors: {
-    bg: {
-      base: "#F6F6F3",
-      surface: "#FFFFFF",
-      elevated: "#FAFAF7",
-    },
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
 
-    text: {
-      primary: "#1C1C1C",
-      secondary: "#5F5F5F",
-      muted: "#8A8A8A",
-    },
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    border: {
-      default: "border-[#E6E6E0]",
-      soft: "border-[#F0F0EC]",
-    },
-  },
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? theme.bg.header.scrolled : theme.bg.header.normal
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
 
-  components: {
-    button: {
-      primary:
-        "bg-black text-white hover:bg-[#1A1A1A] transition-all duration-300 px-8 py-4 rounded-2xl font-medium tracking-wide shadow-sm hover:shadow-lg",
+        {/* RIGHT NAV (כמו שהיה במקור שלך) */}
+        <nav
+          className={`hidden md:flex gap-8 text-sm tracking-wide order-2 transition-colors ${
+            scrolled ? "text-[#1C1C1C]" : "text-white"
+          }`}
+        >
+          <Link href="/contact" className={isActive("/contact") ? "font-medium text-current" : "text-current/70 hover:text-current"}>
+            יצירת קשר
+          </Link>
 
-      secondary:
-        "bg-white/70 backdrop-blur-md border border-[#E6E6E0] text-gray-900 hover:bg-white transition px-8 py-3 rounded-2xl",
+          <Link href="/services" className={isActive("/services") ? "font-medium text-current" : "text-current/70 hover:text-current"}>
+            שירותים
+          </Link>
 
-      whatsapp:
-        "bg-[#25D366] text-white hover:opacity-90 transition-all duration-300 px-8 py-4 rounded-2xl font-medium tracking-wide shadow-sm hover:shadow-lg",
-    },
+          <Link href="/projects" className={isActive("/projects") ? "font-medium text-current" : "text-current/70 hover:text-current"}>
+            פרויקטים
+          </Link>
 
-    card:
-      "bg-white/80 backdrop-blur-sm border border-[#E6E6E0] rounded-2xl shadow-sm hover:shadow-md transition",
+          <Link href="/vision" className={isActive("/vision") ? "font-medium text-current" : "text-current/70 hover:text-current"}>
+            חזון
+          </Link>
 
-    section: "px-6 py-28 md:py-32",
-  },
+          <Link href="/about" className={isActive("/about") ? "font-medium text-current" : "text-current/70 hover:text-current"}>
+            אודות
+          </Link>
+        </nav>
 
-  layout: {
-    container: "max-w-6xl mx-auto px-6",
-    containerNarrow: "max-w-4xl mx-auto px-6",
-  },
-};
+        {/* LEFT HOME (כמו שהיה במקור) */}
+        <div className="flex items-center order-1">
+          <Link
+            href="/"
+            className={`group flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
+              scrolled
+                ? "border-black/20 hover:border-black/40"
+                : "border-white/30 hover:border-white/70"
+            }`}
+          >
+            <span className="text-lg group-hover:scale-110 transition">
+              ⌂
+            </span>
+          </Link>
+        </div>
+
+        {/* CENTER LOGO */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
+          <Link href="/">
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              className="h-[65px] w-auto object-contain transition-all duration-300"
+            />
+          </Link>
+        </div>
+
+      </div>
+    </header>
+  );
+}
