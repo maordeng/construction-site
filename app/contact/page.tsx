@@ -22,50 +22,69 @@ export default function ContactPage() {
       {/* CONTENT */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
 
-        {/* CONTACT CARDS */}
-        <div className="space-y-4">
+        {/* CONTACT - LUX MINIMAL */}
+        <div className="space-y-8">
 
-          <h2 className="text-2xl font-semibold tracking-tight mb-6">
+          <h2 className="text-2xl font-light tracking-wide text-gray-800">
             פרטי קשר
           </h2>
 
-          {/* PHONE */}
-          <a
-            href="tel:+972549762390"
-            className="flex items-center justify-between p-4 rounded-xl border border-black/10 bg-white hover:shadow-md transition"
-          >
-            <div className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-gray-700" />
-              <span className="font-medium text-gray-700">טלפון</span>
-            </div>
-            <span className="text-gray-500 text-sm">050-976-2390</span>
-          </a>
+          <div className="space-y-6 text-gray-600">
 
-          {/* WHATSAPP */}
-          <a
-            href="https://wa.me/972549762390"
-            target="_blank"
-            className="flex items-center justify-between p-4 rounded-xl border border-black/10 bg-white hover:shadow-md transition"
-          >
-            <div className="flex items-center gap-3">
-              <MessageCircle className="w-5 h-5 text-gray-700" />
-              <span className="font-medium text-gray-700">וואטסאפ</span>
-            </div>
-            <span className="text-gray-500 text-sm">שלח הודעה</span>
-          </a>
+            {/* PHONE */}
+            <a
+              href="tel:+972549762390"
+              className="flex items-center justify-between group"
+            >
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-gray-500 group-hover:text-black transition" />
+                <span className="text-gray-700 group-hover:text-black transition">
+                  טלפון
+                </span>
+              </div>
+              <span className="text-sm text-gray-400 group-hover:text-gray-600 transition">
+                054-976-2390
+              </span>
+            </a>
 
-          {/* EMAIL */}
-          <a
-            href="mailto:yourmail@example.com"
-            className="flex items-center justify-between p-4 rounded-xl border border-black/10 bg-white hover:shadow-md transition"
-          >
-            <div className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-gray-700" />
-              <span className="font-medium text-gray-700">מייל</span>
-            </div>
-            <span className="text-gray-500 text-sm">שליחת מייל</span>
-          </a>
+            <div className="h-px bg-black/5" />
 
+            {/* WHATSAPP */}
+            <a
+              href="https://wa.me/972549762390"
+              target="_blank"
+              className="flex items-center justify-between group"
+            >
+              <div className="flex items-center gap-3">
+                <MessageCircle className="w-5 h-5 text-gray-500 group-hover:text-black transition" />
+                <span className="text-gray-700 group-hover:text-black transition">
+                  וואטסאפ
+                </span>
+              </div>
+              <span className="text-sm text-gray-400 group-hover:text-gray-600 transition">
+                שלח הודעה
+              </span>
+            </a>
+
+            <div className="h-px bg-black/5" />
+
+            {/* EMAIL */}
+            <a
+              href="mailto:office@maordeng.com"
+              className="flex items-center justify-between group"
+            >
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-gray-500 group-hover:text-black transition" />
+                <span className="text-gray-700 group-hover:text-black transition">
+                  מייל
+                </span>
+              </div>
+              <span className="text-sm text-gray-400 group-hover:text-gray-600 transition">
+                office@maordeng.com
+              </span>
+            </a>
+
+          </div>
         </div>
 
         {/* FORM */}
