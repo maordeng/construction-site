@@ -22,18 +22,49 @@ export default function ContactPage() {
       {/* CONTENT */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
 
-        {/* CONTACT ICONS */}
-        <div className="space-y-10">
+        {/* CONTACT CARDS */}
+        <div className="space-y-4">
 
-          <h2 className="text-2xl font-semibold tracking-tight">
+          <h2 className="text-2xl font-semibold tracking-tight mb-6">
             פרטי קשר
           </h2>
 
-          <div className="flex gap-6 text-gray-600">
-            <Phone className="w-6 h-6 hover:text-black transition cursor-pointer" />
-            <MessageCircle className="w-6 h-6 hover:text-black transition cursor-pointer" />
-            <Mail className="w-6 h-6 hover:text-black transition cursor-pointer" />
-          </div>
+          {/* PHONE */}
+          <a
+            href="tel:+972549762390"
+            className="flex items-center justify-between p-4 rounded-xl border border-black/10 bg-white hover:shadow-md transition"
+          >
+            <div className="flex items-center gap-3">
+              <Phone className="w-5 h-5 text-gray-700" />
+              <span className="font-medium text-gray-700">טלפון</span>
+            </div>
+            <span className="text-gray-500 text-sm">050-976-2390</span>
+          </a>
+
+          {/* WHATSAPP */}
+          <a
+            href="https://wa.me/972549762390"
+            target="_blank"
+            className="flex items-center justify-between p-4 rounded-xl border border-black/10 bg-white hover:shadow-md transition"
+          >
+            <div className="flex items-center gap-3">
+              <MessageCircle className="w-5 h-5 text-gray-700" />
+              <span className="font-medium text-gray-700">וואטסאפ</span>
+            </div>
+            <span className="text-gray-500 text-sm">שלח הודעה</span>
+          </a>
+
+          {/* EMAIL */}
+          <a
+            href="mailto:yourmail@example.com"
+            className="flex items-center justify-between p-4 rounded-xl border border-black/10 bg-white hover:shadow-md transition"
+          >
+            <div className="flex items-center gap-3">
+              <Mail className="w-5 h-5 text-gray-700" />
+              <span className="font-medium text-gray-700">מייל</span>
+            </div>
+            <span className="text-gray-500 text-sm">שליחת מייל</span>
+          </a>
 
         </div>
 
@@ -68,7 +99,7 @@ export default function ContactPage() {
 }
 
 /* ========================= */
-/* CLIENT COMPONENT          */
+/* CLIENT FORM               */
 /* ========================= */
 
 function ContactForm() {
