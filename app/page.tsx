@@ -45,27 +45,33 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="
-              text-3xl sm:text-5xl md:text-6xl lg:text-7xl
-              font-light leading-[1.05] tracking-tight
-            ">
-              ניהול פרויקטים.
-              <br />
-              דיוק הנדסי מוחלט.
-            </h1>
-          </ScrollReveal>
+  <h1
+    className="
+      text-3xl sm:text-5xl md:text-6xl lg:text-7xl
+      font-light leading-[1.05] tracking-tight
+    "
+  >
+    ניהול ופיקוח בנייה
+    <br />
+    לבנות נכון. בראש שקט.
+  </h1>
+</ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <p className="
-              mt-6 sm:mt-8 md:mt-10
-              text-base sm:text-lg md:text-xl
-              text-white/70
-              max-w-xl sm:max-w-2xl mx-auto
-              leading-[1.6] sm:leading-[1.8]
-              px-2 sm:px-0
-            ">
-              אנחנו מלווים פרויקטים מהתכנון ועד המסירה — עם שליטה מלאה, שקיפות מלאה ותוצאה מדויקת.
-            </p>
+<ScrollReveal delay={0.2}>
+  <p
+    className="
+      mt-6 sm:mt-8 md:mt-10
+      text-base sm:text-lg md:text-xl
+      text-white/70
+      max-w-xl sm:max-w-2xl mx-auto
+      leading-[1.6] sm:leading-[1.8]
+      px-2 sm:px-0
+    "
+  >
+    ליווי אישי ומדויק לפרויקטים פרטיים ומוסדיים —
+    משלב התכנון ועד למסירה.
+  </p>
+</ScrollReveal>
           </ScrollReveal>
 
         </div>
