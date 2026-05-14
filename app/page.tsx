@@ -39,7 +39,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
           <ScrollReveal>
-            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[10px] sm:text-xs mb-4 sm:mb-6">
+            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[14px] sm:text-xs mb-4 sm:mb-6">
               מאור דוד הנדסה
             </p>
           </ScrollReveal>
@@ -53,7 +53,7 @@ export default function Home() {
             >
               ניהול ופיקוח בנייה
               <br />
-              לבנות נכון. בראש שקט.
+              .לבנות נכון, בראש שקט
             </h1>
           </ScrollReveal>
 
@@ -68,8 +68,8 @@ export default function Home() {
                 px-2 sm:px-0
               "
             >
-              ליווי אישי ומדויק לפרויקטים פרטיים ומוסדיים —
-              משלב התכנון ועד למסירה.
+              ליווי אישי לפרויקטים פרטיים ומוסדיים - 
+              .משלב התכנון ועד למסירה
             </p>
           </ScrollReveal>
 
