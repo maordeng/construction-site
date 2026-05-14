@@ -39,8 +39,10 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
           <ScrollReveal>
-            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[10px] sm:text-xs mb-8 sm:mb-12">
-              מאור דוד הנדסה
+            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[10px] sm:text-xs mb-4 sm:mb-8">
+              <span className="inline-block scale-[1.5] origin-center">
+                מאור דוד הנדסה
+              </span>
             </p>
           </ScrollReveal>
 
@@ -176,23 +178,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT - UPDATED */}
-      <section id="contact" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
+      {/* CONTACT - redesigned */}
+      <section id="contact" className="bg-black border-t border-white/10 py-24 sm:py-32 md:py-40 px-4 sm:px-6">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-start">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
 
-          {/* RIGHT - CTA */}
-          <div className="text-right">
+          {/* LEFT - MAIL CTA */}
+          <div className="text-right space-y-6">
 
             <ScrollReveal>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-10 tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
                 יצירת קשר
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <p className="text-sm sm:text-base md:text-lg text-white/60 mb-10 leading-relaxed">
-                שלחו לנו פנייה קצרה ונחזור אליכם בהקדם עם מענה מקצועי ומדויק לפרויקט שלכם.
+              <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed">
+                פנייה קצרה למייל ואנחנו חוזרים אליכם עם מענה מקצועי ומהיר.
               </p>
             </ScrollReveal>
 
@@ -200,54 +202,37 @@ export default function Home() {
               <a
                 href="mailto:office@maordeng.com"
                 className="
-                  group relative inline-flex w-full justify-center items-center gap-2
-                  px-6 py-4 sm:py-5 rounded-2xl
-                  bg-white text-black
-                  font-medium
-                  transition
-                  hover:scale-[1.02]
-                  overflow-hidden
+                  inline-flex items-center justify-center gap-3
+                  w-full md:w-auto
+                  px-8 py-5 rounded-2xl
+                  bg-gradient-to-r from-white to-white/80
+                  text-black font-medium
+                  hover:scale-[1.02] transition
                 "
               >
                 <Mail size={18} />
                 שליחת פנייה במייל
-
-                <span className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition" />
               </a>
             </ScrollReveal>
 
           </div>
 
-          {/* LEFT - INFO */}
-          <div className="text-right md:border-r md:border-white/10 md:pr-12 space-y-8">
+          {/* RIGHT - INFO */}
+          <div className="text-right space-y-8 border-r border-white/10 pr-8">
 
-            <ScrollReveal>
-              <h3 className="text-xl sm:text-2xl font-light text-white/80 mb-6">
-                פרטי קשר
-              </h3>
-            </ScrollReveal>
+            <div className="flex items-center gap-3">
+              <Phone size={18} className="text-white/60" />
+              <span>054-976-2390</span>
+            </div>
 
-            <div className="space-y-6 text-white/70">
+            <div className="flex items-center gap-3">
+              <Mail size={18} className="text-white/60" />
+              <span>office@maordeng.com</span>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <Phone size={18} className="text-white/60" />
-                <a href="tel:0549762390" className="hover:text-white transition">
-                  054-976-2390
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-white/60" />
-                <a href="mailto:office@maordeng.com" className="hover:text-white transition">
-                  office@maordeng.com
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <MapPin size={18} className="text-white/60" />
-                <span>הרב אבא אבוחצירה 9, שדרות</span>
-              </div>
-
+            <div className="flex items-center gap-3">
+              <MapPin size={18} className="text-white/60" />
+              <span>הרב אבא אבוחצירה 9, שדרות</span>
             </div>
 
           </div>
