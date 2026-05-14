@@ -47,26 +47,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SMOOTH TRANSITION (חשוב) */}
+      {/* SMOOTH TRANSITION */}
       <div className="h-32 bg-gradient-to-b from-black/0 to-black"></div>
 
-      {/* CTA ONLY SECTION (נקי במקום רעש) */}
+      {/* CTA SECTION */}
       <section className="bg-black py-40 px-6 text-center">
 
         <h2 className="text-3xl md:text-5xl font-light leading-[1.2] tracking-tight max-w-3xl mx-auto">
           אנחנו הופכים תוכניות למציאות — בלי פשרות, בלי רעש, בלי טעויות.
         </h2>
 
-        <a
-          href="/contact"
-          className="inline-block mt-14 bg-white text-black px-10 py-4 rounded-full hover:scale-105 transition"
-        >
-          יצירת קשר
-        </a>
-
+        <p className="mt-8 text-white/60 max-w-xl mx-auto">
+          כל פרויקט מנוהל בקפדנות הנדסית מלאה עם ליווי אישי משלב התכנון ועד המסירה.
+        </p>
       </section>
 
-      {/* FINAL SPACING BREATH */}
+      {/* CONTACT SECTION (חדש) */}
+      <section
+        id="contact"
+        className="bg-black border-t border-white/10 py-32 px-6 text-center"
+      >
+        <div className="max-w-4xl mx-auto">
+
+          <h2 className="text-3xl md:text-5xl font-light tracking-tight">
+            בואו נדבר על הפרויקט שלכם
+          </h2>
+
+          <p className="mt-6 text-white/60 text-lg leading-relaxed">
+            נשמח לשמוע על הפרויקט שלכם ולתת ייעוץ ראשוני ללא התחייבות.
+          </p>
+
+          <a
+            href="https://wa.me/972549762390"
+            target="_blank"
+            className="inline-block mt-10 bg-[#25D366] text-white px-8 py-4 rounded-full hover:scale-105 transition"
+          >
+            וואטסאפ ישיר
+          </a>
+
+        </div>
+      </section>
+
+      {/* FINAL SPACING */}
       <div className="h-24 bg-black"></div>
 
     </main>

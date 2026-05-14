@@ -13,10 +13,7 @@ export default function Header() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,26 +24,26 @@ export default function Header() {
   // 🎨 BACKGROUND
   const backgroundColor = isHome
     ? `rgba(237, 237, 231, ${0.15 + intensity * 0.75})`
-    : `rgba(18, 18, 18, 0.96)`; // 🔥 יותר עמוק וכמעט שחור
+    : `rgba(18, 18, 18, 0.96)`; // כהה פרימיום
 
   // 🎨 BORDER
   const borderColor = isHome
     ? `rgba(0,0,0,${0.05 + intensity * 0.12})`
-    : "rgba(255,255,255,0.08)"; // 👈 לבן עדין על כהה
+    : "rgba(255,255,255,0.08)";
 
-  // 🎨 TEXT
-  const textColor = isHero
-    ? "#ffffff"
-    : isHome
-      ? "#1C1C1C"
-      : "#ffffff"; // 🔥 דפים פנימיים = לבן
+  // 🎨 TEXT (פשוט ויציב)
+  const textColor = isHome
+    ? isHero
+      ? "#ffffff"
+      : "#1C1C1C"
+    : "#ffffff";
 
   // 🎨 SHADOW
   const shadow = isHome
     ? intensity > 0.6
       ? "0 10px 30px rgba(0,0,0,0.08)"
       : "0 0 0 rgba(0,0,0,0)"
-    : "0 10px 40px rgba(0,0,0,0.35)"; // 🔥 עומק אמיתי
+    : "0 10px 40px rgba(0,0,0,0.35)";
 
   return (
     <header
@@ -59,11 +56,11 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-7 md:py-8 relative">
 
-        {/* HOME BUTTON */}
+        {/* HOME */}
         <div className="flex items-center">
           <Link
             href="/"
-            className="group flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300"
+            className="group flex items-center justify-center w-10 h-10 rounded-full border transition"
             style={{
               borderColor: isHero
                 ? "rgba(255,255,255,0.3)"
@@ -81,11 +78,11 @@ export default function Header() {
 
         {/* NAVIGATION */}
         <nav
-          className="hidden md:flex gap-8 text-sm tracking-wide transition-colors"
+          className="hidden md:flex gap-8 text-sm tracking-wide"
           style={{ color: textColor }}
         >
           {[
-            { href: "/contact", label: "יצירת קשר" },
+            { href: "/#contact", label: "יצירת קשר" }, // 🔥 FIX
             { href: "/services", label: "שירותים" },
             { href: "/projects", label: "פרויקטים" },
             { href: "/vision", label: "חזון" },
@@ -113,7 +110,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CENTER LOGO */}
+        {/* LOGO */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <Link href="/">
             <img
