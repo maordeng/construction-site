@@ -11,6 +11,9 @@ export default function Header() {
 
   const isActive = (path: string) => pathname === path;
 
+  // 🧠 האם זה דף הבית
+  const isHome = pathname === "/";
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -24,7 +27,11 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? theme.bg.header.scrolled : theme.bg.header.normal
+        isHome
+          ? scrolled
+            ? theme.bg.header.scrolled
+            : theme.bg.header.normal
+          : "bg-white/90 backdrop-blur-xl border-b border-black/10 shadow-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
@@ -34,14 +41,20 @@ export default function Header() {
           <Link
             href="/"
             className={`group flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
-              scrolled
-                ? "border-black/20 hover:border-black/40"
-                : "border-white/30 hover:border-white/70"
+              isHome
+                ? scrolled
+                  ? "border-black/20"
+                  : "border-white/30"
+                : "border-black/20"
             }`}
           >
             <span
               className={`text-lg group-hover:scale-110 transition ${
-                scrolled ? "text-[#1C1C1C]" : "text-white"
+                isHome
+                  ? scrolled
+                    ? "text-[#1C1C1C]"
+                    : "text-white"
+                  : "text-[#1C1C1C]"
               }`}
             >
               ⌂
@@ -52,7 +65,11 @@ export default function Header() {
         {/* NAVIGATION */}
         <nav
           className={`hidden md:flex gap-8 text-sm tracking-wide transition-colors ${
-            scrolled ? "text-[#1C1C1C]" : "text-white"
+            isHome
+              ? scrolled
+                ? "text-[#1C1C1C]"
+                : "text-white"
+              : "text-[#1C1C1C]"
           }`}
         >
           {[
