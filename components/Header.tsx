@@ -29,9 +29,25 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
 
-        {/* NAVIGATION */}
+        {/* HOME BUTTON - עכשיו בצד שמאל */}
+        <div className="flex items-center">
+          <Link
+            href="/"
+            className={`group flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
+              scrolled
+                ? "border-black/20 hover:border-black/40"
+                : "border-white/30 hover:border-white/70"
+            }`}
+          >
+            <span className="text-lg group-hover:scale-110 transition">
+              ⌂
+            </span>
+          </Link>
+        </div>
+
+        {/* NAVIGATION - עכשיו בצד ימין */}
         <nav
-          className={`hidden md:flex gap-8 text-sm tracking-wide order-1 transition-colors ${
+          className={`hidden md:flex gap-8 text-sm tracking-wide transition-colors ${
             scrolled ? "text-[#1C1C1C]" : "text-white"
           }`}
         >
@@ -62,22 +78,6 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-
-        {/* HOME BUTTON */}
-        <div className="flex items-center order-2">
-          <Link
-            href="/"
-            className={`group flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
-              scrolled
-                ? "border-black/20 hover:border-black/40"
-                : "border-white/30 hover:border-white/70"
-            }`}
-          >
-            <span className="text-lg group-hover:scale-110 transition">
-              ⌂
-            </span>
-          </Link>
-        </div>
 
         {/* CENTER LOGO */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
