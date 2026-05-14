@@ -53,7 +53,7 @@ export default function Home() {
             >
               ניהול ופיקוח בנייה
               <br />
-              לבנות נכון. בראש שקט.
+              .לבנות נכון, בראש שקט
             </h1>
           </ScrollReveal>
 
