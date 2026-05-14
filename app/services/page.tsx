@@ -23,23 +23,23 @@ export default function ServicesPage() {
         <div className="grid md:grid-cols-3 gap-10 text-center">
 
           <div>
-            <p className="text-4xl font-light">+120</p>
+            <p className="text-4xl font-light">12</p>
             <p className={`mt-2 ${theme.text.darkSecondary}`}>
               פרויקטים שנוהלו
             </p>
           </div>
 
           <div>
-            <p className="text-4xl font-light">98%</p>
+            <p className="text-4xl font-light">95%</p>
             <p className={`mt-2 ${theme.text.darkSecondary}`}>
               עמידה בלוחות זמנים
             </p>
           </div>
 
           <div>
-            <p className="text-4xl font-light">0</p>
+            <p className="text-4xl font-light">10</p>
             <p className={`mt-2 ${theme.text.darkSecondary}`}>
-              חריגות שלא נוהלו
+         שנות נסיון
             </p>
           </div>
 
