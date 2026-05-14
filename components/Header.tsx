@@ -42,12 +42,10 @@ export default function Header() {
     { href: "#contact", label: "יצירת קשר" },
   ];
 
-  const handleScrollTo = (href: string) => {
+  const scrollTo = (href: string) => {
     setMenuOpen(false);
     const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -61,10 +59,28 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-7 md:py-8">
 
-          {/* LOGO */}
-          <Link href="/" className="text-white font-light tracking-wide">
-            ⌂
+          {/* HOME ICON */}
+          <Link href="/" className="text-2xl">
+            <span
+              style={{
+                color: isHero ? "#ffffff" : textColor,
+              }}
+              className="transition"
+            >
+              ⌂
+            </span>
           </Link>
+
+          {/* LOGO (הוחזר!) */}
+          <div className="absolute left-1/2 -translate-x-1/2">
+            <Link href="/">
+              <img
+                src="/images/logo.png"
+                alt="Logo"
+                className="h-[80px] md:h-[90px] w-auto object-contain"
+              />
+            </Link>
+          </div>
 
           {/* DESKTOP NAV */}
           <nav
@@ -74,7 +90,7 @@ export default function Header() {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => handleScrollTo(item.href)}
+                onClick={() => scrollTo(item.href)}
                 className="opacity-70 hover:opacity-100 transition"
               >
                 {item.label}
@@ -93,26 +109,39 @@ export default function Header() {
         </div>
       </header>
 
-      {/* MOBILE MENU OVERLAY */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8">
+      {/* MOBILE SIDEBAR MENU */}
+      <div
+        className={`fixed top-0 right-0 h-full w-72 z-50 transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        } bg-black/95 backdrop-blur-xl border-l border-white/10`}
+      >
+        <div className="p-6 flex flex-col gap-6">
+
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="text-white/60 text-sm mb-6 text-left"
+          >
+            סגור
+          </button>
+
           {navItems.map((item) => (
             <button
               key={item.href}
-              onClick={() => handleScrollTo(item.href)}
-              className="text-white text-2xl font-light tracking-wide"
+              onClick={() => scrollTo(item.href)}
+              className="text-white text-lg text-right hover:opacity-70 transition"
             >
               {item.label}
             </button>
           ))}
-
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="absolute top-6 right-6 text-white/60"
-          >
-            סגור
-          </button>
         </div>
+      </div>
+
+      {/* BACKDROP */}
+      {menuOpen && (
+        <div
+          onClick={() => setMenuOpen(false)}
+          className="fixed inset-0 bg-black/50 z-40"
+        />
       )}
     </>
   );
