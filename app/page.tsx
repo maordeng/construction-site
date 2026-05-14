@@ -62,7 +62,63 @@ export default function Home() {
         </p>
       </section>
 
-      {/* CONTACT SECTION (חדש) */}
+      {/* SERVICES SECTION (חדש) */}
+      <section
+        id="services"
+        className="bg-black border-t border-white/10 py-40 px-6"
+      >
+        <div className="max-w-6xl mx-auto">
+
+          <div className="text-center mb-20">
+            <p className="text-white/50 tracking-[0.3em] uppercase text-xs">
+              Services
+            </p>
+
+            <h2 className="mt-4 text-4xl md:text-6xl font-light tracking-tight">
+              ניהול ופיקוח בנייה ברמה הנדסית גבוהה
+            </h2>
+
+            <p className="mt-6 text-white/60 max-w-2xl mx-auto">
+              פתרונות ניהול ופיקוח לפרויקטים פרטיים ומוסדיים — משלב התכנון ועד המסירה.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10">
+
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
+              <h3 className="text-xl font-medium mb-3">ניהול פרויקטים</h3>
+              <p className="text-white/60 leading-relaxed">
+                ליווי מלא של הפרויקט, שליטה בלוחות זמנים ותקציב ותיאום בין כל הגורמים.
+              </p>
+            </div>
+
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
+              <h3 className="text-xl font-medium mb-3">פיקוח בנייה פרטית</h3>
+              <p className="text-white/60 leading-relaxed">
+                פיקוח צמוד לבתים פרטיים תוך שמירה על איכות ביצוע וסטנדרט גבוה.
+              </p>
+            </div>
+
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
+              <h3 className="text-xl font-medium mb-3">פיקוח מוסדי</h3>
+              <p className="text-white/60 leading-relaxed">
+                בקרה הנדסית מלאה על פרויקטים ציבוריים ומוסדיים.
+              </p>
+            </div>
+
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
+              <h3 className="text-xl font-medium mb-3">ליווי יזמים וקבלנים</h3>
+              <p className="text-white/60 leading-relaxed">
+                שיפור ביצועים, תיאום וניהול תהליכי עבודה בשטח.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
       <section
         id="contact"
         className="bg-black border-t border-white/10 py-32 px-6 text-center"
