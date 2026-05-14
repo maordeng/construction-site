@@ -29,8 +29,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
 
         {/* NAV */}
-        <nav
-          className={`hidden md:flex gap-8 text-sm tracking-wide transition-colors ${
+        <nav className="hidden md:flex gap-8 text-sm tracking-wide order-1 ...">
             scrolled ? "text-[#1C1C1C]" : "text-white"
           }`}
         >
@@ -63,7 +62,7 @@ export default function Header() {
         </nav>
 
         {/* HOME BUTTON */}
-        <div className="flex items-center order-1">
+        <div className="flex items-center order-2">
           <Link
             href="/"
             className={`group flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
@@ -84,7 +83,7 @@ export default function Header() {
             <img
               src="/images/logo.png"
               alt="Logo"
-              className="h-[65px] w-auto object-contain transition-all duration-300"
+              className="h-[90px] w-auto object-contain transition-all duration-300"
             />
           </Link>
         </div>
