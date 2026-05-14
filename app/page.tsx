@@ -16,7 +16,7 @@ export default function Home() {
         <MessageCircle size={22} />
       </a>
 
-      {/* HERO — לא נוגעים */}
+      {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
         <div className="absolute inset-0">
@@ -30,7 +30,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-          <p className="text-white/60 tracking-[0.3em] uppercase text-xs mb-6">
+          <p className="text-white/60 tracking-[0.35em] uppercase text-xs mb-6">
             Maor David Engineering
           </p>
 
@@ -47,52 +47,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES SECTION (חדש) */}
+      {/* SERVICES SECTION */}
       <section
         id="services"
-        className="bg-black border-t border-white/10 py-40 px-6"
+        className="bg-black border-t border-white/10 py-40 px-6 scroll-mt-28"
       >
         <div className="max-w-6xl mx-auto">
 
-          <div className="text-center mb-20">
-            <p className="text-white/50 tracking-[0.3em] uppercase text-xs">
+          {/* HEADER */}
+          <div className="text-center mb-24">
+
+            <p className="text-white/40 tracking-[0.35em] uppercase text-xs">
               Services
             </p>
 
-            <h2 className="mt-4 text-4xl md:text-6xl font-light tracking-tight">
+            <h2 className="mt-5 text-4xl md:text-6xl font-light tracking-tight leading-[1.1]">
               ניהול ופיקוח בנייה ברמה הנדסית גבוהה
             </h2>
 
-            <p className="mt-6 text-white/60 max-w-2xl mx-auto">
+            <p className="mt-6 text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
               פתרונות ניהול ופיקוח לפרויקטים פרטיים ומוסדיים — משלב התכנון ועד המסירה.
             </p>
+
           </div>
 
+          {/* GRID */}
           <div className="grid md:grid-cols-2 gap-10">
 
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
-              <h3 className="text-xl font-medium mb-3">ניהול פרויקטים</h3>
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
+              <h3 className="text-xl font-medium mb-3">
+                ניהול פרויקטים
+              </h3>
               <p className="text-white/60 leading-relaxed">
                 ליווי מלא של הפרויקט, שליטה בלוחות זמנים ותקציב ותיאום בין כל הגורמים.
               </p>
             </div>
 
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
-              <h3 className="text-xl font-medium mb-3">פיקוח בנייה פרטית</h3>
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
+              <h3 className="text-xl font-medium mb-3">
+                פיקוח בנייה פרטית
+              </h3>
               <p className="text-white/60 leading-relaxed">
                 פיקוח צמוד לבתים פרטיים תוך שמירה על איכות ביצוע וסטנדרט גבוה.
               </p>
             </div>
 
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
-              <h3 className="text-xl font-medium mb-3">פיקוח מוסדי</h3>
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
+              <h3 className="text-xl font-medium mb-3">
+                פיקוח מוסדי
+              </h3>
               <p className="text-white/60 leading-relaxed">
                 בקרה הנדסית מלאה על פרויקטים ציבוריים ומוסדיים.
               </p>
             </div>
 
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition">
-              <h3 className="text-xl font-medium mb-3">ליווי יזמים וקבלנים</h3>
+            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
+              <h3 className="text-xl font-medium mb-3">
+                ליווי יזמים וקבלנים
+              </h3>
               <p className="text-white/60 leading-relaxed">
                 שיפור ביצועים, תיאום וניהול תהליכי עבודה בשטח.
               </p>
@@ -106,7 +118,7 @@ export default function Home() {
       {/* CONTACT SECTION */}
       <section
         id="contact"
-        className="bg-black border-t border-white/10 py-32 px-6 text-center"
+        className="bg-black border-t border-white/10 py-32 px-6 text-center scroll-mt-28"
       >
         <div className="max-w-4xl mx-auto">
 
