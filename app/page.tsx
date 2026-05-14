@@ -39,7 +39,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
           <ScrollReveal>
-            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[18px] sm:text-xs mb-4 sm:mb-6">
+            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[10px] sm:text-xs mb-8 sm:mb-12">
               מאור דוד הנדסה
             </p>
           </ScrollReveal>
