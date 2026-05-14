@@ -114,13 +114,11 @@ export default function Header() {
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <Link href="/">
             <img
-              src="/images/logo.png"
+              src={intensity > 0.4 ? "/images/logo.png" : "/images/logo-white.png"}
               alt="Logo"
               className="h-[90px] w-auto object-contain transition-all duration-300"
               style={{
-                filter: isHome && intensity < 0.4
-                  ? "none"
-                  : "brightness(0) invert(0)",
+                filter: "none",
               }}
             />
           </Link>
