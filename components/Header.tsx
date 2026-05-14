@@ -21,36 +21,36 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 🧠 מצב hero אמיתי
   const isHero = isHome && scrollY < 60;
-
-  // 🎯 עומק גלילה (רק לאנימציה)
   const intensity = Math.min(scrollY / 250, 1);
 
-  // 🎨 HEADER BACKGROUND
+  // 🎨 BACKGROUND
   const backgroundColor = isHome
     ? `rgba(237, 237, 231, ${0.15 + intensity * 0.75})`
-    : // 🔥 דפים פנימיים – כהה יותר, פחות שטוח
-      `rgba(220, 220, 214, ${0.92})`;
+    : `rgba(18, 18, 18, 0.96)`; // 🔥 יותר עמוק וכמעט שחור
 
   // 🎨 BORDER
   const borderColor = isHome
     ? `rgba(0,0,0,${0.05 + intensity * 0.12})`
-    : "rgba(0,0,0,0.12)";
+    : "rgba(255,255,255,0.08)"; // 👈 לבן עדין על כהה
 
-  // 🎨 TEXT COLOR
-  const textColor = isHero ? "#ffffff" : "#1C1C1C";
+  // 🎨 TEXT
+  const textColor = isHero
+    ? "#ffffff"
+    : isHome
+      ? "#1C1C1C"
+      : "#ffffff"; // 🔥 דפים פנימיים = לבן
 
-  // 🎨 SHADOW (יותר עומק בדפים פנימיים)
+  // 🎨 SHADOW
   const shadow = isHome
     ? intensity > 0.6
       ? "0 10px 30px rgba(0,0,0,0.08)"
       : "0 0 0 rgba(0,0,0,0)"
-    : "0 6px 20px rgba(0,0,0,0.08)";
+    : "0 10px 40px rgba(0,0,0,0.35)"; // 🔥 עומק אמיתי
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         backgroundColor,
         borderBottom: `1px solid ${borderColor}`,
@@ -67,7 +67,7 @@ export default function Header() {
             style={{
               borderColor: isHero
                 ? "rgba(255,255,255,0.3)"
-                : "rgba(0,0,0,0.2)",
+                : "rgba(255,255,255,0.12)",
             }}
           >
             <span
@@ -113,7 +113,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CENTER LOGO (קבוע לחלוטין) */}
+        {/* CENTER LOGO */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <Link href="/">
             <img
