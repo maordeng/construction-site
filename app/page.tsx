@@ -16,7 +16,7 @@ export default function Home() {
         <MessageCircle size={22} />
       </a>
 
-      {/* HERO (cinematic) */}
+      {/* HERO — לא נוגעים */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
         <div className="absolute inset-0">
@@ -47,91 +47,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATEMENT SECTION */}
-      <section className="bg-black py-40 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* SMOOTH TRANSITION (חשוב) */}
+      <div className="h-32 bg-gradient-to-b from-black/0 to-black"></div>
 
-          <h2 className="text-3xl md:text-5xl font-light leading-[1.2] tracking-tight">
-            בנייה היא לא רק ביצוע —
-            <br />
-            היא שליטה במורכבות.
-          </h2>
+      {/* CTA ONLY SECTION (נקי במקום רעש) */}
+      <section className="bg-black py-40 px-6 text-center">
 
-        </div>
-      </section>
-
-      {/* PROOF / VALUE */}
-      <section className="bg-black/95 py-40 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 text-center">
-
-          <div>
-            <div className="text-4xl mb-4">📏</div>
-            <h3 className="text-xl font-medium mb-2">דיוק</h3>
-            <p className="text-white/60 leading-relaxed">
-              כל פרט נבדק, כל שלב מנוהל.
-            </p>
-          </div>
-
-          <div>
-            <div className="text-4xl mb-4">🔍</div>
-            <h3 className="text-xl font-medium mb-2">שקיפות</h3>
-            <p className="text-white/60 leading-relaxed">
-              שליטה מלאה בזמן אמת.
-            </p>
-          </div>
-
-          <div>
-            <div className="text-4xl mb-4">🏗️</div>
-            <h3 className="text-xl font-medium mb-2">ביצוע</h3>
-            <p className="text-white/60 leading-relaxed">
-              סטנדרט הנדסי גבוה ללא פשרות.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* SERVICES PREVIEW */}
-      <section className="bg-black py-40 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-
-          <h2 className="text-4xl md:text-5xl font-light mb-16">
-            שירותים
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-10 text-left">
-
-            {[
-              "ניהול פרויקטים",
-              "פיקוח בנייה פרטית",
-              "פיקוח מוסדי",
-              "ליווי יזמים"
-            ].map((item) => (
-              <div key={item} className="border border-white/10 p-8 rounded-2xl hover:border-white/30 transition">
-                <p className="text-lg">{item}</p>
-                <p className="text-white/50 mt-3 leading-relaxed text-sm">
-                  ליווי מקצועי משלב התכנון ועד מסירה.
-                </p>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="bg-black py-44 px-6 text-center">
-        <h2 className="text-4xl md:text-6xl font-light leading-tight">
-          בוא נבנה את זה נכון.
+        <h2 className="text-3xl md:text-5xl font-light leading-[1.2] tracking-tight max-w-3xl mx-auto">
+          אנחנו הופכים תוכניות למציאות — בלי פשרות, בלי רעש, בלי טעויות.
         </h2>
 
         <a
           href="/contact"
-          className="inline-block mt-12 bg-white text-black px-10 py-4 rounded-full hover:scale-105 transition"
+          className="inline-block mt-14 bg-white text-black px-10 py-4 rounded-full hover:scale-105 transition"
         >
           יצירת קשר
         </a>
+
       </section>
+
+      {/* FINAL SPACING BREATH */}
+      <div className="h-24 bg-black"></div>
 
     </main>
   );
