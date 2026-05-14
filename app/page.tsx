@@ -3,12 +3,12 @@ import { MessageCircle } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white antialiased">
 
       {/* HEADER */}
       <Header />
 
-      {/* WHATSAPP FLOAT BUTTON */}
+      {/* WHATSAPP FLOAT */}
       <a
         href="https://wa.me/972549762390"
         target="_blank"
@@ -17,11 +17,9 @@ export default function Home() {
           w-14 h-14
           flex items-center justify-center
           bg-[#25D366]
-          text-white
           rounded-full
           shadow-lg
-          hover:shadow-2xl
-          hover:scale-110
+          hover:shadow-2xl hover:scale-110
           transition-all duration-300
         "
       >
@@ -29,7 +27,7 @@ export default function Home() {
       </a>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-28">
 
         {/* BACKGROUND */}
         <div className="absolute inset-0">
@@ -38,43 +36,59 @@ export default function Home() {
             alt="Construction"
             className="w-full h-full object-cover scale-110"
           />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         </div>
 
         {/* CONTENT */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full">
 
-          <div className="max-w-4xl">
+          <div className="max-w-3xl">
 
-            <div className="mb-6 flex items-center gap-3 text-white/60 text-sm tracking-[0.25em] uppercase">
-              <span className="w-2 h-2 bg-white/60 rounded-full"></span>
+            {/* SMALL LABEL */}
+            <div className="mb-8 flex items-center gap-3 text-white/60 text-xs tracking-[0.35em] uppercase">
+              <span className="w-2 h-2 bg-white/50 rounded-full"></span>
               Maor David Engineering
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-light leading-[1.05]">
+            {/* HEADLINE */}
+            <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-[1.05]">
               ניהול ופיקוח בנייה
               <br />
-              ברמת דיוק של הנדסה
+              ברמת דיוק הנדסית
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-white/70 max-w-2xl">
+            {/* DESCRIPTION */}
+            <p className="mt-10 text-lg md:text-xl text-white/70 leading-[1.8] max-w-2xl">
               ליווי פרויקטים פרטיים ומוסדיים משלב התכנון ועד מסירה,
-              תוך שליטה מלאה וסטנדרט ביצוע גבוה.
+              עם שליטה מלאה, שקיפות מלאה וסטנדרט ביצוע גבוה.
             </p>
 
-            <div className="mt-12 flex flex-wrap gap-4">
+            {/* CTA */}
+            <div className="mt-14 flex flex-wrap gap-4">
 
               <a
                 href="/contact"
-                className="bg-white text-black px-8 py-4 rounded-full hover:bg-white/90 transition"
+                className="
+                  bg-white text-black
+                  px-8 py-4 rounded-full
+                  font-medium
+                  hover:bg-white/90
+                  transition-all duration-300
+                "
               >
                 יצירת קשר
               </a>
 
               <a
                 href="/projects"
-                className="border border-white/30 px-8 py-4 rounded-full hover:bg-white hover:text-black transition"
+                className="
+                  border border-white/20
+                  px-8 py-4 rounded-full
+                  text-white/90
+                  hover:bg-white hover:text-black
+                  transition-all duration-300
+                "
               >
                 פרויקטים
               </a>
@@ -84,31 +98,35 @@ export default function Home() {
           </div>
 
         </div>
-
       </section>
 
       {/* TRUST SECTION */}
-      <section className="bg-white text-black py-24 px-6 md:px-10">
+      <section className="bg-white text-black py-32 px-6 md:px-10">
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-14">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16">
 
-          <div>
-            <div className="text-3xl font-medium mb-4">📏 דיוק</div>
-            <p className="text-black/60">ירידה לפרטים הקטנים ביותר.</p>
+          <div className="space-y-3">
+            <div className="text-2xl font-medium tracking-tight">דיוק</div>
+            <p className="text-black/60 leading-relaxed">
+              ירידה לפרטים הקטנים ביותר בכל שלב בפרויקט.
+            </p>
           </div>
 
-          <div>
-            <div className="text-3xl font-medium mb-4">🔍 שקיפות</div>
-            <p className="text-black/60">שליטה מלאה מול הלקוח.</p>
+          <div className="space-y-3">
+            <div className="text-2xl font-medium tracking-tight">שקיפות</div>
+            <p className="text-black/60 leading-relaxed">
+              שליטה מלאה בתהליך מול הלקוח והצוותים בשטח.
+            </p>
           </div>
 
-          <div>
-            <div className="text-3xl font-medium mb-4">🏗️ מקצועיות</div>
-            <p className="text-black/60">ניסיון שטח וניהול הנדסי.</p>
+          <div className="space-y-3">
+            <div className="text-2xl font-medium tracking-tight">מקצועיות</div>
+            <p className="text-black/60 leading-relaxed">
+              ניסיון הנדסי וניהול פרויקטים ברמה גבוהה.
+            </p>
           </div>
 
         </div>
-
       </section>
 
     </main>
