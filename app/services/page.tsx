@@ -16,90 +16,141 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      {/* DIVIDER SPACE */}
-      <div className="h-28 md:h-36" />
+      <div className="h-28 md:h-40" />
+
+      {/* PROOF SECTION */}
+      <section className="max-w-5xl mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-10 text-center">
+
+          <div>
+            <p className="text-4xl font-light">+120</p>
+            <p className={`mt-2 ${theme.text.darkSecondary}`}>
+              פרויקטים שנוהלו
+            </p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-light">98%</p>
+            <p className={`mt-2 ${theme.text.darkSecondary}`}>
+              עמידה בלוחות זמנים
+            </p>
+          </div>
+
+          <div>
+            <p className="text-4xl font-light">0</p>
+            <p className={`mt-2 ${theme.text.darkSecondary}`}>
+              חריגות שלא נוהלו
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <div className="h-32 md:h-44" />
 
       {/* CORE STATEMENT */}
       <section className="max-w-3xl mx-auto px-6 text-center">
-        <p className="text-xl md:text-2xl font-light leading-relaxed text-[#2A2A2A]">
-          אנחנו לא “מפקחים על בנייה” — אנחנו מנהלים את כל המערכת שמאחורי הפרויקט שלך.
+        <p className="text-2xl md:text-3xl font-light leading-relaxed">
+          ניהול נכון לא מתחיל באתר — הוא מתחיל בשליטה.
         </p>
       </section>
 
-      {/* SPACING */}
-      <div className="h-28 md:h-40" />
+      <div className="h-32 md:h-44" />
 
-      {/* SERVICES LIST (MINIMAL + TYPOGRAPHY) */}
-      <section className="max-w-4xl mx-auto px-6 space-y-16">
+      {/* SERVICES SPLIT LAYOUT */}
+      <section className="max-w-5xl mx-auto px-6 space-y-32">
 
-        <div>
-          <h2 className="text-2xl md:text-3xl font-light tracking-tight">
-            ניהול פרויקטי בנייה
-          </h2>
-          <p className={`mt-4 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
-            ניהול כולל של כל שלבי הפרויקט — תיאום, בקרה, קבלנים ולוחות זמנים —
-            תוך שמירה על יציבות ודיוק ביצוע.
-          </p>
+        {/* ITEM 1 */}
+        <div className="md:flex md:items-center md:gap-16">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-light tracking-tight">
+              ניהול פרויקטי בנייה
+            </h2>
+            <p className={`mt-6 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
+              שליטה מלאה על כל שלבי הפרויקט — תיאום, קבלנים,
+              תקציב ולוחות זמנים בצורה מסודרת וברורה.
+            </p>
+          </div>
+
+          <div className="md:w-1/2 mt-10 md:mt-0 border-l md:pl-10 border-black/10">
+            <p className={`text-sm ${theme.text.darkSecondary}`}>
+              • תכנון ובקרה<br />
+              • ניהול קבלנים<br />
+              • מעקב תקציב<br />
+              • לוחות זמנים
+            </p>
+          </div>
         </div>
 
-        <div>
-          <h2 className="text-2xl md:text-3xl font-light tracking-tight">
-            פיקוח בנייה פרטית
-          </h2>
-          <p className={`mt-4 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
-            פיקוח צמוד על בתים פרטיים ודירות, עם דגש על איכות ביצוע,
-            תקנים ועמידה בתכנון האדריכלי.
-          </p>
+        {/* ITEM 2 */}
+        <div className="md:flex md:flex-row-reverse md:items-center md:gap-16">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-light tracking-tight">
+              פיקוח בנייה פרטית
+            </h2>
+            <p className={`mt-6 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
+              פיקוח צמוד על בתים פרטיים ודירות —
+              שמירה על איכות ביצוע ועמידה מלאה בתכנון.
+            </p>
+          </div>
+
+          <div className="md:w-1/2 mt-10 md:mt-0 border-l md:pl-10 border-black/10">
+            <p className={`text-sm ${theme.text.darkSecondary}`}>
+              • בדיקות שטח<br />
+              • בקרת איכות<br />
+              • מניעת טעויות<br />
+              • סטנדרט ביצוע
+            </p>
+          </div>
         </div>
 
-        <div>
-          <h2 className="text-2xl md:text-3xl font-light tracking-tight">
-            פיקוח בנייה מוסדית
-          </h2>
-          <p className={`mt-4 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
-            ניהול ופיקוח פרויקטים ציבוריים ומוסדיים מורכבים,
-            עם שליטה הנדסית מלאה בכל שלב.
-          </p>
-        </div>
+        {/* ITEM 3 */}
+        <div className="md:flex md:items-center md:gap-16">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-light tracking-tight">
+              פיקוח בנייה מוסדית
+            </h2>
+            <p className={`mt-6 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
+              ניהול פרויקטים ציבוריים ומורכבים עם בקרה הנדסית מלאה
+              משלב התחלה ועד מסירה.
+            </p>
+          </div>
 
-        <div>
-          <h2 className="text-2xl md:text-3xl font-light tracking-tight">
-            ליווי יזמים וקבלנים
-          </h2>
-          <p className={`mt-4 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
-            ליווי מקצועי לקבלנים ויזמים לשיפור תהליכים,
-            קבלת החלטות נכונה וניהול ביצוע מדויק.
-          </p>
+          <div className="md:w-1/2 mt-10 md:mt-0 border-l md:pl-10 border-black/10">
+            <p className={`text-sm ${theme.text.darkSecondary}`}>
+              • פרויקטים גדולים<br />
+              • בקרה הנדסית<br />
+              • ניהול מורכבויות<br />
+              • תיאום מערכות
+            </p>
+          </div>
         </div>
 
       </section>
 
-      {/* SPACING */}
       <div className="h-32 md:h-44" />
 
-      {/* VALUE SECTION */}
+      {/* VALUE */}
       <section className="max-w-3xl mx-auto px-6 text-center">
-        <h3 className="text-2xl md:text-3xl font-light tracking-tight">
-          שליטה בפרויקט = שקט אמיתי
+        <h3 className="text-3xl font-light tracking-tight">
+          שליטה היא לא אופציה — היא הבסיס
         </h3>
 
         <p className={`mt-6 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
-          כשיש ניהול נכון — אין הפתעות, אין חריגות, ואין טעויות יקרות.
-          רק תהליך ברור ותוצאה מדויקת.
+          כשיש ניהול נכון, אין הפתעות. יש תהליך ברור ותוצאה מדויקת.
         </p>
       </section>
 
-      {/* SPACING */}
       <div className="h-32 md:h-44" />
 
       {/* CTA */}
       <section className="max-w-3xl mx-auto px-6 text-center pb-32">
-        <h3 className="text-3xl md:text-4xl font-light tracking-tight">
-          בוא נבנה את הפרויקט נכון
+        <h3 className="text-4xl font-light tracking-tight">
+          נתחיל את זה נכון
         </h3>
 
         <p className={`mt-6 text-lg ${theme.text.darkSecondary}`}>
-          שיחה ראשונית קצרה — להבין את הפרויקט ולתת כיוון מקצועי ברור.
+          שיחה קצרה להבנת הפרויקט שלך ולתכנון נכון מההתחלה.
         </p>
 
         <a
