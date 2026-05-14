@@ -8,58 +8,93 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
-  const [hash, setHash] = useState("");
-
-  const isActive = (href: string) => {
-    if (!isHome) return pathname === href;
-    return href === `/#${hash}`;
-  };
-
+  const [activeSection, setActiveSection] = useState("");
   const [scrollY, setScrollY] = useState(0);
 
+  // scroll tracking
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
-
-    const handleHash = () => {
-      setHash(window.location.hash.replace("#", ""));
-    };
-
-    handleHash();
-    window.addEventListener("hashchange", handleHash);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("hashchange", handleHash);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // hash sync (click navigation)
+  useEffect(() => {
+    const syncHash = () => {
+      setActiveSection(window.location.hash.replace("#", ""));
+    };
+
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, []);
+
+  // scroll spy (real section detection)
+  useEffect(() => {
+    if (!isHome) return;
+
+    const sections = ["services", "projects", "vision", "about", "contact"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0px -55% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [isHome]);
 
   const isHero = isHome && scrollY < 60;
   const intensity = Math.min(scrollY / 250, 1);
 
-  // 🎨 BACKGROUND
+  // BACKGROUND
   const backgroundColor = isHome
     ? `rgba(237, 237, 231, ${0.15 + intensity * 0.75})`
     : `rgba(18, 18, 18, 0.96)`;
 
-  // 🎨 BORDER
+  // BORDER
   const borderColor = isHome
     ? `rgba(0,0,0,${0.05 + intensity * 0.12})`
     : "rgba(255,255,255,0.08)";
 
-  // 🎨 TEXT
+  // TEXT
   const textColor = isHome
     ? isHero
       ? "#ffffff"
       : "#1C1C1C"
     : "#ffffff";
 
-  // 🎨 SHADOW
   const shadow = isHome
     ? intensity > 0.6
       ? "0 10px 30px rgba(0,0,0,0.08)"
       : "0 0 0 rgba(0,0,0,0)"
     : "0 10px 40px rgba(0,0,0,0.35)";
+
+  const navItems = [
+    { href: "#contact", label: "יצירת קשר", id: "contact" },
+    { href: "#services", label: "שירותים", id: "services" },
+    { href: "#projects", label: "פרויקטים", id: "projects" },
+    { href: "#vision", label: "חזון", id: "vision" },
+    { href: "#about", label: "אודות", id: "about" },
+  ];
+
+  const isActive = (id: string) => {
+    if (!isHome) return pathname === `/${id}`;
+    return activeSection === id;
+  };
 
   return (
     <header
@@ -92,23 +127,17 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* NAVIGATION */}
+        {/* NAV */}
         <nav
           className="hidden md:flex gap-8 text-sm tracking-wide"
           style={{ color: textColor }}
         >
-          {[
-            { href: "/#contact", label: "יצירת קשר" },
-            { href: "/#services", label: "שירותים" },
-            { href: "/#projects", label: "פרויקטים" },
-            { href: "/#vision", label: "חזון" },
-            { href: "/#about", label: "אודות" },
-          ].map((item) => (
+          {navItems.map((item) => (
             <Link
-              key={item.href}
+              key={item.id}
               href={item.href}
               className={`relative transition-all duration-300 ${
-                isActive(item.href)
+                isActive(item.id)
                   ? "font-medium opacity-100"
                   : "opacity-70 hover:opacity-100"
               }`}
@@ -119,7 +148,7 @@ export default function Header() {
               <span
                 className="absolute left-0 -bottom-1 h-[1px] bg-current transition-all duration-300"
                 style={{
-                  width: isActive(item.href) ? "100%" : "0%",
+                  width: isActive(item.id) ? "100%" : "0%",
                 }}
               />
             </Link>

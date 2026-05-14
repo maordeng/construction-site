@@ -18,7 +18,6 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
         <div className="absolute inset-0">
           <img
             src="/images/hero.jpg"
@@ -29,8 +28,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-
-          <p className="text-white/60 tracking-[0.35em] uppercase text-xs mb-6">
+          <p className="text-white/60 tracking-[0.3em] uppercase text-xs mb-6">
             Maor David Engineering
           </p>
 
@@ -43,106 +41,93 @@ export default function Home() {
           <p className="mt-10 text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-[1.8]">
             אנחנו מלווים פרויקטים מהתכנון ועד המסירה — עם שליטה מלאה, שקיפות מלאה ותוצאה מדויקת.
           </p>
-
         </div>
       </section>
 
-      {/* SERVICES SECTION */}
-      <section
-        id="services"
-        className="bg-black border-t border-white/10 py-40 px-6 scroll-mt-28"
-      >
+      {/* SERVICES */}
+      <section id="services" className="bg-black border-t border-white/10 py-40 px-6">
         <div className="max-w-6xl mx-auto">
-
-          {/* HEADER */}
-          <div className="text-center mb-24">
-
-            <p className="text-white/40 tracking-[0.35em] uppercase text-xs">
-              Services
-            </p>
-
-            <h2 className="mt-5 text-4xl md:text-6xl font-light tracking-tight leading-[1.1]">
-              ניהול ופיקוח בנייה ברמה הנדסית גבוהה
-            </h2>
-
-            <p className="mt-6 text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
-              פתרונות ניהול ופיקוח לפרויקטים פרטיים ומוסדיים — משלב התכנון ועד המסירה.
-            </p>
-
-          </div>
-
-          {/* GRID */}
-          <div className="grid md:grid-cols-2 gap-10">
-
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
-              <h3 className="text-xl font-medium mb-3">
-                ניהול פרויקטים
-              </h3>
-              <p className="text-white/60 leading-relaxed">
-                ליווי מלא של הפרויקט, שליטה בלוחות זמנים ותקציב ותיאום בין כל הגורמים.
-              </p>
-            </div>
-
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
-              <h3 className="text-xl font-medium mb-3">
-                פיקוח בנייה פרטית
-              </h3>
-              <p className="text-white/60 leading-relaxed">
-                פיקוח צמוד לבתים פרטיים תוך שמירה על איכות ביצוע וסטנדרט גבוה.
-              </p>
-            </div>
-
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
-              <h3 className="text-xl font-medium mb-3">
-                פיקוח מוסדי
-              </h3>
-              <p className="text-white/60 leading-relaxed">
-                בקרה הנדסית מלאה על פרויקטים ציבוריים ומוסדיים.
-              </p>
-            </div>
-
-            <div className="p-8 border border-white/10 rounded-2xl hover:border-white/25 transition duration-300">
-              <h3 className="text-xl font-medium mb-3">
-                ליווי יזמים וקבלנים
-              </h3>
-              <p className="text-white/60 leading-relaxed">
-                שיפור ביצועים, תיאום וניהול תהליכי עבודה בשטח.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* CONTACT SECTION */}
-      <section
-        id="contact"
-        className="bg-black border-t border-white/10 py-32 px-6 text-center scroll-mt-28"
-      >
-        <div className="max-w-4xl mx-auto">
-
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight">
-            בואו נדבר על הפרויקט שלכם
+          <h2 className="text-4xl md:text-6xl font-light text-center mb-20">
+            שירותים
           </h2>
 
-          <p className="mt-6 text-white/60 text-lg leading-relaxed">
-            נשמח לשמוע על הפרויקט שלכם ולתת ייעוץ ראשוני ללא התחייבות.
-          </p>
-
-          <a
-            href="https://wa.me/972549762390"
-            target="_blank"
-            className="inline-block mt-10 bg-[#25D366] text-white px-8 py-4 rounded-full hover:scale-105 transition"
-          >
-            וואטסאפ ישיר
-          </a>
-
+          <div className="grid md:grid-cols-2 gap-10">
+            {[
+              ["ניהול פרויקטים", "ליווי מלא של הפרויקט מתחילתו ועד סופו."],
+              ["פיקוח בנייה פרטית", "בקרה הנדסית צמודה לבתים פרטיים."],
+              ["פיקוח מוסדי", "ניהול ופיקוח פרויקטים ציבוריים."],
+              ["ליווי יזמים", "ייעול תהליכים ושיפור ביצוע בשטח."],
+            ].map(([title, desc]) => (
+              <div
+                key={title}
+                className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition"
+              >
+                <h3 className="text-xl font-medium mb-3">{title}</h3>
+                <p className="text-white/60">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* FINAL SPACING */}
-      <div className="h-24 bg-black"></div>
+      {/* PROJECTS */}
+      <section id="projects" className="bg-black border-t border-white/10 py-40 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-light mb-10">
+            פרויקטים
+          </h2>
+
+          <p className="text-white/60 max-w-2xl mx-auto">
+            כאן יוצגו פרויקטים נבחרים שממחישים שליטה הנדסית, דיוק וביצוע ברמה גבוהה.
+          </p>
+        </div>
+      </section>
+
+      {/* VISION */}
+      <section id="vision" className="bg-black border-t border-white/10 py-40 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-light mb-10">
+            חזון
+          </h2>
+
+          <p className="text-white/60 text-lg leading-relaxed">
+            ליצור סטנדרט חדש בעולם הבנייה — כזה שמבוסס על שקיפות, שליטה הנדסית ואחריות מלאה.
+          </p>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="bg-black border-t border-white/10 py-40 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-light mb-10">
+            אודות
+          </h2>
+
+          <p className="text-white/60 text-lg leading-relaxed">
+            מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים,
+            עם דגש על איכות ביצוע, לוחות זמנים ודיוק הנדסי.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="bg-black border-t border-white/10 py-40 px-6 text-center">
+        <h2 className="text-4xl md:text-6xl font-light mb-10">
+          יצירת קשר
+        </h2>
+
+        <p className="text-white/60 mb-10">
+          נשמח לשמוע על הפרויקט שלכם
+        </p>
+
+        <a
+          href="https://wa.me/972549762390"
+          target="_blank"
+          className="bg-[#25D366] text-white px-10 py-4 rounded-full hover:scale-105 transition"
+        >
+          וואטסאפ
+        </a>
+      </section>
 
     </main>
   );
