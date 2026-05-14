@@ -39,7 +39,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
           <ScrollReveal>
-            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[14px] sm:text-xs mb-4 sm:mb-6">
+            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[18px] sm:text-xs mb-4 sm:mb-6">
               מאור דוד הנדסה
             </p>
           </ScrollReveal>
@@ -176,13 +176,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* CONTACT - UPDATED */}
       <section id="contact" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-start">
 
-          {/* LEFT - FORM */}
-          <div>
+          {/* RIGHT - CTA */}
+          <div className="text-right">
 
             <ScrollReveal>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-10 tracking-tight">
@@ -191,43 +191,63 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <p className="text-sm sm:text-base md:text-lg text-white/60 mb-8">
-                שלחו פניה ונחזור אליכם בהקדם
+              <p className="text-sm sm:text-base md:text-lg text-white/60 mb-10 leading-relaxed">
+                שלחו לנו פנייה קצרה ונחזור אליכם בהקדם עם מענה מקצועי ומדויק לפרויקט שלכם.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <a
                 href="mailto:office@maordeng.com"
-                className="inline-flex items-center justify-center w-full gap-2 bg-white text-black px-6 py-4 rounded-xl hover:scale-105 transition"
+                className="
+                  group relative inline-flex w-full justify-center items-center gap-2
+                  px-6 py-4 sm:py-5 rounded-2xl
+                  bg-white text-black
+                  font-medium
+                  transition
+                  hover:scale-[1.02]
+                  overflow-hidden
+                "
               >
                 <Mail size={18} />
-                שליחת מייל
+                שליחת פנייה במייל
+
+                <span className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition" />
               </a>
             </ScrollReveal>
 
           </div>
 
-          {/* RIGHT - DETAILS */}
-          <div className="space-y-6 text-white/70">
+          {/* LEFT - INFO */}
+          <div className="text-right md:border-r md:border-white/10 md:pr-12 space-y-8">
 
-            <div className="flex items-center gap-3">
-              <Phone size={18} />
-              <a href="tel:0549762390" className="hover:text-white transition">
-                054-976-2390
-              </a>
-            </div>
+            <ScrollReveal>
+              <h3 className="text-xl sm:text-2xl font-light text-white/80 mb-6">
+                פרטי קשר
+              </h3>
+            </ScrollReveal>
 
-            <div className="flex items-center gap-3">
-              <Mail size={18} />
-              <a href="mailto:office@maordeng.com" className="hover:text-white transition">
-                office@maordeng.com
-              </a>
-            </div>
+            <div className="space-y-6 text-white/70">
 
-            <div className="flex items-center gap-3">
-              <MapPin size={18} />
-              <span>הרב אבא אבוחצירה 9, שדרות</span>
+              <div className="flex items-center gap-3">
+                <Phone size={18} className="text-white/60" />
+                <a href="tel:0549762390" className="hover:text-white transition">
+                  054-976-2390
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Mail size={18} className="text-white/60" />
+                <a href="mailto:office@maordeng.com" className="hover:text-white transition">
+                  office@maordeng.com
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <MapPin size={18} className="text-white/60" />
+                <span>הרב אבא אבוחצירה 9, שדרות</span>
+              </div>
+
             </div>
 
           </div>
