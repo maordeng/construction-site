@@ -17,6 +17,7 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -28,8 +29,9 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
 
-        {/* NAV */}
-        <nav className="hidden md:flex gap-8 text-sm tracking-wide order-1 ...">
+        {/* NAVIGATION */}
+        <nav
+          className={`hidden md:flex gap-8 text-sm tracking-wide order-1 transition-colors ${
             scrolled ? "text-[#1C1C1C]" : "text-white"
           }`}
         >
@@ -43,18 +45,18 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`relative transition-colors duration-300 ${
+              className={`relative transition-all duration-300 ${
                 isActive(item.href)
-                  ? "font-medium"
+                  ? "font-medium opacity-100"
                   : "opacity-70 hover:opacity-100"
               }`}
             >
               {item.label}
 
-              {/* underline premium */}
+              {/* ACTIVE UNDERLINE */}
               <span
                 className={`absolute left-0 -bottom-1 h-[1px] bg-current transition-all duration-300 ${
-                  isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+                  isActive(item.href) ? "w-full" : "w-0"
                 }`}
               />
             </Link>
@@ -77,7 +79,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* LOGO */}
+        {/* CENTER LOGO */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <Link href="/">
             <img
