@@ -8,14 +8,30 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
-  const isActive = (path: string) => pathname === path;
+  const [hash, setHash] = useState("");
+
+  const isActive = (href: string) => {
+    if (!isHome) return pathname === href;
+    return href === `/#${hash}`;
+  };
 
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    const handleHash = () => {
+      setHash(window.location.hash.replace("#", ""));
+    };
+
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHash);
+    };
   }, []);
 
   const isHero = isHome && scrollY < 60;
@@ -24,14 +40,14 @@ export default function Header() {
   // 🎨 BACKGROUND
   const backgroundColor = isHome
     ? `rgba(237, 237, 231, ${0.15 + intensity * 0.75})`
-    : `rgba(18, 18, 18, 0.96)`; // כהה פרימיום
+    : `rgba(18, 18, 18, 0.96)`;
 
   // 🎨 BORDER
   const borderColor = isHome
     ? `rgba(0,0,0,${0.05 + intensity * 0.12})`
     : "rgba(255,255,255,0.08)";
 
-  // 🎨 TEXT (פשוט ויציב)
+  // 🎨 TEXT
   const textColor = isHome
     ? isHero
       ? "#ffffff"
@@ -82,11 +98,11 @@ export default function Header() {
           style={{ color: textColor }}
         >
           {[
-            { href: "/#contact", label: "יצירת קשר" }, // 🔥 FIX
-            { href: "/services", label: "שירותים" },
-            { href: "/projects", label: "פרויקטים" },
-            { href: "/vision", label: "חזון" },
-            { href: "/about", label: "אודות" },
+            { href: "/#contact", label: "יצירת קשר" },
+            { href: "/#services", label: "שירותים" },
+            { href: "/#projects", label: "פרויקטים" },
+            { href: "/#vision", label: "חזון" },
+            { href: "/#about", label: "אודות" },
           ].map((item) => (
             <Link
               key={item.href}
