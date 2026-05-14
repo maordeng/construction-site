@@ -29,7 +29,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
 
-        {/* HOME BUTTON - עכשיו בצד שמאל */}
+        {/* HOME BUTTON */}
         <div className="flex items-center">
           <Link
             href="/"
@@ -39,13 +39,17 @@ export default function Header() {
                 : "border-white/30 hover:border-white/70"
             }`}
           >
-            <span className="text-lg group-hover:scale-110 transition">
+            <span
+              className={`text-lg group-hover:scale-110 transition ${
+                scrolled ? "text-[#1C1C1C]" : "text-white"
+              }`}
+            >
               ⌂
             </span>
           </Link>
         </div>
 
-        {/* NAVIGATION - עכשיו בצד ימין */}
+        {/* NAVIGATION */}
         <nav
           className={`hidden md:flex gap-8 text-sm tracking-wide transition-colors ${
             scrolled ? "text-[#1C1C1C]" : "text-white"
