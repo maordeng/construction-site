@@ -115,7 +115,7 @@ export default function Header() {
             <img
               src={
                 isHero
-                  ? "/images/logo-white.png"
+                  ? "/images/logo.png"
                   : "/images/logo.png"
               }
               alt="Logo"
