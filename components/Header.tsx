@@ -100,43 +100,45 @@ export default function Header() {
 
           {/* MOBILE BUTTON */}
           <button
-            className="md:hidden text-sm"
-            style={{ color: textColor }}
-            onClick={() => setMenuOpen(true)}
-          >
-            תפריט
-          </button>
+  className="md:hidden text-2xl font-light transition"
+  style={{ color: textColor }}
+  onClick={() => setMenuOpen(true)}
+>
+  ≡
+</button>
         </div>
       </header>
 
 {/* MOBILE SIDEBAR MENU */}
 <div
-  className={`fixed top-0 right-0 h-full w-80 z-50 transform transition-transform duration-300 ${
-    menuOpen ? "translate-x-0" : "translate-x-full"
-  } bg-black/95 backdrop-blur-2xl border-l border-white/10`}
+  className={`
+    fixed top-5 right-5 z-50
+    w-56 rounded-3xl
+    border border-white/10
+    bg-black/80 backdrop-blur-2xl
+    transition-all duration-300
+    overflow-hidden
+    ${menuOpen
+      ? "opacity-100 translate-y-0"
+      : "opacity-0 pointer-events-none -translate-y-2"}
+  `}
 >
-  <div className="p-10 flex flex-col justify-center h-full gap-10 text-center">
+  <div className="flex flex-col py-3">
 
-    {/* CLOSE */}
-    <button
-      onClick={() => setMenuOpen(false)}
-      className="text-white/40 text-sm mb-10 tracking-wide"
-    >
-      סגור
-    </button>
-
-    {/* NAV ITEMS */}
     {navItems.map((item) => (
       <button
         key={item.href}
         onClick={() => scrollTo(item.href)}
         className="
-          text-white/80
-          text-2xl md:text-xl
+          text-right
+          px-5 py-3
+          text-[15px]
           font-light
-          tracking-wide
+          tracking-[0.08em]
+          text-white/75
           hover:text-white
-          transition-all duration-300
+          hover:bg-white/[0.04]
+          transition-all duration-200
         "
       >
         {item.label}
@@ -150,7 +152,7 @@ export default function Header() {
 {menuOpen && (
   <div
     onClick={() => setMenuOpen(false)}
-    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity"
+    className="fixed inset-0 z-40"
   />
 )}
     </>
