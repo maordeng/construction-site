@@ -34,7 +34,7 @@ export default function Header() {
           : "bg-white/90 backdrop-blur-xl border-b border-black/10 shadow-sm"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5 relative">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-7 md:py-8 relative">
 
         {/* HOME BUTTON */}
         <div className="flex items-center">
