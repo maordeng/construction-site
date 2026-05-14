@@ -118,10 +118,9 @@ export default function Header() {
               alt="Logo"
               className="h-[90px] w-auto object-contain transition-all duration-300"
               style={{
-                filter:
-                  isHome && intensity < 0.4
-                    ? "brightness(0) invert(1)"
-                    : "none",
+                filter: isHome && intensity < 0.4
+                  ? "none"
+                  : "brightness(0) invert(0)",
               }}
             />
           </Link>
