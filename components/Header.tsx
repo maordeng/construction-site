@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { theme } from "@/styles/theme";
 
 export default function Header() {
   const pathname = usePathname();
@@ -11,7 +10,6 @@ export default function Header() {
 
   const isActive = (path: string) => pathname === path;
 
-  // 🧠 scroll
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -23,26 +21,32 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 🚨 FIX 1: מצב ברור (לא intensity)
+  // 🧠 מצב hero אמיתי
   const isHero = isHome && scrollY < 60;
 
-  // 🎯 FIX 2: intensity רק לאנימציה
+  // 🎯 עומק גלילה (רק לאנימציה)
   const intensity = Math.min(scrollY / 250, 1);
 
   // 🎨 HEADER BACKGROUND
-  const backgroundColor = isHero
-    ? `rgba(237, 237, 231, 0.15)`
-    : `rgba(255, 255, 255, ${0.75 + intensity * 0.2})`;
+  const backgroundColor = isHome
+    ? `rgba(237, 237, 231, ${0.15 + intensity * 0.75})`
+    : // 🔥 דפים פנימיים – כהה יותר, פחות שטוח
+      `rgba(220, 220, 214, ${0.92})`;
 
   // 🎨 BORDER
-  const borderColor = `rgba(0,0,0,${0.05 + intensity * 0.12})`;
+  const borderColor = isHome
+    ? `rgba(0,0,0,${0.05 + intensity * 0.12})`
+    : "rgba(0,0,0,0.12)";
 
-  // 🎨 TEXT COLOR (יציב ולא מתנדנד)
+  // 🎨 TEXT COLOR
   const textColor = isHero ? "#ffffff" : "#1C1C1C";
 
-  // 🎨 SHADOW
-  const shadow =
-    intensity > 0.6 ? "0 10px 30px rgba(0,0,0,0.08)" : "0 0 0 rgba(0,0,0,0)";
+  // 🎨 SHADOW (יותר עומק בדפים פנימיים)
+  const shadow = isHome
+    ? intensity > 0.6
+      ? "0 10px 30px rgba(0,0,0,0.08)"
+      : "0 0 0 rgba(0,0,0,0)"
+    : "0 6px 20px rgba(0,0,0,0.08)";
 
   return (
     <header
@@ -109,15 +113,11 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CENTER LOGO */}
+        {/* CENTER LOGO (קבוע לחלוטין) */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <Link href="/">
             <img
-              src={
-                isHero
-                  ? "/images/logo.png"
-                  : "/images/logo.png"
-              }
+              src="/images/logo.png"
               alt="Logo"
               className="h-[90px] w-auto object-contain transition-all duration-300"
             />
