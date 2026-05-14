@@ -47,21 +47,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SMOOTH TRANSITION */}
-      <div className="h-32 bg-gradient-to-b from-black/0 to-black"></div>
-
-      {/* CTA SECTION */}
-      <section className="bg-black py-40 px-6 text-center">
-
-        <h2 className="text-3xl md:text-5xl font-light leading-[1.2] tracking-tight max-w-3xl mx-auto">
-          אנחנו הופכים תוכניות למציאות — בלי פשרות, בלי רעש, בלי טעויות.
-        </h2>
-
-        <p className="mt-8 text-white/60 max-w-xl mx-auto">
-          כל פרויקט מנוהל בקפדנות הנדסית מלאה עם ליווי אישי משלב התכנון ועד המסירה.
-        </p>
-      </section>
-
       {/* SERVICES SECTION (חדש) */}
       <section
         id="services"
