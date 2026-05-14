@@ -121,34 +121,21 @@ export default function ServicesPage() {
 
       <div className="h-32 md:h-44" />
 
-      {/* VALUE */}
-      <section className="max-w-3xl mx-auto px-6 text-center">
-        <h3 className="text-3xl font-light tracking-tight">
-          שליטה היא לא אופציה — היא הבסיס
-        </h3>
-
-        <p className={`mt-6 text-lg ${theme.text.darkSecondary} leading-relaxed`}>
-          כשיש ניהול נכון, אין הפתעות. יש תהליך ברור ותוצאה מדויקת.
-        </p>
-      </section>
-
-      <div className="h-32 md:h-44" />
-
       {/* CTA */}
       <section className="max-w-3xl mx-auto px-6 text-center pb-32">
         <h3 className="text-4xl font-light tracking-tight">
-          נתחיל את זה נכון
+        בואו נתחיל את זה נכון
         </h3>
 
         <p className={`mt-6 text-lg ${theme.text.darkSecondary}`}>
-          שיחה קצרה להבנת הפרויקט שלך ולתכנון נכון מההתחלה.
+        .שיחה קצרה להבנת הפרויקט שלך ולתכנון נכון מהתחלה
         </p>
 
         <a
           href="https://wa.me/972549762390"
           className="inline-block mt-10 px-10 py-4 rounded-full bg-black text-white hover:bg-[#1a1a1a] transition"
         >
-          וואטסאפ עכשיו
+        דברו איתנו
         </a>
       </section>
 
