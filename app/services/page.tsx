@@ -39,23 +39,14 @@ export default function ServicesPage() {
           <div>
             <p className="text-4xl font-light">10</p>
             <p className={`mt-2 ${theme.text.darkSecondary}`}>
-         שנות נסיון
+            שנות נסיון
             </p>
           </div>
 
         </div>
       </section>
 
-      <div className="h-32 md:h-44" />
-
-      {/* CORE STATEMENT */}
-      <section className="max-w-3xl mx-auto px-6 text-center">
-        <p className="text-2xl md:text-3xl font-light leading-relaxed">
-          ניהול נכון לא מתחיל באתר — הוא מתחיל בשליטה.
-        </p>
-      </section>
-
-      <div className="h-32 md:h-44" />
+      <div className="h-24 md:h-32" />
 
       {/* SERVICES SPLIT LAYOUT */}
       <section className="max-w-5xl mx-auto px-6 space-y-32">
