@@ -44,8 +44,19 @@ export default function Header() {
 
   const scrollTo = (href: string) => {
     setMenuOpen(false);
+
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const scrollTop = () => {
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -59,19 +70,19 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-7 md:py-8">
 
-          {/* HOME ICON */}
-          <Link href="/" className="text-2xl">
+          {/* HOME ICON (FIXED) */}
+          <button onClick={scrollTop} className="text-2xl">
             <span
               style={{
                 color: isHero ? "#ffffff" : textColor,
               }}
-              className="transition"
+              className="transition hover:scale-110"
             >
               ⌂
             </span>
-          </Link>
+          </button>
 
-          {/* LOGO (הוחזר!) */}
+          {/* LOGO */}
           <div className="absolute left-1/2 -translate-x-1/2">
             <Link href="/">
               <img
@@ -100,61 +111,61 @@ export default function Header() {
 
           {/* MOBILE BUTTON */}
           <button
-  className="md:hidden text-2xl font-light transition"
-  style={{ color: textColor }}
-  onClick={() => setMenuOpen(true)}
->
-  ≡
-</button>
+            className="md:hidden text-2xl font-light transition"
+            style={{ color: textColor }}
+            onClick={() => setMenuOpen(true)}
+          >
+            ≡
+          </button>
         </div>
       </header>
 
-{/* MOBILE SIDEBAR MENU */}
-<div
-  className={`
-    fixed top-5 right-5 z-50
-    w-56 rounded-3xl
-    border border-white/10
-    bg-black/80 backdrop-blur-2xl
-    transition-all duration-300
-    overflow-hidden
-    ${menuOpen
-      ? "opacity-100 translate-y-0"
-      : "opacity-0 pointer-events-none -translate-y-2"}
-  `}
->
-  <div className="flex flex-col py-3">
-
-    {navItems.map((item) => (
-      <button
-        key={item.href}
-        onClick={() => scrollTo(item.href)}
-        className="
-          text-right
-          px-5 py-3
-          text-[15px]
-          font-light
-          tracking-[0.08em]
-          text-white/75
-          hover:text-white
-          hover:bg-white/[0.04]
-          transition-all duration-200
-        "
+      {/* MOBILE SIDEBAR MENU */}
+      <div
+        className={`
+          fixed top-5 right-5 z-50
+          w-56 rounded-3xl
+          border border-white/10
+          bg-black/80 backdrop-blur-2xl
+          transition-all duration-300
+          overflow-hidden
+          ${menuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 pointer-events-none -translate-y-2"}
+        `}
       >
-        {item.label}
-      </button>
-    ))}
+        <div className="flex flex-col py-3">
 
-  </div>
-</div>
+          {navItems.map((item) => (
+            <button
+              key={item.href}
+              onClick={() => scrollTo(item.href)}
+              className="
+                text-right
+                px-5 py-3
+                text-[15px]
+                font-light
+                tracking-[0.08em]
+                text-white/75
+                hover:text-white
+                hover:bg-white/[0.04]
+                transition-all duration-200
+              "
+            >
+              {item.label}
+            </button>
+          ))}
 
-{/* BACKDROP */}
-{menuOpen && (
-  <div
-    onClick={() => setMenuOpen(false)}
-    className="fixed inset-0 z-40"
-  />
-)}
+        </div>
+      </div>
+
+      {/* BACKDROP */}
+      {menuOpen && (
+        <div
+          onClick={() => setMenuOpen(false)}
+          className="fixed inset-0 z-40"
+        />
+      )}
     </>
   );
 }

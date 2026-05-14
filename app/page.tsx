@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
@@ -53,7 +53,7 @@ export default function Home() {
             >
               ניהול ופיקוח בנייה
               <br />
-              .לבנות נכון, בראש שקט
+              לבנות נכון. בראש שקט.
             </h1>
           </ScrollReveal>
 
@@ -68,8 +68,8 @@ export default function Home() {
                 px-2 sm:px-0
               "
             >
-              ליווי אישי לפרויקטים פרטיים ומוסדיים - 
-              משלב התכנון ועד המסירה.
+              ליווי אישי לפרויקטים פרטיים ומוסדיים -
+              משלב התכנון ועד המסירה
             </p>
           </ScrollReveal>
 
@@ -177,36 +177,62 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6 text-center">
+      <section id="contact" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
 
-        <ScrollReveal>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-10 tracking-tight">
-            יצירת קשר
-          </h2>
-        </ScrollReveal>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
 
-        <ScrollReveal delay={0.1}>
-          <p className="text-sm sm:text-base md:text-lg text-white/60 mb-8 sm:mb-10">
-            נשמח לשמוע על הפרויקט שלכם
-          </p>
-        </ScrollReveal>
+          {/* LEFT - FORM */}
+          <div>
 
-        <ScrollReveal delay={0.2}>
-          <a
-            href="https://wa.me/972549762390"
-            target="_blank"
-            className="
-              bg-[#25D366] text-white
-              px-6 sm:px-8 md:px-10
-              py-3 sm:py-4
-              rounded-full
-              hover:scale-105 transition
-              text-sm sm:text-base
-            "
-          >
-            וואטסאפ
-          </a>
-        </ScrollReveal>
+            <ScrollReveal>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-10 tracking-tight">
+                יצירת קשר
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <p className="text-sm sm:text-base md:text-lg text-white/60 mb-8">
+                שלחו פניה ונחזור אליכם בהקדם
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <a
+                href="mailto:office@maordeng.com"
+                className="inline-flex items-center justify-center w-full gap-2 bg-white text-black px-6 py-4 rounded-xl hover:scale-105 transition"
+              >
+                <Mail size={18} />
+                שליחת מייל
+              </a>
+            </ScrollReveal>
+
+          </div>
+
+          {/* RIGHT - DETAILS */}
+          <div className="space-y-6 text-white/70">
+
+            <div className="flex items-center gap-3">
+              <Phone size={18} />
+              <a href="tel:0549762390" className="hover:text-white transition">
+                054-976-2390
+              </a>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <Mail size={18} />
+              <a href="mailto:office@maordeng.com" className="hover:text-white transition">
+                office@maordeng.com
+              </a>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <MapPin size={18} />
+              <span>הרב אבא אבוחצירה 9, שדרות</span>
+            </div>
+
+          </div>
+
+        </div>
 
       </section>
 
