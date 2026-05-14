@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import { MessageCircle } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white antialiased">
+    <main className="bg-black text-white antialiased overflow-x-hidden">
 
       <Header />
 
@@ -18,6 +19,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
         <div className="absolute inset-0">
           <img
             src="/images/hero.jpg"
@@ -28,28 +30,39 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <p className="text-white/60 tracking-[0.3em] uppercase text-xs mb-6">
-            Maor David Engineering
-          </p>
 
-          <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
-            ניהול פרויקטים.
-            <br />
-            דיוק הנדסי מוחלט.
-          </h1>
+          <ScrollReveal>
+            <p className="text-white/60 tracking-[0.35em] uppercase text-xs mb-6">
+              Maor David Engineering
+            </p>
+          </ScrollReveal>
 
-          <p className="mt-10 text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-[1.8]">
-            אנחנו מלווים פרויקטים מהתכנון ועד המסירה — עם שליטה מלאה, שקיפות מלאה ותוצאה מדויקת.
-          </p>
+          <ScrollReveal delay={0.1}>
+            <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
+              ניהול פרויקטים.
+              <br />
+              דיוק הנדסי מוחלט.
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <p className="mt-10 text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-[1.8]">
+              אנחנו מלווים פרויקטים מהתכנון ועד המסירה — עם שליטה מלאה, שקיפות מלאה ותוצאה מדויקת.
+            </p>
+          </ScrollReveal>
+
         </div>
       </section>
 
       {/* SERVICES */}
       <section id="services" className="bg-black border-t border-white/10 py-40 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-light text-center mb-20">
-            שירותים
-          </h2>
+
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl font-light text-center mb-20 tracking-tight">
+              שירותים
+            </h2>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-10">
             {[
@@ -57,14 +70,21 @@ export default function Home() {
               ["פיקוח בנייה פרטית", "בקרה הנדסית צמודה לבתים פרטיים."],
               ["פיקוח מוסדי", "ניהול ופיקוח פרויקטים ציבוריים."],
               ["ליווי יזמים", "ייעול תהליכים ושיפור ביצוע בשטח."],
-            ].map(([title, desc]) => (
-              <div
-                key={title}
-                className="p-8 border border-white/10 rounded-2xl hover:border-white/30 transition"
-              >
-                <h3 className="text-xl font-medium mb-3">{title}</h3>
-                <p className="text-white/60">{desc}</p>
-              </div>
+            ].map(([title, desc], i) => (
+              <ScrollReveal key={title} delay={i * 0.08}>
+                <div className="
+                  p-8 border border-white/10 rounded-2xl
+                  hover:border-white/30 hover:translate-y-[-4px]
+                  transition-all duration-300
+                ">
+                  <h3 className="text-xl font-medium mb-3 tracking-tight">
+                    {title}
+                  </h3>
+                  <p className="text-white/60 leading-relaxed">
+                    {desc}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -73,60 +93,86 @@ export default function Home() {
       {/* PROJECTS */}
       <section id="projects" className="bg-black border-t border-white/10 py-40 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-light mb-10">
-            פרויקטים
-          </h2>
 
-          <p className="text-white/60 max-w-2xl mx-auto">
-            כאן יוצגו פרויקטים נבחרים שממחישים שליטה הנדסית, דיוק וביצוע ברמה גבוהה.
-          </p>
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl font-light mb-10 tracking-tight">
+              פרויקטים
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
+              כאן יוצגו פרויקטים נבחרים שממחישים שליטה הנדסית, דיוק וביצוע ברמה גבוהה.
+            </p>
+          </ScrollReveal>
+
         </div>
       </section>
 
       {/* VISION */}
       <section id="vision" className="bg-black border-t border-white/10 py-40 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-light mb-10">
-            חזון
-          </h2>
 
-          <p className="text-white/60 text-lg leading-relaxed">
-            ליצור סטנדרט חדש בעולם הבנייה — כזה שמבוסס על שקיפות, שליטה הנדסית ואחריות מלאה.
-          </p>
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl font-light mb-10 tracking-tight">
+              חזון
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <p className="text-white/60 text-lg leading-relaxed">
+              ליצור סטנדרט חדש בעולם הבנייה — כזה שמבוסס על שקיפות, שליטה הנדסית ואחריות מלאה.
+            </p>
+          </ScrollReveal>
+
         </div>
       </section>
 
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-40 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-light mb-10">
-            אודות
-          </h2>
 
-          <p className="text-white/60 text-lg leading-relaxed">
-            מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים,
-            עם דגש על איכות ביצוע, לוחות זמנים ודיוק הנדסי.
-          </p>
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl font-light mb-10 tracking-tight">
+              אודות
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <p className="text-white/60 text-lg leading-relaxed">
+              מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים,
+              עם דגש על איכות ביצוע, לוחות זמנים ודיוק הנדסי.
+            </p>
+          </ScrollReveal>
+
         </div>
       </section>
 
       {/* CONTACT */}
       <section id="contact" className="bg-black border-t border-white/10 py-40 px-6 text-center">
-        <h2 className="text-4xl md:text-6xl font-light mb-10">
-          יצירת קשר
-        </h2>
 
-        <p className="text-white/60 mb-10">
-          נשמח לשמוע על הפרויקט שלכם
-        </p>
+        <ScrollReveal>
+          <h2 className="text-4xl md:text-6xl font-light mb-10 tracking-tight">
+            יצירת קשר
+          </h2>
+        </ScrollReveal>
 
-        <a
-          href="https://wa.me/972549762390"
-          target="_blank"
-          className="bg-[#25D366] text-white px-10 py-4 rounded-full hover:scale-105 transition"
-        >
-          וואטסאפ
-        </a>
+        <ScrollReveal delay={0.1}>
+          <p className="text-white/60 mb-10">
+            נשמח לשמוע על הפרויקט שלכם
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.2}>
+          <a
+            href="https://wa.me/972549762390"
+            target="_blank"
+            className="bg-[#25D366] text-white px-10 py-4 rounded-full hover:scale-105 transition"
+          >
+            וואטסאפ
+          </a>
+        </ScrollReveal>
+
       </section>
 
     </main>
