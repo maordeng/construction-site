@@ -109,40 +109,50 @@ export default function Header() {
         </div>
       </header>
 
-      {/* MOBILE SIDEBAR MENU */}
-      <div
-        className={`fixed top-0 right-0 h-full w-72 z-50 transform transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        } bg-black/95 backdrop-blur-xl border-l border-white/10`}
+{/* MOBILE SIDEBAR MENU */}
+<div
+  className={`fixed top-0 right-0 h-full w-80 z-50 transform transition-transform duration-300 ${
+    menuOpen ? "translate-x-0" : "translate-x-full"
+  } bg-black/95 backdrop-blur-2xl border-l border-white/10`}
+>
+  <div className="p-10 flex flex-col justify-center h-full gap-10 text-center">
+
+    {/* CLOSE */}
+    <button
+      onClick={() => setMenuOpen(false)}
+      className="text-white/40 text-sm mb-10 tracking-wide"
+    >
+      סגור
+    </button>
+
+    {/* NAV ITEMS */}
+    {navItems.map((item) => (
+      <button
+        key={item.href}
+        onClick={() => scrollTo(item.href)}
+        className="
+          text-white/80
+          text-2xl md:text-xl
+          font-light
+          tracking-wide
+          hover:text-white
+          transition-all duration-300
+        "
       >
-        <div className="p-6 flex flex-col gap-6">
+        {item.label}
+      </button>
+    ))}
 
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="text-white/60 text-sm mb-6 text-left"
-          >
-            סגור
-          </button>
+  </div>
+</div>
 
-          {navItems.map((item) => (
-            <button
-              key={item.href}
-              onClick={() => scrollTo(item.href)}
-              className="text-white text-lg text-right hover:opacity-70 transition"
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* BACKDROP */}
-      {menuOpen && (
-        <div
-          onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 bg-black/50 z-40"
-        />
-      )}
+{/* BACKDROP */}
+{menuOpen && (
+  <div
+    onClick={() => setMenuOpen(false)}
+    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity"
+  />
+)}
     </>
   );
 }
