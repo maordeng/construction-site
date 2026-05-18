@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/Header";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
