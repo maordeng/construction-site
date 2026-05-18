@@ -1,8 +1,53 @@
 import Header from "@/components/Header";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState<any>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const PROJECTS = [
+    {
+      title: "בית פרטי יוקרתי",
+      location: "אשקלון",
+      desc: "ניהול ופיקוח מלא משלב התכנון ועד מסירת המפתח.",
+      images: [
+        "/images/project1.jpg",
+        "/images/project1-2.jpg",
+        "/images/project1-3.jpg",
+      ],
+    },
+    {
+      title: "מבנה מסחרי",
+      location: "באר שבע",
+      desc: "ליווי ביצוע, בקרה הנדסית ותיאום מלא בין כלל הגורמים.",
+      images: [
+        "/images/project2.jpg",
+        "/images/project2-2.jpg",
+      ],
+    },
+    {
+      title: "פרויקט מוסדי",
+      location: "מרכז הארץ",
+      desc: "ניהול שטח ופיקוח קפדני תוך עמידה בלוחות זמנים.",
+      images: [
+        "/images/project3.jpg",
+        "/images/project3-2.jpg",
+      ],
+    },
+    {
+      title: "וילת מגורים",
+      location: "שדרות",
+      desc: "שליטה מלאה בתהליך הבנייה עם דגש על איכות וגימור.",
+      images: [
+        "/images/project4.jpg",
+        "/images/project4-2.jpg",
+      ],
+    },
+  ];
+
   return (
     <main className="bg-black text-white antialiased overflow-x-hidden">
 
@@ -47,12 +92,10 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1
-              className="
-                text-3xl sm:text-5xl md:text-6xl lg:text-7xl
-                font-light leading-[1.05] tracking-tight
-              "
-            >
+            <h1 className="
+              text-3xl sm:text-5xl md:text-6xl lg:text-7xl
+              font-light leading-[1.05] tracking-tight
+            ">
               ניהול ופיקוח בנייה
               <br />
               .לבנות נכון, בראש שקט
@@ -60,16 +103,14 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p
-              className="
-                mt-6 sm:mt-8 md:mt-10
-                text-base sm:text-lg md:text-xl
-                text-white/70
-                max-w-xl sm:max-w-2xl mx-auto
-                leading-[1.6] sm:leading-[1.8]
-                px-2 sm:px-0
-              "
-            >
+            <p className="
+              mt-6 sm:mt-8 md:mt-10
+              text-base sm:text-lg md:text-xl
+              text-white/70
+              max-w-xl sm:max-w-2xl mx-auto
+              leading-[1.6] sm:leading-[1.8]
+              px-2 sm:px-0
+            ">
               ליווי אישי לפרויקטים פרטיים ומוסדיים -
               משלב התכנון ועד המסירה
             </p>
@@ -83,10 +124,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
 
           <ScrollReveal>
-            <h2 className="
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-              font-light text-center mb-12 sm:mb-16 md:mb-20 tracking-tight
-            ">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-center mb-12 sm:mb-16 md:mb-20 tracking-tight">
               שירותים
             </h2>
           </ScrollReveal>
@@ -98,115 +136,65 @@ export default function Home() {
               ["פיקוח בנייה פרטית", "בקרה הנדסית צמודה לבתים פרטיים."],
               ["פיקוח מוסדי", "ניהול ופיקוח פרויקטים ציבוריים."],
               ["ליווי יזמים", "ייעול תהליכים ושיפור ביצוע בשטח."],
-            ].map(([title, desc], i) => (
-              <ScrollReveal key={title} delay={i * 0.08}>
-                <div className="
-                  p-6 sm:p-7 md:p-8
-                  border border-white/10 rounded-2xl
-                  hover:border-white/30 hover:translate-y-[-4px]
-                  transition-all duration-300
-                ">
-                  <h3 className="text-lg sm:text-xl font-medium mb-2 sm:mb-3 tracking-tight">
-                    {title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-white/60 leading-relaxed">
-                    {desc}
-                  </p>
-                </div>
-              </ScrollReveal>
+            ].map(([title, desc]) => (
+              <div
+                key={title}
+                className="p-6 sm:p-7 md:p-8 border border-white/10 rounded-2xl"
+              >
+                <h3 className="text-lg sm:text-xl font-medium mb-2">
+                  {title}
+                </h3>
+                <p className="text-sm sm:text-base text-white/60">
+                  {desc}
+                </p>
+              </div>
             ))}
 
           </div>
         </div>
       </section>
 
-      {/* PROJECTS (CAROUSEL - UPDATED) */}
+      {/* PROJECTS */}
       <section id="projects" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto text-center">
 
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-10 tracking-tight">
-              פרויקטים
-            </h2>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-xl sm:max-w-2xl mx-auto leading-relaxed">
-              כאן יוצגו פרויקטים נבחרים שממחישים שליטה הנדסית, דיוק וביצוע ברמה גבוהה.
-            </p>
-          </ScrollReveal>
-
+        <div className="max-w-6xl mx-auto text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6">
+            פרויקטים
+          </h2>
+          <p className="text-white/60">
+            לחצו על פרויקט לפתיחת גלריה
+          </p>
         </div>
 
         {/* CAROUSEL */}
-        <div className="mt-14 flex gap-6 overflow-x-auto px-2 snap-x snap-mandatory scroll-smooth">
+        <div className="flex gap-6 overflow-x-auto px-2 snap-x snap-mandatory">
 
-          {[
-            {
-              image: "/images/project1.jpg",
-              title: "בית פרטי יוקרתי",
-              location: "אשקלון",
-              desc: "ניהול ופיקוח מלא משלב התכנון ועד מסירת המפתח.",
-            },
-            {
-              image: "/images/project2.jpg",
-              title: "מבנה מסחרי",
-              location: "באר שבע",
-              desc: "ליווי ביצוע, בקרה הנדסית ותיאום מלא בין כלל הגורמים.",
-            },
-            {
-              image: "/images/project3.jpg",
-              title: "פרויקט מוסדי",
-              location: "מרכז הארץ",
-              desc: "ניהול שטח ופיקוח קפדני תוך עמידה בלוחות זמנים.",
-            },
-            {
-              image: "/images/project4.jpg",
-              title: "וילת מגורים",
-              location: "שדרות",
-              desc: "שליטה מלאה בתהליך הבנייה עם דגש על איכות וגימור.",
-            },
-          ].map((project) => (
+          {PROJECTS.map((project) => (
             <div
               key={project.title}
-              className="
-                min-w-[85%] sm:min-w-[60%] md:min-w-[45%]
-                snap-center
-                group
-                border border-white/10
-                rounded-3xl
-                overflow-hidden
-                bg-white/[0.02]
-                hover:border-white/20
-                transition-all duration-500
-              "
+              onClick={() => {
+                setActiveProject(project);
+                setActiveIndex(0);
+                setLightboxOpen(true);
+              }}
+              className="min-w-[80%] md:min-w-[45%] snap-center cursor-pointer border border-white/10 rounded-3xl overflow-hidden bg-white/[0.02]"
             >
 
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="
-                    w-full h-[260px] sm:h-[320px]
-                    object-cover
-                    transition-transform duration-700
-                    group-hover:scale-105
-                  "
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              </div>
+              <img
+                src={project.images[0]}
+                className="w-full h-[300px] object-cover hover:scale-105 transition"
+              />
 
-              <div className="p-6 sm:p-8 text-right">
-                <div className="flex items-center justify-between mb-4">
+              <div className="p-6 text-right">
+                <div className="flex justify-between mb-2">
                   <span className="text-white/40 text-sm">
                     {project.location}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-light tracking-tight">
+                  <h3 className="text-xl font-light">
                     {project.title}
                   </h3>
                 </div>
-
-                <p className="text-white/60 leading-relaxed text-sm sm:text-base">
+                <p className="text-white/60 text-sm">
                   {project.desc}
                 </p>
               </div>
@@ -215,107 +203,90 @@ export default function Home() {
           ))}
 
         </div>
+
+        {/* LIGHTBOX */}
+        {lightboxOpen && activeProject && (
+          <div
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+            onClick={() => setLightboxOpen(false)}
+          >
+
+            <div
+              className="relative max-w-5xl w-full px-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+
+              <img
+                src={activeProject.images[activeIndex]}
+                className="w-full max-h-[80vh] object-contain rounded-xl"
+              />
+
+              {/* prev */}
+              <button
+                onClick={() =>
+                  setActiveIndex((p) =>
+                    p === 0 ? activeProject.images.length - 1 : p - 1
+                  )
+                }
+                className="absolute left-3 top-1/2 text-3xl text-white"
+              >
+                ‹
+              </button>
+
+              {/* next */}
+              <button
+                onClick={() =>
+                  setActiveIndex((p) =>
+                    (p + 1) % activeProject.images.length
+                  )
+                }
+                className="absolute right-3 top-1/2 text-3xl text-white"
+              >
+                ›
+              </button>
+
+              {/* close */}
+              <button
+                onClick={() => setLightboxOpen(false)}
+                className="absolute top-3 right-3 text-white"
+              >
+                ✕
+              </button>
+
+            </div>
+          </div>
+        )}
+
       </section>
 
       {/* VISION */}
-      <section id="vision" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-10 tracking-tight">
-              חזון
-            </h2>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <p className="text-sm sm:text-base md:text-lg text-white/60 leading-relaxed px-2 sm:px-0">
-              ליצור סטנדרט חדש בעולם הבנייה — כזה שמבוסס על שקיפות, שליטה הנדסית ואחריות מלאה.
-            </p>
-          </ScrollReveal>
-
-        </div>
+      <section id="vision" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+        <h2 className="text-4xl font-light mb-6">חזון</h2>
+        <p className="text-white/60 max-w-2xl mx-auto">
+          ליצור סטנדרט חדש בעולם הבנייה — שקיפות, שליטה ואחריות.
+        </p>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-10 tracking-tight">
-              אודות
-            </h2>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <p className="text-sm sm:text-base md:text-lg text-white/60 leading-relaxed px-2 sm:px-0">
-              מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים,
-              עם דגש על איכות ביצוע, לוחות זמנים ודיוק הנדסי.
-            </p>
-          </ScrollReveal>
-
-        </div>
+      <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+        <h2 className="text-4xl font-light mb-6">אודות</h2>
+        <p className="text-white/60 max-w-2xl mx-auto">
+          מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים.
+        </p>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="bg-black border-t border-white/10 py-24 sm:py-32 md:py-40 px-4 sm:px-6">
+      <section id="contact" className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+        <h2 className="text-4xl font-light mb-6">יצירת קשר</h2>
 
-          {/* LEFT */}
-          <div className="text-right space-y-6">
-
-            <ScrollReveal>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
-                יצירת קשר
-              </h2>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed">
-                פנייה קצרה למייל ואנחנו חוזרים אליכם עם מענה מקצועי ומהיר.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <a
-                href="mailto:office@maordeng.com"
-                className="
-                  inline-flex items-center justify-center gap-3
-                  w-full md:w-auto
-                  px-8 py-5 rounded-2xl
-                  bg-gradient-to-r from-white to-white/80
-                  text-black font-medium
-                  hover:scale-[1.02] transition
-                "
-              >
-                <Mail size={18} />
-                שליחת פנייה במייל
-              </a>
-            </ScrollReveal>
-
-          </div>
-
-          {/* RIGHT */}
-          <div className="text-right space-y-8 border-r border-white/10 pr-8">
-
-            <div className="flex items-center gap-3">
-              <Phone size={18} className="text-white/60" />
-              <span>054-976-2390</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Mail size={18} className="text-white/60" />
-              <span>office@maordeng.com</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <MapPin size={18} className="text-white/60" />
-              <span>הרב אבא אבוחצירה 9, שדרות</span>
-            </div>
-
-          </div>
-
-        </div>
+        <a
+          href="mailto:office@maordeng.com"
+          className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl"
+        >
+          <Mail size={18} />
+          שליחת מייל
+        </a>
 
       </section>
 
