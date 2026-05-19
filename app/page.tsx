@@ -12,9 +12,9 @@ export default function Home() {
 
   const PROJECTS = [
     {
-      title: "בית פרטי יוקרתי",
-      location: "אשקלון",
-      desc: "ניהול ופיקוח מלא משלב התכנון ועד מסירת המפתח.",
+      title: "מעונות סטודנטים - אוניברסיטת בן גוריון",
+      location: "באר שבע",
+      desc: "כמהנדס ביצוע בחברת ״מנרב״ - 14 מבנים משולב מסחר ומגורים   .",
       images: [
         "/projects/project1/1.jpg",
         "/projects/project1/2.jpg",
