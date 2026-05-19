@@ -247,7 +247,6 @@ export default function Home() {
                 alt=""
               />
 
-              {/* PREV */}
               <button
                 onClick={() =>
                   setActiveIndex((prev) =>
@@ -256,93 +255,84 @@ export default function Home() {
                       : prev - 1
                   )
                 }
-                className="
-                  absolute left-4 top-1/2 -translate-y-1/2
-                  w-12 h-12 rounded-full
-                  bg-white/10 hover:bg-white/20
-                  backdrop-blur-sm
-                  text-white text-3xl
-                  transition
-                "
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-3xl"
               >
                 ‹
               </button>
 
-              {/* NEXT */}
               <button
                 onClick={() =>
                   setActiveIndex((prev) =>
                     (prev + 1) % activeProject.images.length
                   )
                 }
-                className="
-                  absolute right-4 top-1/2 -translate-y-1/2
-                  w-12 h-12 rounded-full
-                  bg-white/10 hover:bg-white/20
-                  backdrop-blur-sm
-                  text-white text-3xl
-                  transition
-                "
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-3xl"
               >
                 ›
               </button>
 
-              {/* CLOSE */}
               <button
                 onClick={() => setLightboxOpen(false)}
-                className="
-                  absolute top-4 right-4
-                  w-10 h-10 rounded-full
-                  bg-white/10 hover:bg-white/20
-                  text-white
-                  transition
-                "
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white"
               >
                 ✕
               </button>
 
-              {/* THUMBNAILS */}
-              <div className="flex justify-center gap-3 mt-6 flex-wrap">
-
+              <div className="flex justify-center gap-3 mt-6">
                 {activeProject.images.map((img: string, index: number) => (
                   <button
                     key={img}
                     onClick={() => setActiveIndex(index)}
-                    className={`
-                      overflow-hidden rounded-xl border transition
-                      ${activeIndex === index
+                    className={`overflow-hidden rounded-xl border ${
+                      activeIndex === index
                         ? "border-white"
-                        : "border-white/20 opacity-60 hover:opacity-100"}
-                    `}
+                        : "border-white/20 opacity-60"
+                    }`}
                   >
-
-                    <img
-                      src={img}
-                      className="w-20 h-20 object-cover"
-                      alt=""
-                    />
-
+                    <img src={img} className="w-20 h-20 object-cover" />
                   </button>
                 ))}
-
               </div>
 
             </div>
-
           </div>
         )}
 
       </section>
 
-      {/* VISION */}
-      <section id="vision" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
-        <h2 className="text-4xl font-light mb-6">חזון</h2>
+      {/* ===== VISION (FIXED DESIGN ONLY) ===== */}
+      <section id="vision" className="bg-black border-t border-white/10 py-24 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto text-center">
 
-        <p className="text-white/60 max-w-2xl mx-auto">
-        אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח.         מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה - עם תכנון מוקפד, בקרה הנדסית מדויקת ופתרונות איכותיים לכל אתגר שמופיע בדרך.
-כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה.                     תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים. כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן. החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם. ואשר הולכת דרך עם אנשים אשר חולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות.
+          <ScrollReveal>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-10 tracking-tight">
+              חזון
+            </h2>
+          </ScrollReveal>
 
-        </p>
+          <ScrollReveal delay={0.1}>
+            <div className="space-y-6 text-white/60 leading-relaxed text-sm sm:text-base md:text-lg">
+
+              <p>
+                אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח.
+              </p>
+
+              <p>
+                מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה — עם תכנון מוקפד ובקרה הנדסית מדויקת.
+              </p>
+
+              <p>
+                אנו יוצרים תרבות עבודה מסודרת ושקופה, עם תהליכים ברורים ועדכונים שוטפים ללקוח.
+              </p>
+
+              <p>
+                החזון שלנו הוא לבנות חברה יציבה ומקצועית שמכבדת אנשים ומביאה תוצאות יוצאות דופן.
+              </p>
+
+            </div>
+          </ScrollReveal>
+
+        </div>
       </section>
 
       {/* ABOUT */}
