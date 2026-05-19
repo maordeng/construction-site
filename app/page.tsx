@@ -300,40 +300,32 @@ export default function Home() {
 
       </section>
 
-      {/* ===== VISION (FIXED DESIGN ONLY) ===== */}
-      <section id="vision" className="bg-black border-t border-white/10 py-24 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
+ {/* VISION */}
+<section id="vision" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
 
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-10 tracking-tight">
-              חזון
-            </h2>
-          </ScrollReveal>
+<h2 className="text-4xl font-light mb-10">חזון</h2>
 
-          <ScrollReveal delay={0.1}>
-            <div className="space-y-6 text-white/60 leading-relaxed text-sm sm:text-base md:text-lg">
+<div className="max-w-3xl mx-auto text-white/60 space-y-6 leading-relaxed text-right">
 
-              <p>
-                אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח.
-              </p>
+  <p>
+    אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח.
+  </p>
 
-              <p>
-                מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה — עם תכנון מוקפד ובקרה הנדסית מדויקת.
-              </p>
+  <p>
+    מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה - עם תכנון מוקפד, בקרה הנדסית מדויקת ופתרונות איכותיים לכל אתגר שמופיע בדרך.
+  </p>
 
-              <p>
-                אנו יוצרים תרבות עבודה מסודרת ושקופה, עם תהליכים ברורים ועדכונים שוטפים ללקוח.
-              </p>
+  <p>
+    כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה. תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים. כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן.
+  </p>
 
-              <p>
-                החזון שלנו הוא לבנות חברה יציבה ומקצועית שמכבדת אנשים ומביאה תוצאות יוצאות דופן.
-              </p>
+  <p>
+    החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם. ואשר הולכת דרך עם אנשים אשר חולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות.
+  </p>
 
-            </div>
-          </ScrollReveal>
+</div>
 
-        </div>
-      </section>
+</section>
 
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
