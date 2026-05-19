@@ -1,4 +1,5 @@
 "use client";
+
 import Header from "@/components/Header";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
@@ -15,9 +16,10 @@ export default function Home() {
       location: "אשקלון",
       desc: "ניהול ופיקוח מלא משלב התכנון ועד מסירת המפתח.",
       images: [
-        "/images/project1.jpg",
-        "/images/project1-2.jpg",
-        "/images/project1-3.jpg",
+        "/projects/project1/1.jpg",
+        "/projects/project1/2.jpg",
+        "/projects/project1/3.jpg",
+        "/projects/project1/4.jpg",
       ],
     },
     {
@@ -162,13 +164,14 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6">
             פרויקטים
           </h2>
+
           <p className="text-white/60">
             לחצו על פרויקט לפתיחת גלריה
           </p>
         </div>
 
         {/* CAROUSEL */}
-        <div className="flex gap-6 overflow-x-auto px-2 snap-x snap-mandatory">
+        <div className="flex gap-6 overflow-x-auto px-2 snap-x snap-mandatory scroll-smooth">
 
           {PROJECTS.map((project) => (
             <div
@@ -178,26 +181,56 @@ export default function Home() {
                 setActiveIndex(0);
                 setLightboxOpen(true);
               }}
-              className="min-w-[80%] md:min-w-[45%] snap-center cursor-pointer border border-white/10 rounded-3xl overflow-hidden bg-white/[0.02]"
+              className="
+                min-w-[80%] md:min-w-[45%]
+                snap-center
+                cursor-pointer
+                group
+                border border-white/10
+                rounded-3xl
+                overflow-hidden
+                bg-white/[0.02]
+                hover:border-white/20
+                transition-all duration-500
+              "
             >
 
-              <img
-                src={project.images[0]}
-                className="w-full h-[300px] object-cover hover:scale-105 transition"
-              />
+              <div className="relative overflow-hidden">
+
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
+                  className="
+                    w-full
+                    h-[300px]
+                    object-cover
+                    transition-transform duration-700
+                    group-hover:scale-105
+                  "
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+
+              </div>
 
               <div className="p-6 text-right">
+
                 <div className="flex justify-between mb-2">
+
                   <span className="text-white/40 text-sm">
                     {project.location}
                   </span>
+
                   <h3 className="text-xl font-light">
                     {project.title}
                   </h3>
+
                 </div>
+
                 <p className="text-white/60 text-sm">
                   {project.desc}
                 </p>
+
               </div>
 
             </div>
@@ -213,48 +246,98 @@ export default function Home() {
           >
 
             <div
-              className="relative max-w-5xl w-full px-4"
+              className="relative max-w-6xl w-full px-4"
               onClick={(e) => e.stopPropagation()}
             >
 
               <img
                 src={activeProject.images[activeIndex]}
-                className="w-full max-h-[80vh] object-contain rounded-xl"
+                className="w-full max-h-[85vh] object-contain rounded-2xl"
+                alt=""
               />
 
-              {/* prev */}
+              {/* PREV */}
               <button
                 onClick={() =>
-                  setActiveIndex((p) =>
-                    p === 0 ? activeProject.images.length - 1 : p - 1
+                  setActiveIndex((prev) =>
+                    prev === 0
+                      ? activeProject.images.length - 1
+                      : prev - 1
                   )
                 }
-                className="absolute left-3 top-1/2 text-3xl text-white"
+                className="
+                  absolute left-4 top-1/2 -translate-y-1/2
+                  w-12 h-12 rounded-full
+                  bg-white/10 hover:bg-white/20
+                  backdrop-blur-sm
+                  text-white text-3xl
+                  transition
+                "
               >
                 ‹
               </button>
 
-              {/* next */}
+              {/* NEXT */}
               <button
                 onClick={() =>
-                  setActiveIndex((p) =>
-                    (p + 1) % activeProject.images.length
+                  setActiveIndex((prev) =>
+                    (prev + 1) % activeProject.images.length
                   )
                 }
-                className="absolute right-3 top-1/2 text-3xl text-white"
+                className="
+                  absolute right-4 top-1/2 -translate-y-1/2
+                  w-12 h-12 rounded-full
+                  bg-white/10 hover:bg-white/20
+                  backdrop-blur-sm
+                  text-white text-3xl
+                  transition
+                "
               >
                 ›
               </button>
 
-              {/* close */}
+              {/* CLOSE */}
               <button
                 onClick={() => setLightboxOpen(false)}
-                className="absolute top-3 right-3 text-white"
+                className="
+                  absolute top-4 right-4
+                  w-10 h-10 rounded-full
+                  bg-white/10 hover:bg-white/20
+                  text-white
+                  transition
+                "
               >
                 ✕
               </button>
 
+              {/* THUMBNAILS */}
+              <div className="flex justify-center gap-3 mt-6 flex-wrap">
+
+                {activeProject.images.map((img: string, index: number) => (
+                  <button
+                    key={img}
+                    onClick={() => setActiveIndex(index)}
+                    className={`
+                      overflow-hidden rounded-xl border transition
+                      ${activeIndex === index
+                        ? "border-white"
+                        : "border-white/20 opacity-60 hover:opacity-100"}
+                    `}
+                  >
+
+                    <img
+                      src={img}
+                      className="w-20 h-20 object-cover"
+                      alt=""
+                    />
+
+                  </button>
+                ))}
+
+              </div>
+
             </div>
+
           </div>
         )}
 
@@ -263,6 +346,7 @@ export default function Home() {
       {/* VISION */}
       <section id="vision" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
         <h2 className="text-4xl font-light mb-6">חזון</h2>
+
         <p className="text-white/60 max-w-2xl mx-auto">
           ליצור סטנדרט חדש בעולם הבנייה — שקיפות, שליטה ואחריות.
         </p>
@@ -271,6 +355,7 @@ export default function Home() {
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
         <h2 className="text-4xl font-light mb-6">אודות</h2>
+
         <p className="text-white/60 max-w-2xl mx-auto">
           מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים.
         </p>
