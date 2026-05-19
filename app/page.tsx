@@ -14,7 +14,7 @@ export default function Home() {
     {
       title: "מעונות סטודנטים - אוניברסיטת בן גוריון",
       location: "באר שבע",
-      desc: "כמהנדס ביצוע בחברת ״מנרב״ - 14 מבנים משולב מסחר ומגורים   .",
+      desc: "כמהנדס ביצוע בחברת ״מנרב״ - 14 מבנים משולב מסחר ומגורים  ",
       images: [
         "/projects/project1/1.jpg",
         "/projects/project1/2.jpg",
