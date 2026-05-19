@@ -32,21 +32,12 @@ export default function Home() {
       ],
     },
     {
-      title: "מאזני גשר",
-      location: " מפעלי יח״מ ",
+      title: " מאזני גשר - מפעלי יח״מ",
+      location: " קיבוץ מגן  ",
       desc: "ליווי הנדסי של בנית מאזני גשר",
       images: [
         "/images/project3.jpg",
         "/images/project3-2.jpg",
-      ],
-    },
-    {
-      title: "וילת מגורים",
-      location: "שדרות",
-      desc: "שליטה מלאה בתהליך הבנייה עם דגש על איכות וגימור.",
-      images: [
-        "/images/project4.jpg",
-        "/images/project4-2.jpg",
       ],
     },
   ];
