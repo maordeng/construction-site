@@ -23,18 +23,18 @@ export default function Home() {
       ],
     },
     {
-      title: "מבנה מסחרי",
-      location: "באר שבע",
-      desc: "ליווי ביצוע, בקרה הנדסית ותיאום מלא בין כלל הגורמים.",
+      title: "שכונת ״התמרים״ ",
+      location: "קיבוץ חצרים ",
+      desc: "מנהל פרויקט ופיקוח תחת חברת ״ב.קידר הנדסה״ - 52יח״ד משלב פיתוח ותשתיות ועד מפתח",
       images: [
         "/images/project2.jpg",
         "/images/project2-2.jpg",
       ],
     },
     {
-      title: "פרויקט מוסדי",
-      location: "מרכז הארץ",
-      desc: "ניהול שטח ופיקוח קפדני תוך עמידה בלוחות זמנים.",
+      title: "מאזני גשר",
+      location: " מפעלי יח״מ ",
+      desc: "ליווי הנדסי של בנית מאזני גשר",
       images: [
         "/images/project3.jpg",
         "/images/project3-2.jpg",
