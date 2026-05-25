@@ -53,6 +53,7 @@ export default function Home() {
 
       <Header />
 
+      {/* FLOAT CTA */}
       <a
         href="https://wa.me/972549762390"
         target="_blank"
@@ -83,7 +84,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
           <ScrollReveal>
-            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[10px] sm:text-xs mb-4 sm:mb-8 break-words">
+            <p className="text-white/60 tracking-[0.25em] sm:tracking-[0.35em] uppercase text-[10px] sm:text-xs mb-4 sm:mb-8">
               <span className="inline-block scale-[1.5] origin-center">
                 מאור דוד הנדסה
               </span>
@@ -94,7 +95,6 @@ export default function Home() {
             <h1 className="
               text-3xl sm:text-5xl md:text-6xl lg:text-7xl
               font-light leading-[1.05] tracking-tight
-              break-words
             ">
               ניהול ופיקוח בנייה
               <br />
@@ -110,7 +110,6 @@ export default function Home() {
               max-w-xl sm:max-w-2xl mx-auto
               leading-[1.6] sm:leading-[1.8]
               px-2 sm:px-0
-              break-words
             ">
               ליווי אישי לפרויקטים פרטיים ומוסדיים -
               משלב התכנון ועד המסירה
@@ -126,7 +125,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
 
           <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-center mb-12 sm:mb-16 md:mb-20 tracking-tight break-words">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-center mb-12 sm:mb-16 md:mb-20 tracking-tight">
               שירותים
             </h2>
           </ScrollReveal>
@@ -169,14 +168,13 @@ export default function Home() {
                   border border-white/10 rounded-2xl
                   cursor-pointer hover:border-white/30
                   transition-all duration-500
-                  break-words
                 "
               >
-                <h3 className="text-lg sm:text-xl font-medium mb-2 break-words">
+                <h3 className="text-lg sm:text-xl font-medium mb-2">
                   {title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-white/60 break-words">
+                <p className="text-sm sm:text-base text-white/60">
                   {desc}
                 </p>
 
@@ -185,7 +183,6 @@ export default function Home() {
                     mt-6 pt-6 border-t border-white/10
                     text-white/60 text-sm sm:text-base leading-loose
                     animate-in fade-in duration-500
-                    break-words
                   ">
                     {content}
                   </div>
@@ -201,15 +198,13 @@ export default function Home() {
       <section id="projects" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
 
         <div className="max-w-6xl mx-auto text-center mb-14">
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 break-words">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6">
             פרויקטים
           </h2>
 
-          <p className="text-white/60 break-words">
+          <p className="text-white/60">
             לחצו על פרויקט לפתיחת גלריה
           </p>
-
         </div>
 
         <div className="flex gap-6 overflow-x-auto px-2 snap-x snap-mandatory scroll-smooth">
@@ -227,7 +222,6 @@ export default function Home() {
                 snap-center
                 cursor-pointer
                 group
-                relative z-10
                 border border-white/10
                 rounded-3xl
                 overflow-hidden
@@ -242,27 +236,31 @@ export default function Home() {
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="
+                    w-full
+                    h-[300px]
+                    object-cover
+                    transition-transform duration-700
+                    group-hover:scale-105
+                  "
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               </div>
 
-              <div className="p-6 text-right break-words">
+              <div className="p-6 text-right">
 
                 <div className="flex justify-between mb-2">
-
                   <span className="text-white/40 text-sm">
                     {project.location}
                   </span>
 
-                  <h3 className="text-xl font-light break-words">
+                  <h3 className="text-xl font-light">
                     {project.title}
                   </h3>
-
                 </div>
 
-                <p className="text-white/60 text-sm break-words">
+                <p className="text-white/60 text-sm">
                   {project.desc}
                 </p>
 
@@ -273,6 +271,75 @@ export default function Home() {
 
         </div>
 
+        {/* LIGHTBOX */}
+        {lightboxOpen && activeProject && (
+          <div
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+            onClick={() => setLightboxOpen(false)}
+          >
+
+            <div
+              className="relative max-w-6xl w-full px-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+
+              <img
+                src={activeProject.images[activeIndex]}
+                className="w-full max-h-[85vh] object-contain rounded-2xl"
+                alt=""
+              />
+
+              <button
+                onClick={() =>
+                  setActiveIndex((prev) =>
+                    prev === 0
+                      ? activeProject.images.length - 1
+                      : prev - 1
+                  )
+                }
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-3xl"
+              >
+                ‹
+              </button>
+
+              <button
+                onClick={() =>
+                  setActiveIndex((prev) =>
+                    (prev + 1) % activeProject.images.length
+                  )
+                }
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-3xl"
+              >
+                ›
+              </button>
+
+              <button
+                onClick={() => setLightboxOpen(false)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white"
+              >
+                ✕
+              </button>
+
+              <div className="flex justify-center gap-3 mt-6">
+                {activeProject.images.map((img: string, index: number) => (
+                  <button
+                    key={img}
+                    onClick={() => setActiveIndex(index)}
+                    className={overflow-hidden rounded-xl border ${
+                      activeIndex === index
+                        ? "border-white"
+                        : "border-white/20 opacity-60"
+                    }}
+                  >
+                    <img src={img} className="w-20 h-20 object-cover" />
+                  </button>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        )}
+
       </section>
 
       {/* VISION */}
@@ -280,17 +347,25 @@ export default function Home() {
 
         <h2 className="text-4xl font-light mb-10">חזון</h2>
 
-        <div className="max-w-3xl mx-auto text-white/60 space-y-6 leading-relaxed text-right break-words">
+        <div className="max-w-3xl mx-auto text-white/60 space-y-6 leading-relaxed text-right">
 
-          <p>.אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח</p>
+          <p>
+            .אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח
+          </p>
 
-          <p>מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה - עם תכנון מוקפד, בקרה הנדסית מדויקת ופתרונות איכותיים לכל אתגר שמופיע בדרך</p>
+          <p>
+            מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה - עם תכנון מוקפד, בקרה הנדסית מדויקת ופתרונות איכותיים לכל אתגר שמופיע בדרך
+          </p>
 
-          <p>.כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה
-            <br /><br />
-            תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן</p>
+          <p>
+  .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה
+  <br /><br />
+  תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
+</p>
 
-          <p>החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם - ואשר הולכת דרך עם אנשים החולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות</p>
+          <p>
+           החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם - ואשר הולכת דרך עם אנשים החולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות
+          </p>
 
         </div>
 
@@ -301,7 +376,7 @@ export default function Home() {
 
         <h2 className="text-4xl font-light mb-6">אודות</h2>
 
-        <p className="text-white/60 max-w-2xl mx-auto leading-relaxed break-words">
+        <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
           מאור דוד הנדסה הוקמה על ידי מאור דוד אמקיאס, חרדי לשעבר, שבעבודה קשה והתמדה בלתי מתפשרת הגיע להישגים בתחום ההנדסה.
 
           <br /><br />
@@ -363,16 +438,16 @@ export default function Home() {
               const phone = "972549762390";
 
               const text =
-`📩 פנייה חדשה מהאתר
+📩 פנייה חדשה מהאתר
 
 👤 שם: ${name}
 📌 נושא: ${subject}
 
 💬 הודעה:
-${message}`;
+${message};
 
               window.open(
-                `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
+                https://wa.me/${phone}?text=${encodeURIComponent(text)},
                 "_blank"
               );
             }}
