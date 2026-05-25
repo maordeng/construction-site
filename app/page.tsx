@@ -137,10 +137,8 @@ export default function Home() {
               <div
                 key={title}
                 onClick={() =>
-                  title === "פיקוח בנייה פרטית"
-                    ? setOpenService(
-                        openService === title ? null : title
-                      )
+                  (title === "פיקוח בנייה פרטית" || title === "ניהול פרויקטים")
+                    ? setOpenService(openService === title ? null : title)
                     : null
                 }
                 className={`
@@ -148,13 +146,12 @@ export default function Home() {
                   border border-white/10 rounded-2xl
                   transition-all duration-500
                   ${
-                    title === "פיקוח בנייה פרטית"
+                    (title === "פיקוח בנייה פרטית" || title === "ניהול פרויקטים")
                       ? "cursor-pointer hover:border-white/30"
                       : ""
                   }
                 `}
               >
-
                 <h3 className="text-lg sm:text-xl font-medium mb-2">
                   {title}
                 </h3>
@@ -164,24 +161,33 @@ export default function Home() {
                 </p>
 
                 {/* EXPANDABLE CONTENT */}
-                {title === "פיקוח בנייה פרטית" &&
-                  openService === title && (
-                    <div className="
-                      mt-6
-                      pt-6
-                      border-t border-white/10
-                      text-white/60
-                      text-sm sm:text-base
-                      leading-loose
-                      animate-in fade-in duration-500
-                    ">
-                      פיקוח הנדסי צמוד לבתים פרטיים, בקרת התכניות והתאמתן לפני ובמהלך
-                      העבודות למניעת טעויות שעולות הרבה כסף, התנהלות מול קבלני משנה
-                      ותיאום שלבי העבודות, בקרה תקציבית וקביעת שלבי תשלום על פי
-                      התקדמות העבודות ועוד.
-                    </div>
-                  )}
+                {((title === "פיקוח בנייה פרטית" && openService === title) ||
+                  (title === "ניהול פרויקטים" && openService === title)) && (
+                  <div className="
+                    mt-6
+                    pt-6
+                    border-t border-white/10
+                    text-white/60
+                    text-sm sm:text-base
+                    leading-loose
+                    animate-in fade-in duration-500
+                  ">
+                    {title === "ניהול פרויקטים" && (
+                      <>
+                        ליווי מלא של הפרויקט מתחילתו ועד סופו. תיאום בין יועצים, קבלנים וספקים,
+                        בקרה על לוחות זמנים ותקציב, והובלת תהליך ביצוע מסודר ויעיל לאורך כל הדרך.
+                      </>
+                    )}
 
+                    {title === "פיקוח בנייה פרטית" && (
+                      <>
+                        פיקוח הנדסי צמוד לבתים פרטיים, בקרת התכניות והתאמתן לפני ובמהלך העבודות
+                        למניעת טעויות שעולות הרבה כסף, התנהלות מול קבלני משנה ותיאום שלבי העבודות,
+                        בקרה תקציבית וקביעת שלבי תשלום על פי התקדמות העבודות ועוד.
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
 
@@ -202,7 +208,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* CAROUSEL */}
         <div className="flex gap-6 overflow-x-auto px-2 snap-x snap-mandatory scroll-smooth">
 
           {PROJECTS.map((project) => (
@@ -232,13 +237,7 @@ export default function Home() {
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="
-                    w-full
-                    h-[300px]
-                    object-cover
-                    transition-transform duration-700
-                    group-hover:scale-105
-                  "
+                  className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -341,35 +340,35 @@ export default function Home() {
 
       </section>
 
- {/* VISION */}
-<section id="vision" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+      {/* VISION */}
+      <section id="vision" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
 
-<h2 className="text-4xl font-light mb-10">חזון</h2>
+        <h2 className="text-4xl font-light mb-10">חזון</h2>
 
-<div className="max-w-3xl mx-auto text-white/60 space-y-6 leading-relaxed text-right">
+        <div className="max-w-3xl mx-auto text-white/60 space-y-6 leading-relaxed text-right">
 
-  <p>
-    .אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח
-  </p>
+          <p>
+            .אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח
+          </p>
 
-  <p className="mb-6">
-  מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה -
-  עם תכנון מוקפד, בקרה הנדסית מדויקת ופתרונות איכותיים לכל אתגר שמופיע בדרך
-  .
-</p>
+          <p className="mb-6">
+            מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה -
+            עם תכנון מוקפד, בקרה הנדסית מדויקת ופתרונות איכותיים לכל אתגר שמופיע בדרך
+            .
+          </p>
 
-  <p className="mb-6">
-      .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה<br />
-     .תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים.  כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
-    </p>
+          <p className="mb-6">
+            .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה<br />
+            .תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים.  כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
+          </p>
 
-  <p>
-   .החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם. ואשר הולכת דרך עם אנשים אשר חולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות
-  </p>
+          <p>
+            .החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם. ואשר הולכת דרך עם אנשים אשר חולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות
+          </p>
 
-</div>
+        </div>
 
-</section>
+      </section>
 
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
