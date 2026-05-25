@@ -10,6 +10,9 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // NEW
+  const [openService, setOpenService] = useState<string | null>(null);
+
   const PROJECTS = [
     {
       title: "מעונות סטודנטים - אוניברסיטת בן גוריון",
@@ -133,14 +136,52 @@ export default function Home() {
             ].map(([title, desc]) => (
               <div
                 key={title}
-                className="p-6 sm:p-7 md:p-8 border border-white/10 rounded-2xl"
+                onClick={() =>
+                  title === "פיקוח בנייה פרטית"
+                    ? setOpenService(
+                        openService === title ? null : title
+                      )
+                    : null
+                }
+                className={`
+                  p-6 sm:p-7 md:p-8
+                  border border-white/10 rounded-2xl
+                  transition-all duration-500
+                  ${
+                    title === "פיקוח בנייה פרטית"
+                      ? "cursor-pointer hover:border-white/30"
+                      : ""
+                  }
+                `}
               >
+
                 <h3 className="text-lg sm:text-xl font-medium mb-2">
                   {title}
                 </h3>
+
                 <p className="text-sm sm:text-base text-white/60">
                   {desc}
                 </p>
+
+                {/* EXPANDABLE CONTENT */}
+                {title === "פיקוח בנייה פרטית" &&
+                  openService === title && (
+                    <div className="
+                      mt-6
+                      pt-6
+                      border-t border-white/10
+                      text-white/60
+                      text-sm sm:text-base
+                      leading-loose
+                      animate-in fade-in duration-500
+                    ">
+                      פיקוח הנדסי צמוד לבתים פרטיים, בקרת התכניות והתאמתן לפני ובמהלך
+                      העבודות למניעת טעויות שעולות הרבה כסף, התנהלות מול קבלני משנה
+                      ותיאום שלבי העבודות, בקרה תקציבית וקביעת שלבי תשלום על פי
+                      התקדמות העבודות ועוד.
+                    </div>
+                  )}
+
               </div>
             ))}
 
@@ -321,7 +362,6 @@ export default function Home() {
       .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה<br />
      .תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים.  כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
     </p>
-
 
   <p>
    .החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם. ואשר הולכת דרך עם אנשים אשר חולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות
