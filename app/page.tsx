@@ -135,7 +135,7 @@ export default function Home() {
                 title: "ניהול פרויקטים",
                 desc: "ליווי מלא של הפרויקט מתחילתו ועד סופו.",
                 content:
-                  "ניהול כולל של פרויקטים משלב התכנון ועד המסירה. תיאום בין יועצים, קבלנים וספקים, בקרה על לוחות זמנים, תקציב ואיכות ביצוע והובלת תהליך עבודה מסודר.",
+                  "ניהול כולל של פרויקטים משלב התכנון ועד המסירה. תיאום בין יועצים, קבלנים וספקים, בקרה על לוחות זמנים, תקציב ואיכות ביצוע.",
               },
               {
                 title: "פיקוח בנייה פרטית",
@@ -147,13 +147,13 @@ export default function Home() {
                 title: "פיקוח מוסדי",
                 desc: "ניהול ופיקוח פרויקטים ציבוריים.",
                 content:
-                  "ניהול ופיקוח פרויקטים מוסדיים עם עמידה בתקנים, בקרה הנדסית מלאה ותיאום רב-מערכתי.",
+                  "ניהול ופיקוח פרויקטים מוסדיים עם עמידה בתקנים ובקרה הנדסית מלאה.",
               },
               {
                 title: "ליווי יזמים",
                 desc: "ייעול תהליכים ושיפור ביצוע בשטח.",
                 content:
-                  "ליווי יזמים משלב הרעיון ועד המסירה כולל ניתוחים כלכליים, תכנון ובקרה בשטח.",
+                  "ליווי יזמים משלב הרעיון ועד המסירה כולל ניתוחים כלכליים ותכנון מוקדם.",
               },
             ].map(({ title, desc, content }) => (
               <div
@@ -164,8 +164,8 @@ export default function Home() {
                 className="
                   p-6 sm:p-7 md:p-8
                   border border-white/10 rounded-2xl
-                  transition-all duration-500
                   cursor-pointer hover:border-white/30
+                  transition-all duration-500
                 "
               >
                 <h3 className="text-lg sm:text-xl font-medium mb-2">
@@ -318,6 +318,23 @@ export default function Home() {
                 ✕
               </button>
 
+              {/* ✅ THUMBNAILS RESTORED */}
+              <div className="flex justify-center gap-3 mt-6">
+                {activeProject.images.map((img: string, index: number) => (
+                  <button
+                    key={img}
+                    onClick={() => setActiveIndex(index)}
+                    className={`overflow-hidden rounded-xl border ${
+                      activeIndex === index
+                        ? "border-white"
+                        : "border-white/20 opacity-60"
+                    }`}
+                  >
+                    <img src={img} className="w-20 h-20 object-cover" />
+                  </button>
+                ))}
+              </div>
+
             </div>
           </div>
         )}
@@ -338,16 +355,14 @@ export default function Home() {
           <p className="mb-6">
             מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה -
             עם תכנון מוקפד, בקרה הנדסית מדויקת ופתרונות איכותיים לכל אתגר שמופיע בדרך
-            .
           </p>
 
           <p className="mb-6">
-            .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה<br />
-            .תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים. כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
+            .תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים
           </p>
 
           <p>
-            .החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם. ואשר הולכת דרך עם אנשים אשר חולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות
+            .החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק
           </p>
 
         </div>
@@ -356,6 +371,7 @@ export default function Home() {
 
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+
         <h2 className="text-4xl font-light mb-6">אודות</h2>
 
         <p className="text-white/60 max-w-2xl mx-auto">
