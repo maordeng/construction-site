@@ -358,18 +358,26 @@ export default function Home() {
 
       </section>
 
-      {/* ABOUT (MOVED UP) */}
+      {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
 
         <h2 className="text-4xl font-light mb-6">אודות</h2>
 
-        <p className="text-white/60 max-w-2xl mx-auto">
-          מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים.
+        <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
+          מאור דוד הנדסה הוקמה על ידי מאור דוד אמקיאס, חרדי לשעבר, שבעבודה קשה והתמדה בלתי מתפשרת הגיע להישגים בתחום ההנדסה.
+
+          <br /><br />
+
+          לאחר שנים של ניסיון בביצוע ובניהול פרויקטים, הקים את ״מאור דוד הנדסה״ מתוך מטרה לייצר תרבות שונה בענף הבנייה.
+
+          <br /><br />
+
+          תרבות זו באה לידי ביטוי במקצועיות, יושרה, שקיפות ושירות יוצא דופן, הרואה בכל לקוח שותף לדרך.
         </p>
 
       </section>
 
-      {/* CONTACT (ONLY ONE + FIXED LABELS) */}
+      {/* CONTACT */}
       <section
         id="contact"
         className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center"
@@ -378,34 +386,17 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-right">
 
-          <div className="space-y-6">
+          <div className="space-y-4 text-white/60">
 
-            <p className="text-white/60">
-              נשמח לשמוע על הפרויקט שלכם ולתת מענה מקצועי ומהיר.
-            </p>
+            <a href="tel:0549762390" className="flex items-center gap-3 hover:text-white">
+              <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">📞</span>
+              <span>054-976-2390</span>
+            </a>
 
-            <div className="space-y-4 text-white/60">
-
-              <a href="tel:0549762390" className="flex items-center gap-3 hover:text-white">
-                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">📞</span>
-                <span>054-976-2390</span>
-              </a>
-
-              <a href="https://wa.me/972549762390" target="_blank" className="flex items-center gap-3 hover:text-white">
-                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">💬</span>
-                <span>וואטסאפ</span>
-              </a>
-
-              <a href="mailto:office@maordeng.com" className="flex items-center gap-3 hover:text-white">
-                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">✉️</span>
-                <span>office@maordeng.com</span>
-              </a>
-
-            </div>
-
-            <div className="text-white/60 text-sm mt-4">
-              הרב אבא אבוחצירה 9, שדרות
-            </div>
+            <a href="mailto:office@maordeng.com" className="flex items-center gap-3 hover:text-white">
+              <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">✉️</span>
+              <span>office@maordeng.com</span>
+            </a>
 
           </div>
 
@@ -436,6 +427,12 @@ export default function Home() {
           </form>
 
         </div>
+
+        <div className="text-white/60 text-sm mt-6 flex items-center gap-2 justify-center">
+          <span>📍</span>
+          <span>הרב אבא אבוחצירה 9, שדרות</span>
+        </div>
+
       </section>
 
     </main>
