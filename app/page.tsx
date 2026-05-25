@@ -398,6 +398,16 @@ export default function Home() {
               <span>office@maordeng.com</span>
             </a>
 
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%91%20%D7%90%D7%91%D7%90%20%D7%90%D7%91%D7%95%D7%97%D7%A6%D7%99%D7%A8%D7%94%209%20%D7%A9%D7%93%D7%A8%D7%95%D7%AA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:text-white"
+            >
+              <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">📍</span>
+              <span>הרב אבא אבוחצירה 9, שדרות</span>
+            </a>
+
           </div>
 
           <form
@@ -427,12 +437,6 @@ export default function Home() {
           </form>
 
         </div>
-
-        <div className="text-white/60 text-sm mt-6 flex items-center gap-2 justify-center">
-          <span>📍</span>
-          <span>הרב אבא אבוחצירה 9, שדרות</span>
-        </div>
-
       </section>
 
     </main>
