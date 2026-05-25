@@ -119,6 +119,7 @@ export default function Home() {
 
       {/* SERVICES */}
       <section id="services" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
+
         <div className="max-w-6xl mx-auto">
 
           <ScrollReveal>
@@ -130,42 +131,22 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
 
             {[
-              {
-                title: "ניהול פרויקטים",
-                desc: "ליווי מלא של הפרויקט מתחילתו ועד סופו.",
-                content:
-                  "ניהול כולל של פרויקטים משלב התכנון ועד המסירה. תיאום בין יועצים, קבלנים וספקים, בקרה על לוחות זמנים, תקציב ואיכות ביצוע, והובלת תהליך עבודה מסודר שמבטיח שליטה מלאה בפרויקט לכל אורכו.",
-              },
-              {
-                title: "פיקוח בנייה פרטית",
-                desc: "בקרה הנדסית צמודה לבתים פרטיים.",
-                content:
-                  "פיקוח הנדסי צמוד לבנייה פרטית משלב התכנון ועד סיום הביצוע. בדיקה ואישור תכניות, מניעת טעויות בשטח, פיקוח על עבודת הקבלנים, תיאום בין שלבי הביצוע, ובקרה שוטפת על איכות העבודה, התקציב והעמידה בלוחות הזמנים.",
-              },
-              {
-                title: "פיקוח מוסדי",
-                desc: "ניהול ופיקוח פרויקטים ציבוריים.",
-                content:
-                  "ניהול ופיקוח של פרויקטים מוסדיים וציבוריים מורכבים, תוך הקפדה על תקנים מחמירים, עמידה בלוחות זמנים, תיאום בין מספר רב של גורמים מקצועיים, ובקרה הנדסית מלאה לאורך כל שלבי הפרויקט.",
-              },
-              {
-                title: "ליווי יזמים",
-                desc: "ייעול תהליכים ושיפור ביצוע בשטח.",
-                content:
-                  "ליווי יזמים משלב הרעיון ועד שלב הביצוע והמסירה. ניתוח כלכלי ותכנוני של הפרויקט, איתור סיכונים מראש, שיפור תהליכי עבודה בשטח והכוונה לקבלת החלטות שמבוססות על ניסיון הנדסי וניהולי.",
-              },
-            ].map(({ title, desc, content }) => (
+              ["ניהול פרויקטים", "ליווי מלא של הפרויקט מתחילתו ועד סופו."],
+              ["פיקוח בנייה פרטית", "בקרה הנדסית צמודה לבתים פרטיים."],
+              ["פיקוח מוסדי", "ניהול ופיקוח פרויקטים ציבוריים."],
+              ["ליווי יזמים", "ייעול תהליכים ושיפור ביצוע בשטח."],
+            ].map(([title, desc]) => (
               <div
                 key={title}
                 onClick={() =>
                   setOpenService(openService === title ? null : title)
                 }
-                className="
+                className={`
                   p-6 sm:p-7 md:p-8
                   border border-white/10 rounded-2xl
                   transition-all duration-500
                   cursor-pointer hover:border-white/30
-                "
+                `}
               >
                 <h3 className="text-lg sm:text-xl font-medium mb-2">
                   {title}
@@ -181,7 +162,7 @@ export default function Home() {
                     text-white/60 text-sm sm:text-base leading-loose
                     animate-in fade-in duration-500
                   ">
-                    {content}
+                    הרחבה של השירות תופיע כאן
                   </div>
                 )}
               </div>
@@ -210,6 +191,8 @@ export default function Home() {
             <div
               key={project.title}
               onClick={() => {
+                console.log("CLICKED PROJECT:", project); // 🔥 DEBUG
+
                 setActiveProject(project);
                 setActiveIndex(0);
                 setLightboxOpen(true);
@@ -233,7 +216,13 @@ export default function Home() {
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="
+                    w-full
+                    h-[300px]
+                    object-cover
+                    transition-transform duration-700
+                    group-hover:scale-105
+                  "
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -368,6 +357,7 @@ export default function Home() {
 
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+
         <h2 className="text-4xl font-light mb-6">אודות</h2>
 
         <p className="text-white/60 max-w-2xl mx-auto">
