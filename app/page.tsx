@@ -236,13 +236,7 @@ export default function Home() {
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="
-                    w-full
-                    h-[300px]
-                    object-cover
-                    transition-transform duration-700
-                    group-hover:scale-105
-                  "
+                  className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -325,11 +319,11 @@ export default function Home() {
                   <button
                     key={img}
                     onClick={() => setActiveIndex(index)}
-                    className={overflow-hidden rounded-xl border ${
+                    className={`overflow-hidden rounded-xl border ${
                       activeIndex === index
                         ? "border-white"
                         : "border-white/20 opacity-60"
-                    }}
+                    }`}
                   >
                     <img src={img} className="w-20 h-20 object-cover" />
                   </button>
@@ -437,17 +431,16 @@ export default function Home() {
 
               const phone = "972549762390";
 
-              const text =
-📩 פנייה חדשה מהאתר
+              const text = `📩 פנייה חדשה מהאתר
 
 👤 שם: ${name}
 📌 נושא: ${subject}
 
 💬 הודעה:
-${message};
+${message}`;
 
               window.open(
-                https://wa.me/${phone}?text=${encodeURIComponent(text)},
+                `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
                 "_blank"
               );
             }}
