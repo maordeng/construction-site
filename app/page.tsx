@@ -227,6 +227,7 @@ export default function Home() {
                 snap-center
                 cursor-pointer
                 group
+                relative z-10
                 border border-white/10
                 rounded-3xl
                 overflow-hidden
