@@ -10,14 +10,13 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // NEW
   const [openService, setOpenService] = useState<string | null>(null);
 
   const PROJECTS = [
     {
       title: "מעונות סטודנטים - אוניברסיטת בן גוריון",
       location: "באר שבע",
-      desc: "כמהנדס ביצוע בחברת ״מנרב״ - 14 מבנים משולב מסחר ומגורים  ",
+      desc: "כמהנדס ביצוע בחברת ״מנרב״ - 14 מבנים משולב מסחר ומגורים",
       images: [
         "/projects/project1/1.jpg",
         "/projects/project1/2.jpg",
@@ -26,22 +25,23 @@ export default function Home() {
       ],
     },
     {
-      title: "שכונת ״התמרים״ ",
-      location: "קיבוץ חצרים ",
-      desc: "מנהל פרויקט ופיקוח תחת חברת ״ב.קידר הנדסה״ - 52יח״ד משלב פיתוח ותשתיות ועד מפתח",
+      title: "שכונת ״התמרים״",
+      location: "קיבוץ חצרים",
+      desc: "מנהל פרויקט ופיקוח תחת חברת ״ב.קידר הנדסה״ - 52 יח״ד",
       images: [
         "/images/project2.jpg",
         "/images/project2-2.jpg",
       ],
     },
     {
-      title: " מאזני גשר - מפעלי יח״מ",
-      location: " קיבוץ מגן  ",
-      desc: "ליווי הנדסי של בנית מאזני גשר",
+      title: "מאזני גשר - מפעלי יח״מ",
+      location: "קיבוץ מגן",
+      desc: "ליווי הנדסי של בניית מאזני גשר",
       images: [
         "/projects/project3/1.jpg",
         "/projects/project3/2.jpg",
         "/projects/project3/3.jpg",
+        "/projects/project3/4.jpg",
       ],
     },
   ];
@@ -131,22 +131,42 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
 
             {[
-              ["ניהול פרויקטים", "ליווי מלא של הפרויקט מתחילתו ועד סופו."],
-              ["פיקוח בנייה פרטית", "בקרה הנדסית צמודה לבתים פרטיים."],
-              ["פיקוח מוסדי", "ניהול ופיקוח פרויקטים ציבוריים."],
-              ["ליווי יזמים", "ייעול תהליכים ושיפור ביצוע בשטח."],
-            ].map(([title, desc]) => (
+              {
+                title: "ניהול פרויקטים",
+                desc: "ליווי מלא של הפרויקט מתחילתו ועד סופו.",
+                content:
+                  "ניהול כולל של פרויקטים משלב התכנון ועד המסירה. תיאום בין יועצים, קבלנים וספקים, בקרה על לוחות זמנים, תקציב ואיכות ביצוע והובלת תהליך עבודה מסודר.",
+              },
+              {
+                title: "פיקוח בנייה פרטית",
+                desc: "בקרה הנדסית צמודה לבתים פרטיים.",
+                content:
+                  "פיקוח הנדסי צמוד לבנייה פרטית משלב התכנון ועד סיום הביצוע. בדיקות תכניות, מניעת טעויות, פיקוח קבלנים ותיאום מלא בשטח.",
+              },
+              {
+                title: "פיקוח מוסדי",
+                desc: "ניהול ופיקוח פרויקטים ציבוריים.",
+                content:
+                  "ניהול ופיקוח פרויקטים מוסדיים עם עמידה בתקנים, בקרה הנדסית מלאה ותיאום רב-מערכתי.",
+              },
+              {
+                title: "ליווי יזמים",
+                desc: "ייעול תהליכים ושיפור ביצוע בשטח.",
+                content:
+                  "ליווי יזמים משלב הרעיון ועד המסירה כולל ניתוחים כלכליים, תכנון ובקרה בשטח.",
+              },
+            ].map(({ title, desc, content }) => (
               <div
                 key={title}
                 onClick={() =>
                   setOpenService(openService === title ? null : title)
                 }
-                className={`
+                className="
                   p-6 sm:p-7 md:p-8
                   border border-white/10 rounded-2xl
                   transition-all duration-500
                   cursor-pointer hover:border-white/30
-                `}
+                "
               >
                 <h3 className="text-lg sm:text-xl font-medium mb-2">
                   {title}
@@ -162,7 +182,7 @@ export default function Home() {
                     text-white/60 text-sm sm:text-base leading-loose
                     animate-in fade-in duration-500
                   ">
-                    הרחבה של השירות תופיע כאן
+                    {content}
                   </div>
                 )}
               </div>
@@ -191,8 +211,6 @@ export default function Home() {
             <div
               key={project.title}
               onClick={() => {
-                console.log("CLICKED PROJECT:", project); // 🔥 DEBUG
-
                 setActiveProject(project);
                 setActiveIndex(0);
                 setLightboxOpen(true);
@@ -226,13 +244,11 @@ export default function Home() {
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-
               </div>
 
               <div className="p-6 text-right">
 
                 <div className="flex justify-between mb-2">
-
                   <span className="text-white/40 text-sm">
                     {project.location}
                   </span>
@@ -240,7 +256,6 @@ export default function Home() {
                   <h3 className="text-xl font-light">
                     {project.title}
                   </h3>
-
                 </div>
 
                 <p className="text-white/60 text-sm">
@@ -303,22 +318,6 @@ export default function Home() {
                 ✕
               </button>
 
-              <div className="flex justify-center gap-3 mt-6">
-                {activeProject.images.map((img: string, index: number) => (
-                  <button
-                    key={img}
-                    onClick={() => setActiveIndex(index)}
-                    className={`overflow-hidden rounded-xl border ${
-                      activeIndex === index
-                        ? "border-white"
-                        : "border-white/20 opacity-60"
-                    }`}
-                  >
-                    <img src={img} className="w-20 h-20 object-cover" />
-                  </button>
-                ))}
-              </div>
-
             </div>
           </div>
         )}
@@ -344,7 +343,7 @@ export default function Home() {
 
           <p className="mb-6">
             .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה<br />
-            .תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים.  כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
+            .תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים. כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
           </p>
 
           <p>
@@ -357,7 +356,6 @@ export default function Home() {
 
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
-
         <h2 className="text-4xl font-light mb-6">אודות</h2>
 
         <p className="text-white/60 max-w-2xl mx-auto">
