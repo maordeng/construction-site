@@ -27,10 +27,12 @@ export default function Home() {
     {
       title: "שכונת ״התמרים״",
       location: "קיבוץ חצרים",
-      desc: "מנהל פרויקט ופיקוח תחת חברת ״ב.קידר הנדסה״ - 52 יח״ד",
+      desc: "מנהל פרויקט ופיקוח תחת חברת ״ב.קידר הנדסה״ - 52 יח״ד משלב פיתוח ותשתיות ועד מפתח",
       images: [
-        "/images/project2.jpg",
-        "/images/project2-2.jpg",
+        "/projects/project2/1.jpg",
+        "/projects/project2/2.jpg",
+        "/projects/project2/3.jpg",
+        "/projects/project2/4.jpg"
       ],
     },
     {
