@@ -12,6 +12,8 @@ export default function Home() {
 
   const [openService, setOpenService] = useState<string | null>(null);
 
+  const [loading, setLoading] = useState(false);
+
   const PROJECTS = [
     {
       title: "מעונות סטודנטים - אוניברסיטת בן גוריון",
@@ -398,13 +400,16 @@ export default function Home() {
               <span>office@maordeng.com</span>
             </a>
 
+            {/* MAP ICON (UPDATED ONLY) */}
             <a
               href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%91%20%D7%90%D7%91%D7%90%20%D7%90%D7%91%D7%95%D7%97%D7%A6%D7%99%D7%A8%D7%94%209%20%D7%A9%D7%93%D7%A8%D7%95%D7%AA"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 hover:text-white"
             >
-              <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">📍</span>
+              <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">
+                <MapPin size={18} />
+              </span>
               <span>הרב אבא אבוחצירה 9, שדרות</span>
             </a>
 
@@ -412,27 +417,42 @@ export default function Home() {
 
           <form
             className="space-y-4"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
+              setLoading(true);
 
               const form = e.currentTarget as HTMLFormElement;
               const name = (form.elements.namedItem("name") as HTMLInputElement).value;
               const subject = (form.elements.namedItem("subject") as HTMLInputElement).value;
               const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
-              const mailto = `mailto:office@maordeng.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-                `שם: ${name}\n\nהודעה:\n${message}`
-              )}`;
+              try {
+                await fetch("/api/contact", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ name, subject, message }),
+                });
 
-              window.location.href = mailto;
+                form.reset();
+                alert("הפנייה נשלחה בהצלחה");
+              } catch (err) {
+                alert("שגיאה בשליחה");
+              } finally {
+                setLoading(false);
+              }
             }}
           >
             <input name="name" placeholder="שם מלא" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
             <input name="subject" placeholder="נושא הפניה" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
             <textarea name="message" placeholder="תיאור הפניה" rows={5} className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
 
-            <button className="w-full bg-white text-black py-3 rounded-xl">
-              שליחת פניה
+            <button
+              disabled={loading}
+              className="w-full bg-white text-black py-3 rounded-xl"
+            >
+              {loading ? "שולח..." : "שליחת פניה"}
             </button>
           </form>
 
