@@ -320,7 +320,6 @@ export default function Home() {
                 ✕
               </button>
 
-              {/* thumbnails */}
               <div className="flex justify-center gap-3 mt-6">
                 {activeProject.images.map((img: string, index: number) => (
                   <button
@@ -350,27 +349,27 @@ export default function Home() {
 
         <div className="max-w-3xl mx-auto text-white/60 space-y-6 leading-relaxed text-right">
 
-          <p>
-            .אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח
-          </p>
-
-          <p>
-            מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה
-          </p>
-
-          <p>
-            .תהליכי עבודה ברורים ושקיפות מלאה לאורך כל הדרך
-          </p>
-
-          <p>
-            .החזון שלנו הוא יציבות, מקצועיות ושקט ללקוח
-          </p>
+          <p>אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח.</p>
+          <p>מאור דוד הנדסה פועלת לסטנדרט ביצוע גבוה ושקוף.</p>
+          <p>תהליכי עבודה מסודרים ושיתוף פעולה מלא עם הלקוח.</p>
+          <p>מטרה: יציבות, מקצועיות ושקט ללקוח.</p>
 
         </div>
 
       </section>
 
-      {/* CONTACT (ONLY ONE) */}
+      {/* ABOUT (MOVED UP) */}
+      <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+
+        <h2 className="text-4xl font-light mb-6">אודות</h2>
+
+        <p className="text-white/60 max-w-2xl mx-auto">
+          מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים.
+        </p>
+
+      </section>
+
+      {/* CONTACT (ONLY ONE + FIXED LABELS) */}
       <section
         id="contact"
         className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center"
@@ -379,36 +378,37 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-right">
 
-          {/* INFO */}
           <div className="space-y-6">
 
             <p className="text-white/60">
               נשמח לשמוע על הפרויקט שלכם ולתת מענה מקצועי ומהיר.
             </p>
 
-            <div className="flex gap-4 justify-end">
+            <div className="space-y-4 text-white/60">
 
-              <a href="tel:0549762390" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
-                📞
+              <a href="tel:0549762390" className="flex items-center gap-3 hover:text-white">
+                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">📞</span>
+                <span>054-976-2390</span>
               </a>
 
-              <a href="https://wa.me/972549762390" target="_blank" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
-                💬
+              <a href="https://wa.me/972549762390" target="_blank" className="flex items-center gap-3 hover:text-white">
+                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">💬</span>
+                <span>וואטסאפ</span>
               </a>
 
-              <a href="mailto:office@maordeng.com" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
-                ✉️
+              <a href="mailto:office@maordeng.com" className="flex items-center gap-3 hover:text-white">
+                <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">✉️</span>
+                <span>office@maordeng.com</span>
               </a>
 
             </div>
 
-            <div className="text-white/60 text-sm">
+            <div className="text-white/60 text-sm mt-4">
               הרב אבא אבוחצירה 9, שדרות
             </div>
 
           </div>
 
-          {/* FORM */}
           <form
             className="space-y-4"
             onSubmit={(e) => {
@@ -436,16 +436,6 @@ export default function Home() {
           </form>
 
         </div>
-      </section>
-
-      {/* ABOUT */}
-      <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
-
-        <h2 className="text-4xl font-light mb-6">אודות</h2>
-
-        <p className="text-white/60 max-w-2xl mx-auto">
-          מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים.
-        </p>
       </section>
 
     </main>
