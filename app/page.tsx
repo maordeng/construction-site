@@ -45,6 +45,33 @@ export default function Home() {
     },
   ];
 
+  const SERVICES = [
+    {
+      title: "ניהול פרויקטים",
+      desc: "ליווי מלא של הפרויקט מתחילתו ועד סופו.",
+      content:
+        "ניהול כולל של פרויקטים משלב התכנון ועד המסירה. תיאום בין יועצים, קבלנים וספקים, בקרה על לוחות זמנים, תקציב ואיכות ביצוע, והובלת תהליך עבודה מסודר שמבטיח שליטה מלאה בפרויקט לכל אורכו.",
+    },
+    {
+      title: "פיקוח בנייה פרטית",
+      desc: "בקרה הנדסית צמודה לבתים פרטיים.",
+      content:
+        "פיקוח הנדסי צמוד לבנייה פרטית משלב התכנון ועד סיום הביצוע. בדיקה ואישור תכניות, מניעת טעויות בשטח, פיקוח על עבודת הקבלנים, תיאום בין שלבי הביצוע, ובקרה שוטפת על איכות העבודה, התקציב והעמידה בלוחות הזמנים.",
+    },
+    {
+      title: "פיקוח מוסדי",
+      desc: "ניהול ופיקוח פרויקטים ציבוריים.",
+      content:
+        "ניהול ופיקוח של פרויקטים מוסדיים וציבוריים מורכבים, תוך הקפדה על תקנים מחמירים, עמידה בלוחות זמנים, תיאום בין מספר רב של גורמים מקצועיים, ובקרה הנדסית מלאה לאורך כל שלבי הפרויקט.",
+    },
+    {
+      title: "ליווי יזמים",
+      desc: "ייעול תהליכים ושיפור ביצוע בשטח.",
+      content:
+        "ליווי יזמים משלב הרעיון ועד שלב הביצוע והמסירה. ניתוח כלכלי ותכנוני של הפרויקט, איתור סיכונים מראש, שיפור תהליכי עבודה בשטח והכוונה לקבלת החלטות שמבוססות על ניסיון הנדסי וניהולי.",
+    },
+  ];
+
   return (
     <main className="bg-black text-white antialiased overflow-x-hidden">
 
@@ -128,29 +155,18 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
 
-            {[
-              ["ניהול פרויקטים", "ליווי מלא של הפרויקט מתחילתו ועד סופו."],
-              ["פיקוח בנייה פרטית", "בקרה הנדסית צמודה לבתים פרטיים."],
-              ["פיקוח מוסדי", "ניהול ופיקוח פרויקטים ציבוריים."],
-              ["ליווי יזמים", "ייעול תהליכים ושיפור ביצוע בשטח."],
-            ].map(([title, desc]) => (
+            {SERVICES.map(({ title, desc, content }) => (
               <div
                 key={title}
                 onClick={() =>
-                  (title === "פיקוח בנייה פרטית" || title === "ניהול פרויקטים")
-                    ? setOpenService(openService === title ? null : title)
-                    : null
+                  setOpenService(openService === title ? null : title)
                 }
-                className={`
+                className="
                   p-6 sm:p-7 md:p-8
                   border border-white/10 rounded-2xl
                   transition-all duration-500
-                  ${
-                    (title === "פיקוח בנייה פרטית" || title === "ניהול פרויקטים")
-                      ? "cursor-pointer hover:border-white/30"
-                      : ""
-                  }
-                `}
+                  cursor-pointer hover:border-white/30
+                "
               >
                 <h3 className="text-lg sm:text-xl font-medium mb-2">
                   {title}
@@ -160,32 +176,13 @@ export default function Home() {
                   {desc}
                 </p>
 
-                {/* EXPANDABLE CONTENT */}
-                {((title === "פיקוח בנייה פרטית" && openService === title) ||
-                  (title === "ניהול פרויקטים" && openService === title)) && (
+                {openService === title && (
                   <div className="
-                    mt-6
-                    pt-6
-                    border-t border-white/10
-                    text-white/60
-                    text-sm sm:text-base
-                    leading-loose
+                    mt-6 pt-6 border-t border-white/10
+                    text-white/60 text-sm sm:text-base leading-loose
                     animate-in fade-in duration-500
                   ">
-                    {title === "ניהול פרויקטים" && (
-                      <>
-                        ליווי מלא של הפרויקט מתחילתו ועד סופו. תיאום בין יועצים, קבלנים וספקים,
-                        בקרה על לוחות זמנים ותקציב, והובלת תהליך ביצוע מסודר ויעיל לאורך כל הדרך.
-                      </>
-                    )}
-
-                    {title === "פיקוח בנייה פרטית" && (
-                      <>
-                        פיקוח הנדסי צמוד לבתים פרטיים, בקרת התכניות והתאמתן לפני ובמהלך העבודות
-                        למניעת טעויות שעולות הרבה כסף, התנהלות מול קבלני משנה ותיאום שלבי העבודות,
-                        בקרה תקציבית וקביעת שלבי תשלום על פי התקדמות העבודות ועוד.
-                      </>
-                    )}
+                    {content}
                   </div>
                 )}
               </div>
