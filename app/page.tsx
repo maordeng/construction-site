@@ -137,25 +137,25 @@ export default function Home() {
                 title: "ניהול פרויקטים",
                 desc: "ליווי מלא של הפרויקט מתחילתו ועד סופו.",
                 content:
-                  "ניהול כולל של פרויקטים משלב התכנון ועד המסירה, כולל תיאום בין כל הגורמים ובקרה מלאה על איכות ולוחות זמנים.",
+                  "ניהול כולל של פרויקטים משלב התכנון ועד המסירה, כולל בקרה על איכות, לוחות זמנים ותקציב.",
               },
               {
                 title: "פיקוח בנייה פרטית",
                 desc: "בקרה הנדסית צמודה לבתים פרטיים.",
                 content:
-                  "פיקוח צמוד על כל שלבי הבנייה, בדיקות תכניות, מניעת טעויות ותיאום מלא מול הקבלנים בשטח.",
+                  "פיקוח הנדסי מלא על כל שלבי הבנייה, מניעת טעויות ותיאום בין כל הגורמים בשטח.",
               },
               {
                 title: "פיקוח מוסדי",
                 desc: "ניהול ופיקוח פרויקטים ציבוריים.",
                 content:
-                  "ניהול פרויקטים ציבוריים עם בקרה הנדסית מלאה ועמידה בתקנים.",
+                  "ניהול פרויקטים מוסדיים עם בקרה הנדסית ועמידה בתקנים.",
               },
               {
                 title: "ליווי יזמים",
                 desc: "ייעול תהליכים ושיפור ביצוע בשטח.",
                 content:
-                  "ליווי יזמים משלב הרעיון ועד מסירה תוך בקרה תקציבית ותכנונית.",
+                  "ליווי יזמים משלב התכנון ועד מסירה תוך בקרה מקצועית.",
               },
             ].map(({ title, desc, content }) => (
               <div
@@ -343,7 +343,34 @@ export default function Home() {
 
       </section>
 
-      {/* CONTACT (UPDATED) */}
+      {/* VISION */}
+      <section id="vision" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+
+        <h2 className="text-4xl font-light mb-10">חזון</h2>
+
+        <div className="max-w-3xl mx-auto text-white/60 space-y-6 leading-relaxed text-right">
+
+          <p>
+            .אנחנו מאמינים שאיכות, מקצועיות ותקשורת בריאה הן הבסיס לכל פרויקט בנייה מוצלח
+          </p>
+
+          <p>
+            מתוך אמונה זו, “מאור דוד הנדסה” פועלת להבטיח שכל פרויקט מתנהל בסטנדרט מקצועי גבוה
+          </p>
+
+          <p>
+            .תהליכי עבודה ברורים ושקיפות מלאה לאורך כל הדרך
+          </p>
+
+          <p>
+            .החזון שלנו הוא יציבות, מקצועיות ושקט ללקוח
+          </p>
+
+        </div>
+
+      </section>
+
+      {/* CONTACT (ONLY ONE) */}
       <section
         id="contact"
         className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center"
@@ -355,31 +382,21 @@ export default function Home() {
           {/* INFO */}
           <div className="space-y-6">
 
-            <p className="text-white/60 leading-relaxed">
+            <p className="text-white/60">
               נשמח לשמוע על הפרויקט שלכם ולתת מענה מקצועי ומהיר.
             </p>
 
             <div className="flex gap-4 justify-end">
 
-              <a
-                href="tel:0549762390"
-                className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:border-white/30"
-              >
+              <a href="tel:0549762390" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
                 📞
               </a>
 
-              <a
-                href="https://wa.me/972549762390"
-                target="_blank"
-                className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:border-white/30"
-              >
+              <a href="https://wa.me/972549762390" target="_blank" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
                 💬
               </a>
 
-              <a
-                href="mailto:office@maordeng.com"
-                className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:border-white/30"
-              >
+              <a href="mailto:office@maordeng.com" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
                 ✉️
               </a>
 
@@ -402,45 +419,20 @@ export default function Home() {
               const subject = (form.elements.namedItem("subject") as HTMLInputElement).value;
               const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
-              const mailto = `mailto:office@maordeng.com?subject=${encodeURIComponent(
-                subject
-              )}&body=${encodeURIComponent(
+              const mailto = `mailto:office@maordeng.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
                 `שם: ${name}\n\nהודעה:\n${message}`
               )}`;
 
               window.location.href = mailto;
             }}
           >
+            <input name="name" placeholder="שם מלא" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
+            <input name="subject" placeholder="נושא הפניה" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
+            <textarea name="message" placeholder="תיאור הפניה" rows={5} className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
 
-            <input
-              name="name"
-              placeholder="שם מלא"
-              className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white"
-              required
-            />
-
-            <input
-              name="subject"
-              placeholder="נושא הפניה"
-              className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white"
-              required
-            />
-
-            <textarea
-              name="message"
-              placeholder="תיאור הפניה"
-              rows={5}
-              className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white"
-              required
-            />
-
-            <button
-              type="submit"
-              className="w-full bg-white text-black py-3 rounded-xl hover:opacity-90 transition"
-            >
+            <button className="w-full bg-white text-black py-3 rounded-xl">
               שליחת פניה
             </button>
-
           </form>
 
         </div>
@@ -448,27 +440,12 @@ export default function Home() {
 
       {/* ABOUT */}
       <section id="about" className="bg-black border-t border-white/10 py-20 px-4 sm:px-6 text-center">
+
         <h2 className="text-4xl font-light mb-6">אודות</h2>
 
         <p className="text-white/60 max-w-2xl mx-auto">
           מאור דוד הנדסה מתמחה בניהול ופיקוח פרויקטים מורכבים.
         </p>
-      </section>
-
-      {/* CONTACT */}
-
-      <section id="contact" className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center">
-
-        <h2 className="text-4xl font-light mb-6">יצירת קשר</h2>
-
-        <a
-          href="mailto:office@maordeng.com"
-          className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl"
-        >
-          <Mail size={18} />
-          שליחת מייל
-        </a>
-
       </section>
 
     </main>
