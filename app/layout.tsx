@@ -5,7 +5,7 @@ export const metadata = {
   title: "מאור דוד הנדסה",
   description: "ניהול ופיקוח בנייה",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon-v2.ico",
   },
 };
 
