@@ -4,9 +4,6 @@ import Header from "../components/Header";
 export const metadata = {
   title: "מאור דוד הנדסה",
   description: "ניהול ופיקוח בנייה",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
