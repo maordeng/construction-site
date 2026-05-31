@@ -119,80 +119,81 @@ export default function Home() {
         </div>
       </section>
 
-   {/* SERVICES */}
-<section id="services" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
+      {/* SERVICES */}
+      <section id="services" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
 
-<div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
-  <ScrollReveal>
-    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-center mb-12 sm:mb-16 md:mb-20 tracking-tight">
-      שירותים
-    </h2>
-  </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-center mb-12 sm:mb-16 md:mb-20 tracking-tight">
+              שירותים
+            </h2>
+          </ScrollReveal>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 text-right">
 
-    {[
-      {
-        title: "ניהול פרויקטים",
-        desc: "ליווי מלא של הפרויקט מתחילתו ועד סופו.",
-        content:
-          "ניהול פרויקטים מקיף הכולל תיאום בין כל הגורמים המעורבים בתכנון ובביצוע, בקרה שוטפת על איכות העבודה, עמידה בלוחות זמנים ותקציב, ניהול קבלנים וספקים, פתרון בעיות בשטח בזמן אמת, והובלת הפרויקט עד למסירה מלאה ללקוח תוך הקפדה על סטנדרטים הנדסיים גבוהים.",
-      },
-      {
-        title: "פיקוח בנייה פרטית",
-        desc: "בקרה הנדסית צמודה לבתים פרטיים.",
-        content:
-          "פיקוח הנדסי צמוד בכל שלבי הבנייה של בית פרטי – החל מעבודות שלד ועד גמרים. בדיקות איכות ביצוע בשטח, זיהוי חריגות מהתכנון, מניעת טעויות קריטיות בזמן אמת, תיאום בין קבלני משנה, והבטחת התאמה מלאה לתכניות, לתקנים ולדרישות הלקוח.",
-      },
-      {
-        title: "פיקוח מוסדי",
-        desc: "ניהול ופיקוח פרויקטים ציבוריים.",
-        content:
-          "פיקוח וניהול פרויקטים מוסדיים וציבוריים בקנה מידה רחב, כולל עבודה מול גופים ממשלתיים ועירוניים, עמידה בתקנים מחמירים, בקרה תקציבית, ניהול לו״ז מורכב, פיקוח על מספר רב של קבלנים במקביל והבטחת ביצוע מדויק בהתאם למפרטים הנדסיים ותכניות מאושרות.",
-      },
-      {
-        title: "ליווי יזמים",
-        desc: "ייעול תהליכים ושיפור ביצוע בשטח.",
-        content:
-          "ליווי מקצועי ליזמים לאורך כל חיי הפרויקט – משלב הרעיון והתכנון, דרך בחינת היתכנות הנדסית וכלכלית, ועד שלב הביצוע והמסירה. מתן ייעוץ הנדסי שוטף, אופטימיזציה של תהליכי עבודה, ניתוח סיכונים, ושיפור ביצועים בשטח לשם מקסום רווחיות ויעילות הפרויקט.",
-      },
-    ].map(({ title, desc, content }) => (
-      <div
-        key={title}
-        onClick={() =>
-          setOpenService(openService === title ? null : title)
-        }
-        className="
-          p-6 sm:p-7 md:p-8
-          border border-white/10 rounded-2xl
-          cursor-pointer hover:border-white/30
-          transition-all duration-500
-        "
-      >
-        <h3 className="text-lg sm:text-xl font-medium mb-2">
-          {title}
-        </h3>
+            {[
+              {
+                title: "ניהול פרויקטים",
+                desc: "ליווי מלא של הפרויקט מתחילתו ועד סופו.",
+                content:
+                  "ניהול פרויקטים מקיף הכולל תיאום בין כל הגורמים המעורבים בתכנון ובביצוע, בקרה שוטפת על איכות העבודה, עמידה בלוחות זמנים ותקציב, ניהול קבלנים וספקים, פתרון בעיות בשטח בזמן אמת, והובלת הפרויקט עד למסירה מלאה ללקוח תוך הקפדה על סטנדרטים הנדסיים גבוהים.",
+              },
+              {
+                title: "פיקוח בנייה פרטית",
+                desc: "בקרה הנדסית צמודה לבתים פרטיים.",
+                content:
+                  "פיקוח הנדסי צמוד בכל שלבי הבנייה של בית פרטי – החל מעבודות שלד ועד גמרים. בדיקות איכות ביצוע בשטח, זיהוי חריגות מהתכנון, מניעת טעויות קריטיות בזמן אמת, תיאום בין קבלני משנה, והבטחת התאמה מלאה לתכניות, לתקנים ולדרישות הלקוח.",
+              },
+              {
+                title: "פיקוח מוסדי",
+                desc: "ניהול ופיקוח פרויקטים ציבוריים.",
+                content:
+                  "פיקוח וניהול פרויקטים מוסדיים וציבוריים בקנה מידה רחב, כולל עבודה מול גופים ממשלתיים ועירוניים, עמידה בתקנים מחמירים, בקרה תקציבית, ניהול לו״ז מורכב, פיקוח על מספר רב של קבלנים במקביל והבטחת ביצוע מדויק בהתאם למפרטים הנדסיים ותכניות מאושרות.",
+              },
+              {
+                title: "ליווי יזמים",
+                desc: "ייעול תהליכים ושיפור ביצוע בשטח.",
+                content:
+                  "ליווי מקצועי ליזמים לאורך כל חיי הפרויקט – משלב הרעיון והתכנון, דרך בחינת היתכנות הנדסית וכלכלית, ועד שלב הביצוע והמסירה. מתן ייעוץ הנדסי שוטף, אופטימיזציה של תהליכי עבודה, ניתוח סיכונים, ושיפור ביצועים בשטח לשם מקסום רווחיות ויעילות הפרויקט.",
+              },
+            ].map(({ title, desc, content }) => (
+              <div
+                key={title}
+                onClick={() =>
+                  setOpenService(openService === title ? null : title)
+                }
+                className="
+                  p-6 sm:p-7 md:p-8
+                  border border-white/10 rounded-2xl
+                  cursor-pointer hover:border-white/30
+                  transition-all duration-500
+                  text-right
+                "
+              >
+                <h3 className="text-lg sm:text-xl font-medium mb-2">
+                  {title}
+                </h3>
 
-        <p className="text-sm sm:text-base text-white/60">
-          {desc}
-        </p>
+                <p className="text-sm sm:text-base text-white/60">
+                  {desc}
+                </p>
 
-        {openService === title && (
-          <div className="
-            mt-6 pt-6 border-t border-white/10
-            text-white/60 text-sm sm:text-base leading-loose
-            animate-in fade-in duration-500
-          ">
-            {content}
+                {openService === title && (
+                  <div className="
+                    mt-6 pt-6 border-t border-white/10
+                    text-white/60 text-sm sm:text-base leading-loose
+                    animate-in fade-in duration-500
+                  ">
+                    {content}
+                  </div>
+                )}
+              </div>
+            ))}
+
           </div>
-        )}
-      </div>
-    ))}
-
-  </div>
-</div>
-</section>
+        </div>
+      </section>
 
       {/* PROJECTS */}
       <section id="projects" className="bg-black border-t border-white/10 py-20 sm:py-28 md:py-36 lg:py-40 px-4 sm:px-6">
@@ -352,13 +353,13 @@ export default function Home() {
           </p>
 
           <p>
-  .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה
-  <br /><br />
-  תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
-</p>
+            .כדי להבטיח שהמקצועיות תתממש במלואה, אנו יוצרים תרבות עבודה מסודרת ושקופה
+            <br /><br />
+            תהליכי עבודה ברורים, פגישות מסודרות ועדכונים שוטפים ללקוח מאפשרים שיתוף פעולה פורה בין כל הגורמים המעורבים כך נוצרת סביבת עבודה שמכבדת את האנשים ומביאה לתוצאה יוצאת דופן
+          </p>
 
           <p>
-           החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם - ואשר הולכת דרך עם אנשים החולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות
+            החזון שלנו הוא ליצור חברה יציבה ובעלת מבנה ארגוני חזק, שבה עובדים מצוינים נהנים מעשייה משמעותית, מקצועית והגשמה עצמית, לצד תגמול הולם - ואשר הולכת דרך עם אנשים החולקים את ערכי המקצועיות והאיכות לצד כבוד ואנושיות
           </p>
 
         </div>
