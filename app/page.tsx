@@ -388,7 +388,7 @@ export default function Home() {
       {/* CONTACT */}
       <section
         id="contact"
-        className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center"
+        className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center text-right"
       >
         <h2 className="text-4xl font-light mb-10">יצירת קשר</h2>
 
