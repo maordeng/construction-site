@@ -388,13 +388,13 @@ export default function Home() {
       {/* CONTACT */}
       <section
         id="contact"
-        className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center text-right"
+        className="bg-black border-t border-white/10 py-24 px-4 sm:px-6 text-center"
       >
         <h2 className="text-4xl font-light mb-10">יצירת קשר</h2>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-right">
 
-        <div className="space-y-4 text-white/60 items-end flex flex-col">
+          <div className="space-y-4 text-white/60">
 
             <a href="tel:0549762390" className="flex items-center gap-3 hover:text-white">
               <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">📞</span>
@@ -421,7 +421,7 @@ export default function Home() {
           </div>
 
           <form
-            className="space-y-4"
+            className="space-y-4 text-right"
             onSubmit={(e) => {
               e.preventDefault();
 
@@ -446,9 +446,9 @@ ${message}`;
               );
             }}
           >
-            <input name="name" placeholder="שם מלא" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
-            <input name="subject" placeholder="נושא הפניה" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
-            <textarea name="message" placeholder="תיאור הפניה" rows={5} className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white" />
+            <input name="name" placeholder="שם מלא" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white text-right" />
+            <input name="subject" placeholder="נושא הפניה" className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white text-right" />
+            <textarea name="message" placeholder="תיאור הפניה" rows={5} className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white text-right" />
 
             <button className="w-full bg-white text-black py-3 rounded-xl">
               שליחת פניה
