@@ -394,7 +394,7 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-right">
 
-          <div className="space-y-4 text-white/60">
+        <div className="space-y-4 text-white/60 items-end flex flex-col">
 
             <a href="tel:0549762390" className="flex items-center gap-3 hover:text-white">
               <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10">📞</span>
